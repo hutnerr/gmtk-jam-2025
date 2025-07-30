@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl5g7tjmjq45r"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_v16xo"]
+[ext_resource type="Script" uid="uid://cnget6q00o0q7" path="res://01_user-interface/main-menu/main_menu.gd" id="2_o43a6"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_shm1l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v16xo"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v16xo")
+script = ExtResource("2_o43a6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v16xo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 200
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 128
+text = "CYCLOGRID"
+
+[node name="ButtonMarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/margin_left = 550
+theme_override_constants/margin_right = 550
+
+[node name="ButtonVBox" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ButtonMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Play"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/PlayButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="LevelSelButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/LevelSelButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+text = "Settings"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+text = "Quit"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"

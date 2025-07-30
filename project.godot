@@ -11,8 +11,24 @@ config_version=5
 [application]
 
 config/name="gmtk-jam-2025"
+run/main_scene="uid://o3ryldcogx2y"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://99_assets/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://99_resources/default_bus_layout.tres"
+
+[autoload]
+
+KeyboardDetector="*res://02_globals/keyboard_detector.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 
