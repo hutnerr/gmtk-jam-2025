@@ -5,6 +5,8 @@ extends Control
 @onready var settingsButton: Button = $PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton
 @onready var quitButton: Button = $PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton
 
+const FIRST_LEVEL: String = "res://05_levels/01/LevelOne.tscn"
+
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
 	levelSelectButton.pressed.connect(onLevelSelectButtonButtonPressed)
@@ -12,7 +14,7 @@ func _ready() -> void:
 	quitButton.pressed.connect(onQuitButtonPressed)
 	
 func onPlayButtonPressed() -> void:
-	print("Play Button Pressed")
+	SceneTransitioner.change_scene(FIRST_LEVEL)
 
 func onLevelSelectButtonButtonPressed() -> void:
 	print("Level Select Button Pressed")

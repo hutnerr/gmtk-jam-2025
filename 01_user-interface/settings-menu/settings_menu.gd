@@ -7,7 +7,12 @@ extends Control
 @onready var mainMenuButtonSpacer: Control = $PanelContainer/MarginContainer/MainContainer/Spacer3
 @onready var coveragePanel: Panel = $CoveragePanel # for in the main menu to hide 
 
+const MAIN_PATH = "res://00_main/Main.tscn"
+
 func _ready() -> void:
+	toggleVisible()
+	get_tree().paused = false # since toggleVis will pause us
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	mainMenuButton.pressed.connect(onMainMenuButtonPressed)
 	quitButton.pressed.connect(onQuitButtonPressed)
 	closeSettingsButton.pressed.connect(onCloseSettingsButtonPressed)
@@ -18,8 +23,8 @@ func onEscPressed() -> void:
 	
 func onMainMenuButtonPressed() -> void:
 	print("Main Menu Button Pressed")
-	# either change scene or change visibility of some stuff
-	# depending on how we implement it
+	SceneTransitioner.change_scene(MAIN_PATH)
+	toggleVisible()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()
@@ -30,13 +35,18 @@ func onCloseSettingsButtonPressed() -> void:
 
 func toggleVisible() -> void:
 	var tree = get_tree()
-	if tree.current_scene.scene_file_path == "res://00_main/Main.tscn":
+	if tree.current_scene.scene_file_path == MAIN_PATH:
 		mainMenuButton.visible = false
 		mainMenuButtonSpacer.visible = false
 		quitButton.visible = false
 		quitButtonSpacer.visible = false
 		if !visible: # since we're about to change this, check the inverse
 			coveragePanel.visible = true
+	else:
+		mainMenuButton.visible = true
+		mainMenuButtonSpacer.visible = true
+		quitButton.visible = true
+		quitButtonSpacer.visible = true
 	
 	tree.paused = !tree.paused
 	visible = !visible 

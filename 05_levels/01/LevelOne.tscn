@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c50d8nrf0ayry"]
+
+[node name="LevelOne" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 513.0
+offset_top = 325.0
+offset_right = 654.0
+offset_bottom = 348.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "THIS IS LEVEL ONE"

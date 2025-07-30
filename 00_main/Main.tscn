@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=5 format=3 uid="uid://o3ryldcogx2y"]
 
 [ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
-[ext_resource type="PackedScene" uid="uid://dufb3o6i21t47" path="res://01_user-interface/settings-menu/SettingsMenu.tscn" id="2_51a2b"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
 [ext_resource type="Texture2D" uid="uid://dou3ebvsncpos" path="res://99_assets/endless-clouds.svg" id="4_fm26s"]
 [ext_resource type="Script" uid="uid://ei132lunx33x" path="res://00_main/parallax.gd" id="4_hka2u"]
@@ -13,10 +12,6 @@ script = ExtResource("1_f4613")
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="UserInterface" instance=ExtResource("2_utqqy")]
-
-[node name="SettingsMenu" parent="UserInterface" instance=ExtResource("2_51a2b")]
-process_mode = 2
-visible = false
 
 [node name="Background" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
