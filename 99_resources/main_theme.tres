@@ -65,4 +65,6 @@ Label/colors/font_color = Color(0.921569, 0.858824, 0.698039, 1)
 Label/fonts/font = ExtResource("1_57uhh")
 LabelHeader/base_type = &"Label"
 LabelHeader/font_sizes/font_size = 32
+MainMenuButton/base_type = &"Button"
+MainMenuButton/font_sizes/font_size = 16
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_bvaiu")

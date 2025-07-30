@@ -31,10 +31,10 @@ grow_vertical = 2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2800, 0)
+motion_mirroring = Vector2(1400, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-custom_minimum_size = Vector2(2800, 2000)
+custom_minimum_size = Vector2(1400, 800)
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3

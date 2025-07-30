@@ -54,6 +54,7 @@ theme_override_constants/separation = 10
 [node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
 text = "Play"
 
 [node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/PlayButton"]
