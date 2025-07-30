@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=6 format=3 uid="uid://o3ryldcogx2y"]
 
 [ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
 [ext_resource type="PackedScene" uid="uid://dufb3o6i21t47" path="res://01_user-interface/settings-menu/SettingsMenu.tscn" id="2_51a2b"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
+[ext_resource type="Texture2D" uid="uid://dou3ebvsncpos" path="res://99_assets/endless-clouds.svg" id="4_fm26s"]
+[ext_resource type="Script" uid="uid://ei132lunx33x" path="res://00_main/testing.gd" id="4_hka2u"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -15,3 +17,27 @@ script = ExtResource("1_f4613")
 [node name="SettingsMenu" parent="UserInterface" instance=ExtResource("2_51a2b")]
 process_mode = 2
 visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("4_hka2u")
+
+[node name="Panel" type="Panel" parent="ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2800, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+custom_minimum_size = Vector2(2800, 2000)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_fm26s")
+stretch_mode = 1

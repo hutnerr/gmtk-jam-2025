@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_shm1l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v16xo"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+bg_color = Color(0.156863, 0.156863, 0.156863, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
