@@ -28,6 +28,38 @@ func rotateDirection(degrees: int):
 		270:
 			# rotate 270 degrees clockwise: (x,y) -> (-y,x)
 			currentDirection = Vector2i(-currentDirection.y, currentDirection.x)
+	
+	if player:
+		rotatePlayerSprite()
+	
+	print("Rotated to face: ", directionToString(currentDirection))
+
+func rotatePlayerSprite():
+	if not player:
+		return
+	
+	var sprite = player.get_node_or_null("Sprite2D")
+	if not sprite:
+		for child in player.get_children():
+			if child is Sprite2D:
+				sprite = child
+				break
+	
+	if not sprite:
+		print("no sprite found")
+		return
+	
+	match currentDirection:
+		Vector2i(1, 0):   # RIGHT
+			sprite.rotation_degrees = 0
+		Vector2i(0, 1):   # DOWN
+			sprite.rotation_degrees = 90
+		Vector2i(-1, 0):  # LEFT
+			sprite.rotation_degrees = 180
+		Vector2i(0, -1):  # UP
+			sprite.rotation_degrees = 270
+		_:
+			print("Unknown direction: ", currentDirection)
 
 func transformDirection(commandDir: Vector2i) -> Vector2i:
 	# If the command is RIGHT (1,0), use current direction
@@ -74,3 +106,4 @@ func reset():
 
 	player.global_position = defaultPosition
 	currentDirection = defaultDirection
+	rotatePlayerSprite()
