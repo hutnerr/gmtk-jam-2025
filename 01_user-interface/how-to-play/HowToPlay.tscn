@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://qp16i2cd76xl"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_74mi8"]
+[ext_resource type="Script" uid="uid://delq3qqr4iivg" path="res://01_user-interface/how-to-play/how_to_play.gd" id="1_l6cnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkwh1"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_74mi8")
+script = ExtResource("1_l6cnn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jkwh1")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "to play you must kill all of the enemies, you do this by touching them. 
+
+to move the player, you must define your loop using the preset commands. the sequence that is set is the way
+the player will move across the grid. 
+
+the smalls sequence will repeat until either you complete the level, significantly go out of bounds, or manually stop it
+
+you can always open the settings menu using ESC as well. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoodBoyButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 512.0
+offset_right = 785.0
+offset_bottom = 565.0
+text = "I Understand"

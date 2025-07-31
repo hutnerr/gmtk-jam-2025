@@ -73,6 +73,11 @@ text = "Level Select"
 script = ExtResource("3_shm1l")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="HowToPlayButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "How To Play"
+
 [node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
 theme_type_variation = &"MainMenuButton"

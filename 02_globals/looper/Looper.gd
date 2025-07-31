@@ -35,7 +35,7 @@ func runLoop() -> void:
 				break
 			
 			# TODO: make an animation and await that being done here instead
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(0.25).timeout
 			
 			if not looping: # if we've stopped looping during our wait
 				break
