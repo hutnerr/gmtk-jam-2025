@@ -22,15 +22,16 @@ func onEscPressed() -> void:
 	toggleVisible()
 	
 func onMainMenuButtonPressed() -> void:
-	print("Main Menu Button Pressed")
-	SceneTransitioner.change_scene(MAIN_PATH)
 	toggleVisible()
+	SceneTransitioner.change_scene(MAIN_PATH)
+	coveragePanel.visible = true
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()
 	
 func onCloseSettingsButtonPressed() -> void:
 	visible = false
+	coveragePanel.visible = false
 	get_tree().paused = false
 
 func toggleVisible() -> void:
@@ -40,13 +41,13 @@ func toggleVisible() -> void:
 		mainMenuButtonSpacer.visible = false
 		quitButton.visible = false
 		quitButtonSpacer.visible = false
-		if !visible: # since we're about to change this, check the inverse
-			coveragePanel.visible = true
+		coveragePanel.visible = true
 	else:
 		mainMenuButton.visible = true
 		mainMenuButtonSpacer.visible = true
 		quitButton.visible = true
 		quitButtonSpacer.visible = true
+		coveragePanel.visible = false
 	
 	tree.paused = !tree.paused
 	visible = !visible 

@@ -24,6 +24,7 @@ theme = ExtResource("1_uh2pk")
 script = ExtResource("2_5nxtp")
 
 [node name="CoveragePanel" type="Panel" parent="SettingsMenu"]
+visible = false
 layout_mode = 0
 offset_left = -850.0
 offset_top = -531.0

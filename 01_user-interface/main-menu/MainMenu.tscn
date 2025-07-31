@@ -38,7 +38,7 @@ theme_override_constants/margin_top = 200
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0.156863, 0.156863, 0.156863, 1)
-theme_override_constants/outline_size = 16
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 128
 text = "CYCLOGRID"
 
@@ -65,6 +65,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="LevelSelButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
+theme_type_variation = &"MainMenuButton"
 text = "Level Select"
 
 [node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/LevelSelButton"]
@@ -73,6 +74,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
+theme_type_variation = &"MainMenuButton"
 text = "Settings"
 
 [node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton"]
@@ -81,6 +83,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
+theme_type_variation = &"MainMenuButton"
 text = "Quit"
 
 [node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton"]
