@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://blwyq6ghpnwvb"]
+[gd_scene load_steps=2 format=3 uid="uid://blwyq6ghpnwvb"]
+
+[ext_resource type="Script" uid="uid://b4fbamxnt6b6d" path="res://03_components/tile-position-component/tile_position_component.gd" id="1_xl0uu"]
 
 [node name="TilePositionComponent" type="Node"]
+script = ExtResource("1_xl0uu")

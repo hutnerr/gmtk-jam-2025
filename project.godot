@@ -24,6 +24,7 @@ buses/default_bus_layout="res://99_resources/default_bus_layout.tres"
 KeyboardDetector="*res://02_globals/keyboard_detector.gd"
 SceneTransitioner="*res://02_globals/scene-transitioner/SceneTransition.tscn"
 SettingsMenu="*res://01_user-interface/settings-menu/SettingsMenu.tscn"
+Gridleton="*res://02_globals/gridleton/gridleton.tscn"
 
 [display]
 

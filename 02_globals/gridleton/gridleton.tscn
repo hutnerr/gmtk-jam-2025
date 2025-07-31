@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ddqjmyrvf48"]
+
+[ext_resource type="Script" uid="uid://dogvbb2nxtmc0" path="res://02_globals/gridleton/gridleton.gd" id="1_4pvt7"]
+
+[node name="Gridleton" type="Node2D"]
+script = ExtResource("1_4pvt7")

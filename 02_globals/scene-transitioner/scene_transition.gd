@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal sceneChanged
+const mainPath = "res://00_main/Main.tscn"
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -8,7 +11,7 @@ func change_scene(target: String) -> void:
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play_backwards("dissolve")
-	print("done changing scene")
+	sceneChanged.emit()
 
 # to use you can set the SceneTransition node to an autoload
 # then whenever you want to change your scene, you simply call SceneTransition.change_scene(target)
