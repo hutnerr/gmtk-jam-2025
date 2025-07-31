@@ -3,7 +3,7 @@ class_name State
 
 signal transitioned
 
-var parent: Node2D
+var parent: Node
 
 func enter() -> void:
 	pass

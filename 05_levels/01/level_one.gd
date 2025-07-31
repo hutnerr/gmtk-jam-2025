@@ -1,5 +1,8 @@
-class_name TileObject extends Node2D
+extends Node
 
 
-parent.thing.pos
-parent.get_node(thing).pos
+@onready var gridTile = $GridTileMap
+
+func _ready():
+	Gridleton.currentGrid = gridTile
+	Gridleton.loadGridObject()

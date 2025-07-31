@@ -7,13 +7,16 @@ var currentState: State
 var states: Dictionary = {}
 
 # This is like the _ready() function, except I want to pass the "parent" as a reference. 
-func customInit(parent:Node2D)-> void:
+func customInit(parent:Node)-> void:
 	for child in get_children():
 		if child is State:
+			print(child.parent)
+			print("Im a state")
 			child.parent = parent
 			states[child.name.to_lower()] = child
 			child.transitioned.connect(onChildTransition)
-
+		else:
+			print("I wasnt a state????")
 	if initialState:
 		initialState.enter()
 		currentState = initialState

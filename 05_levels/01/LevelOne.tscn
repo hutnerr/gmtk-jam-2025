@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://c50d8nrf0ayry"]
+[gd_scene load_steps=6 format=4 uid="uid://c50d8nrf0ayry"]
 
 [ext_resource type="TileSet" uid="uid://cx2s8bp3t16e7" path="res://99_resources/art-tilemap.tres" id="1_foomf"]
+[ext_resource type="Script" uid="uid://dpuyddaqttpm" path="res://05_levels/01/level_one.gd" id="1_pktca"]
 [ext_resource type="TileSet" uid="uid://c2ds6b7ic1rcy" path="res://99_resources/grid-tileset.tres" id="2_ugyno"]
 [ext_resource type="PackedScene" uid="uid://cx08sw0w5fe3" path="res://04_objects/level-completion/completion.tscn" id="3_0p04f"]
 [ext_resource type="Script" uid="uid://b4fbamxnt6b6d" path="res://03_components/tile-position-component/tile_position_component.gd" id="4_4cgtm"]
 
-[node name="LevelOne" type="Node2D"]
+[node name="LevelOne" type="Node"]
+script = ExtResource("1_pktca")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
