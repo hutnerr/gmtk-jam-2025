@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=6 format=3 uid="uid://o3ryldcogx2y"]
 
 [ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
 [ext_resource type="Texture2D" uid="uid://dou3ebvsncpos" path="res://99_assets/endless-clouds.svg" id="4_fm26s"]
 [ext_resource type="Script" uid="uid://ei132lunx33x" path="res://00_main/parallax.gd" id="4_hka2u"]
+[ext_resource type="PackedScene" uid="uid://d0778cg3m1y6u" path="res://music/main_theme.tscn" id="5_hka2u"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -36,3 +37,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("4_fm26s")
 stretch_mode = 1
+
+[node name="MainTheme" parent="." instance=ExtResource("5_hka2u")]
+autoplay = true

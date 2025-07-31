@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx08sw0w5fe3"]
+
+[ext_resource type="Script" uid="uid://5a6dcq15c2t7" path="res://03_components/state-machine-component/state_machine.gd" id="1_5boi4"]
+[ext_resource type="Script" uid="uid://bbc7nhcj0ean5" path="res://03_components/state-machine-component/state.gd" id="2_qeswq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5boi4"]
+size = Vector2(13, 13.5)
+
+[node name="Completion" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5boi4")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_5boi4")
+metadata/_custom_type_script = "uid://5a6dcq15c2t7"
+
+[node name="Planning" type="Node" parent="StateMachine"]
+script = ExtResource("2_qeswq")
+metadata/_custom_type_script = "uid://bbc7nhcj0ean5"
+
+[node name="Playing" type="Node" parent="StateMachine"]
+script = ExtResource("2_qeswq")
+metadata/_custom_type_script = "uid://bbc7nhcj0ean5"
+
+[node name="Completed" type="Node" parent="StateMachine"]
+script = ExtResource("2_qeswq")
+metadata/_custom_type_script = "uid://bbc7nhcj0ean5"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
