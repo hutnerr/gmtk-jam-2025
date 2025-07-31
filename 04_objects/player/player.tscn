@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfmwu30ysrsa3"]
+
+[ext_resource type="Texture2D" uid="uid://gpxi5wdp3e8h" path="res://99_assets/sprites/Cream Bunny.png" id="1_53e5t"]
+[ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://04_objects/player/player.gd" id="1_xlt0o"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_xlt0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_53e5t")
