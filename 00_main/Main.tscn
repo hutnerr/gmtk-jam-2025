@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=8 format=3 uid="uid://o3ryldcogx2y"]
 
 [ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
-[ext_resource type="Texture2D" uid="uid://dou3ebvsncpos" path="res://99_assets/endless-clouds.svg" id="4_fm26s"]
+[ext_resource type="Texture2D" uid="uid://byxe41kpy3k0f" path="res://99_assets/background/Pralax Background-Sky.png" id="4_h3sfl"]
 [ext_resource type="Script" uid="uid://ei132lunx33x" path="res://00_main/parallax.gd" id="4_hka2u"]
 [ext_resource type="PackedScene" uid="uid://d0778cg3m1y6u" path="res://music/main_theme.tscn" id="5_hka2u"]
+[ext_resource type="Texture2D" uid="uid://bxaqf7sfyfas2" path="res://99_assets/background/Pralax Background-Clouds.png" id="5_ko1dt"]
+[ext_resource type="Texture2D" uid="uid://mpikqki8s2ec" path="res://99_assets/background/Pralax Background-Bushes.png" id="6_e244q"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -14,29 +16,50 @@ script = ExtResource("1_f4613")
 
 [node name="MainMenu" parent="UserInterface" instance=ExtResource("2_utqqy")]
 
+[node name="Background2" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+scroll_offset = Vector2(1, 0)
+script = ExtResource("4_hka2u")
+scrollSpeed = Vector2(1, 0)
+
+[node name="Sky Parallax" type="ParallaxLayer" parent="Background2"]
+motion_scale = Vector2(30, 30)
+motion_mirroring = Vector2(1500, 0)
+
+[node name="Sky" type="TextureRect" parent="Background2/Sky Parallax"]
+custom_minimum_size = Vector2(1500, 900)
+offset_right = 1200.0
+offset_bottom = 900.0
+texture = ExtResource("4_h3sfl")
+
 [node name="Background" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 script = ExtResource("4_hka2u")
+scrollSpeed = Vector2(50, 0)
 
-[node name="Panel" type="Panel" parent="Background"]
+[node name="Cloud Parallax" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2(1200, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Background/Cloud Parallax"]
+custom_minimum_size = Vector2(1200, 900)
+offset_right = 1200.0
+offset_bottom = 900.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("5_ko1dt")
+
+[node name="Bushes" type="TextureRect" parent="Background"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 99.0
+offset_right = -4.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(1400, 0)
-
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
-custom_minimum_size = Vector2(1400, 800)
-offset_right = 40.0
-offset_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("4_fm26s")
-stretch_mode = 1
+texture = ExtResource("6_e244q")
 
 [node name="MainTheme" parent="." instance=ExtResource("5_hka2u")]
 autoplay = true

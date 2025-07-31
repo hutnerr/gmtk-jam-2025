@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gpxi5wdp3e8h"
-path="res://.godot/imported/Cream Bunny.png-092eb9092f1bde4cabf8a05d1a21d18d.ctex"
+uid="uid://byxe41kpy3k0f"
+path="res://.godot/imported/Pralax Background-Sky.png-35fea2367b57003395f7b6755174d45e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://99_assets/Cream Bunny.png"
-dest_files=["res://.godot/imported/Cream Bunny.png-092eb9092f1bde4cabf8a05d1a21d18d.ctex"]
+source_file="res://99_assets/background/Pralax Background-Sky.png"
+dest_files=["res://.godot/imported/Pralax Background-Sky.png-35fea2367b57003395f7b6755174d45e.ctex"]
 
 [params]
 

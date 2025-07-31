@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5a6dcq15c2t7" path="res://03_components/state-machine-component/state_machine.gd" id="1_5boi4"]
 [ext_resource type="Script" uid="uid://bbc7nhcj0ean5" path="res://03_components/state-machine-component/state.gd" id="2_qeswq"]
-[ext_resource type="Texture2D" uid="uid://kgl176grg764" path="res://99_assets/Rat.png" id="3_qeswq"]
+[ext_resource type="Texture2D" uid="uid://kgl176grg764" path="res://99_assets/sprites/Rat.png" id="3_qeswq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5boi4"]
 size = Vector2(13, 13.5)
