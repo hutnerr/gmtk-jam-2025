@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drh4a7n1ynqsj"]
+
+[ext_resource type="Script" uid="uid://7y7nhfcy0gpt" path="res://02_globals/factory/command_factory.gd" id="1_igetw"]
+
+[node name="CommandFactory" type="Node"]
+script = ExtResource("1_igetw")

@@ -1,0 +1,199 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfl2d7ijythod"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_3b55p"]
+[ext_resource type="Script" uid="uid://d3k6ca78mmo0b" path="res://01_user-interface/puzzle-menu/puzzle_menu.gd" id="2_ss7uf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b55p"]
+bg_color = Color(0.156863, 0.156863, 0.14902, 1)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.980392, 0.741176, 0.184314, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss7uf"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_top = 2
+border_color = Color(0.980392, 0.741176, 0.184314, 1)
+corner_radius_bottom_right = 16
+
+[node name="PuzzleMenu" type="Control"]
+custom_minimum_size = Vector2(640, 384)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_right = -642.0
+offset_bottom = 384.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3b55p")
+script = ExtResource("2_ss7uf")
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="CommandSequencePanel" type="PanelContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b55p")
+
+[node name="CommandsContainer" type="VBoxContainer" parent="MainContainer/CommandSequencePanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+theme_override_constants/separation = 0
+
+[node name="LoopContainer" type="MarginContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="LoopItemVBox" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LoopTitleLabel" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Loop"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="LoopItemMainContainer" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ClearLoopButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Clear"
+
+[node name="MiddleLineSeperator" type="VSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CMDButtonMargin" type="MarginContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CMDButtonVBox" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "CMD"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+
+[node name="RightButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "Right"
+
+[node name="LeftButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "Left"
+
+[node name="UpButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "Up"
+
+[node name="DownButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "Down"
+
+[node name="Rotate90Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "R90"
+
+[node name="Rotate180Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "R180"
+
+[node name="Rotate270Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+layout_mode = 2
+text = "R270"
+
+[node name="InfoPanel" type="PanelContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ss7uf")
+
+[node name="Info" type="MarginContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/InfoPanel"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/InfoPanel/Info"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LoopLimitLabel" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/InfoPanel/Info/VBoxContainer"]
+layout_mode = 2
+text = "Loop Limit: "
+
+[node name="CurrentLevelLabel" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/InfoPanel/Info/VBoxContainer"]
+layout_mode = 2
+text = "Level: "
+
+[node name="RunButton" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Button" type="MarginContainer" parent="MainContainer/RunButton"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MainContainer/RunButton/Button"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PlayButton" type="Button" parent="MainContainer/RunButton/Button/HBoxContainer"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+text = "Run Loop!"
+
+[node name="StopButton" type="Button" parent="MainContainer/RunButton/Button/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Stop"

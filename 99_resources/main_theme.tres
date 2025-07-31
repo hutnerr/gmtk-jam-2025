@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://fg7vl58y3nn0"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://fg7vl58y3nn0"]
 
 [ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/PixelPurl.ttf" id="2_bvaiu"]
 
@@ -16,6 +16,10 @@ corner_radius_bottom_right = 16
 bg_color = Color(0.235294, 0.219608, 0.211765, 1)
 corner_radius_top_left = 16
 corner_radius_bottom_right = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_57uhh"]
+color = Color(0.980392, 0.741176, 0.184314, 1)
+thickness = 2
 
 [sub_resource type="Image" id="Image_57uhh"]
 data = {
@@ -48,6 +52,11 @@ bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 corner_radius_top_left = 48
 corner_radius_bottom_right = 48
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bvaiu"]
+color = Color(0.980392, 0.741176, 0.184314, 1)
+thickness = 2
+vertical = true
+
 [resource]
 Button/colors/font_color = Color(0.921569, 0.858824, 0.698039, 1)
 Button/colors/font_focus_color = Color(0.921569, 0.858824, 0.698039, 1)
@@ -59,6 +68,7 @@ Button/styles/hover = SubResource("StyleBoxFlat_qdocg")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_qdocg")
 Button/styles/normal = SubResource("StyleBoxFlat_nnb1h")
 Button/styles/pressed = SubResource("StyleBoxFlat_qdocg")
+HSeparator/styles/separator = SubResource("StyleBoxLine_57uhh")
 HSlider/icons/grabber = SubResource("ImageTexture_bvaiu")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_57uhh")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_evmcu")
@@ -70,3 +80,4 @@ LabelHeader/font_sizes/font_size = 32
 MainMenuButton/base_type = &"Button"
 MainMenuButton/font_sizes/font_size = 32
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_bvaiu")
+VSeparator/styles/separator = SubResource("StyleBoxLine_bvaiu")

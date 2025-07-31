@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd05hvymjarrd"]
+
+[ext_resource type="Script" uid="uid://wxdd4vdgygv7" path="res://02_globals/looper/Looper.gd" id="1_42sy6"]
+
+[node name="Looper" type="Node2D"]
+script = ExtResource("1_42sy6")

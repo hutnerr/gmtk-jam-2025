@@ -4,6 +4,8 @@ var movementDistance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MoveManny.player = self
+	MoveManny.defaultPosition = self.global_position
 	call_deferred("anon")
 
 func anon():

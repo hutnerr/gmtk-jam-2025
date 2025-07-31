@@ -25,6 +25,8 @@ KeyboardDetector="*res://02_globals/keyboard_detector.gd"
 SceneTransitioner="*res://02_globals/scene-transitioner/SceneTransition.tscn"
 SettingsMenu="*res://01_user-interface/settings-menu/SettingsMenu.tscn"
 Gridleton="*res://02_globals/gridleton/gridleton.tscn"
+Looper="*res://02_globals/looper/Looper.tscn"
+MoveManny="*res://02_globals/movement-manager/MoveManny.tscn"
 
 [display]
 
@@ -32,6 +34,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

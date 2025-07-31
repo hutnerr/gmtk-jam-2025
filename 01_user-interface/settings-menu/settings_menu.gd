@@ -25,6 +25,9 @@ func onMainMenuButtonPressed() -> void:
 	toggleVisible()
 	SceneTransitioner.change_scene(MAIN_PATH)
 	coveragePanel.visible = true
+	Looper.looping = false
+	Looper.clearCommands()
+	MoveManny.reset()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()

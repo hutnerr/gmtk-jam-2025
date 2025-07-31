@@ -16,31 +16,31 @@ script = ExtResource("1_f4613")
 
 [node name="MainMenu" parent="UserInterface" instance=ExtResource("2_utqqy")]
 
-[node name="Background2" type="ParallaxBackground" parent="."]
+[node name="Sky" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 scroll_offset = Vector2(1, 0)
 script = ExtResource("4_hka2u")
 scrollSpeed = Vector2(1, 0)
 
-[node name="Sky Parallax" type="ParallaxLayer" parent="Background2"]
+[node name="Sky Parallax" type="ParallaxLayer" parent="Sky"]
 motion_scale = Vector2(30, 30)
 motion_mirroring = Vector2(1500, 0)
 
-[node name="Sky" type="TextureRect" parent="Background2/Sky Parallax"]
+[node name="Sky" type="TextureRect" parent="Sky/Sky Parallax"]
 custom_minimum_size = Vector2(1500, 900)
 offset_right = 1200.0
 offset_bottom = 900.0
 texture = ExtResource("4_h3sfl")
 
-[node name="Background" type="ParallaxBackground" parent="."]
+[node name="Clouds" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 script = ExtResource("4_hka2u")
 scrollSpeed = Vector2(50, 0)
 
-[node name="Cloud Parallax" type="ParallaxLayer" parent="Background"]
+[node name="Cloud Parallax" type="ParallaxLayer" parent="Clouds"]
 motion_mirroring = Vector2(1200, 0)
 
-[node name="TextureRect" type="TextureRect" parent="Background/Cloud Parallax"]
+[node name="TextureRect" type="TextureRect" parent="Clouds/Cloud Parallax"]
 custom_minimum_size = Vector2(1200, 900)
 offset_right = 1200.0
 offset_bottom = 900.0
@@ -48,7 +48,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 texture = ExtResource("5_ko1dt")
 
-[node name="Bushes" type="TextureRect" parent="Background"]
+[node name="Bushes" type="TextureRect" parent="Clouds"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
