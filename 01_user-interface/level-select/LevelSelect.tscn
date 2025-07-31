@@ -1,0 +1,155 @@
+[gd_scene load_steps=5 format=3 uid="uid://cllacdmsy4gp5"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_rthvo"]
+[ext_resource type="Script" uid="uid://d3r7owvt03nn2" path="res://01_user-interface/level-select/level_select.gd" id="2_6dffn"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7mduo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki6fl"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 64
+corner_radius_bottom_right = 64
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_rthvo")
+script = ExtResource("2_6dffn")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -166.0
+offset_right = 98.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ki6fl")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="OddButtons" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="1Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "1"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/1Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="3Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "3"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/3Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="5Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "5"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/5Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="7Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "7"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/7Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="EvenButtons" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="2Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "2"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/2Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="4Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "4"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/4Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="6Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "6"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/6Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="8Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "8"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/8Button"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"LevelSelBtn"
+text = "Close"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/CloseButton"]
+script = ExtResource("3_7mduo")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"

@@ -1,13 +1,13 @@
 extends Control
 
 @onready var playButton: Button = $MainContainer/RunButton/Button/HBoxContainer/PlayButton
-@onready var rightButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/RightButton
-@onready var leftButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/LeftButton
-@onready var upButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/UpButton
-@onready var downButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/DownButton
-@onready var rotate90Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/Rotate90Button
-@onready var rotate180Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/Rotate180Button
-@onready var rotate270Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox/Rotate270Button
+@onready var rightButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/RightButton
+@onready var leftButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/LeftButton
+@onready var upButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/UpButton
+@onready var downButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/DownButton
+@onready var rotate90Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/Rotate90Button
+@onready var rotate180Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/Rotate180Button
+@onready var rotate270Button: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox/Rotate270Button
 
 @onready var clearLoopButton: Button = $MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox/MarginContainer2/ClearLoopButton
 @onready var stopButton: Button = $MainContainer/RunButton/Button/HBoxContainer/StopButton

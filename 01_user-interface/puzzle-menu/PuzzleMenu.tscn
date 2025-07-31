@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfl2d7ijythod"]
+[gd_scene load_steps=6 format=3 uid="uid://cfl2d7ijythod"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_3b55p"]
 [ext_resource type="Script" uid="uid://d3k6ca78mmo0b" path="res://01_user-interface/puzzle-menu/puzzle_menu.gd" id="2_ss7uf"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_ej1pw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b55p"]
 bg_color = Color(0.156863, 0.156863, 0.14902, 1)
@@ -96,6 +97,10 @@ layout_mode = 2
 size_flags_vertical = 10
 text = "Clear"
 
+[node name="OnHoverAnimComponent" type="Node" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/LoopContainer/LoopItemVBox/MarginContainer2/ClearLoopButton"]
+script = ExtResource("3_ej1pw")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
 [node name="MiddleLineSeperator" type="VSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -104,43 +109,47 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CMDButtonVBox" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin"]
+[node name="CMDButtonVBoxBase" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Label" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="Label" type="Label" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase"]
 layout_mode = 2
 text = "CMD"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="HSeparator" type="HSeparator" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase"]
 layout_mode = 2
 
-[node name="RightButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="CMDButtonVBox" type="VBoxContainer" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RightButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "Right"
 
-[node name="LeftButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="LeftButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "Left"
 
-[node name="UpButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="UpButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "Up"
 
-[node name="DownButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="DownButton" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "Down"
 
-[node name="Rotate90Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="Rotate90Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "R90"
 
-[node name="Rotate180Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="Rotate180Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "R180"
 
-[node name="Rotate270Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBox"]
+[node name="Rotate270Button" type="Button" parent="MainContainer/CommandSequencePanel/CommandsContainer/HBoxContainer/CMDButtonMargin/CMDButtonVBoxBase/CMDButtonVBox"]
 layout_mode = 2
 text = "R270"
 
@@ -193,7 +202,15 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 text = "Run Loop!"
 
+[node name="OnHoverAnimComponent" type="Node" parent="MainContainer/RunButton/Button/HBoxContainer/PlayButton"]
+script = ExtResource("3_ej1pw")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
 [node name="StopButton" type="Button" parent="MainContainer/RunButton/Button/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Stop"
+
+[node name="OnHoverAnimComponent" type="Node" parent="MainContainer/RunButton/Button/HBoxContainer/StopButton"]
+script = ExtResource("3_ej1pw")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
