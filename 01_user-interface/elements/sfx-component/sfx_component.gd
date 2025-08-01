@@ -6,12 +6,13 @@ const PRESSED_AUDIO: String = "res://99_assets/music/bookFlip2.ogg"
 @export var hoverStream: AudioStream = preload(HOVER_AUDIO)
 @export var pressedStream: AudioStream = preload(PRESSED_AUDIO)
 
-var audioPlayer: AudioStreamPlayer2D
+var audioPlayer: AudioStreamPlayer
 var target: Control
 
 func _ready() -> void:
-	audioPlayer = AudioStreamPlayer2D.new()
+	audioPlayer = AudioStreamPlayer.new()
 	audioPlayer.name = "AudioStreamPlayer2D"
+	audioPlayer.bus = "sfx"
 	add_child(audioPlayer)
 	
 	if not hoverStream and not pressedStream:
