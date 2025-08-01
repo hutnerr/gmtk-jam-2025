@@ -17,6 +17,7 @@ script = ExtResource("1_f4613")
 [node name="MainMenu" parent="UserInterface" instance=ExtResource("2_utqqy")]
 
 [node name="Sky" type="ParallaxBackground" parent="."]
+visible = false
 follow_viewport_enabled = true
 scroll_offset = Vector2(1, 0)
 script = ExtResource("4_hka2u")
@@ -33,6 +34,7 @@ offset_bottom = 900.0
 texture = ExtResource("4_h3sfl")
 
 [node name="Clouds" type="ParallaxBackground" parent="."]
+visible = false
 follow_viewport_enabled = true
 script = ExtResource("4_hka2u")
 scrollSpeed = Vector2(50, 0)
@@ -62,4 +64,11 @@ grow_vertical = 2
 texture = ExtResource("6_e244q")
 
 [node name="MainTheme" parent="." instance=ExtResource("5_hka2u")]
-autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.137255, 0.137255, 1)

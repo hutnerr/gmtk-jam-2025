@@ -1,11 +1,17 @@
 extends Control
 
 const MAIN_MENU = "res://00_main/Main.tscn"
+const LEVEL_ONE = "res://05_levels/1/Level1.tscn"
 
-@onready var goodBoyButton: Button = $Panel/GoodBoyButton
+@onready var goodBoyButton: Button = $VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton
+@onready var levelOneButton: Button = $VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton
 
 func _ready() -> void:
 	goodBoyButton.pressed.connect(onGoodBoyButtonPressed)
+	levelOneButton.pressed.connect(onLevelOneButtonPressed)
 
 func onGoodBoyButtonPressed() -> void:
 	SceneTransitioner.change_scene(MAIN_MENU)
+
+func onLevelOneButtonPressed() -> void:
+	SceneTransitioner.change_scene(LEVEL_ONE)

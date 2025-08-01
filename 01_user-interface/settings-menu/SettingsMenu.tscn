@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_yr0k2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nxtp"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 2

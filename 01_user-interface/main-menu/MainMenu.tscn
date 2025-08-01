@@ -38,10 +38,10 @@ theme_override_constants/margin_top = 200
 [node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0.156863, 0.156863, 0.156863, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_outline_color = Color(0.133333, 0.137255, 0.137255, 1)
+theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 128
-text = "CYCLOGRID"
+text = "BY BLADE REPEATED"
 
 [node name="ButtonMarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -78,12 +78,25 @@ layout_mode = 2
 theme_type_variation = &"MainMenuButton"
 text = "How To Play"
 
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/HowToPlayButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
 [node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
 layout_mode = 2
 theme_type_variation = &"MainMenuButton"
 text = "Settings"
 
 [node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Credits"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/CreditsButton"]
 script = ExtResource("3_shm1l")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 

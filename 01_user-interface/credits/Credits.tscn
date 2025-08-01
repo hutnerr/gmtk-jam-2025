@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyssb2tl4nk65"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_77fc3"]
+[ext_resource type="Script" uid="uid://4jtvy6v1ftoq" path="res://01_user-interface/credits/credits.gd" id="2_n8g3m"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_77fc3")
+script = ExtResource("2_n8g3m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_bottom = 256
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelHeader"
+theme_override_font_sizes/font_size = 64
+text = "Hunter Baker"
+
+[node name="LinkButton2" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Itch.io"
+uri = "https://hutnerr.itch.io/"
+text_direction = 1
+
+[node name="LinkButton3" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "GitHub"
+uri = "https://github.com/hutnerr"
+
+[node name="LinkButton" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Personal Website"
+uri = "https://www.hunter-baker.com/"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 256
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelHeader"
+theme_override_font_sizes/font_size = 64
+text = "Jakob Bennie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkButton2" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Itch.io"
+uri = "https://koborooski.itch.io/"
+
+[node name="LinkButton3" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "GitHub"
+uri = "https://github.com/Koborooski"
+
+[node name="LinkButton" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Personal Website"
+uri = "https://koborooski.github.io/Personal-Website/"
+
+[node name="GoodBoyButton" type="Button" parent="."]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -124.0
+offset_right = 82.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back to Main Menu"

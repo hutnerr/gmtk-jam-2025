@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qp16i2cd76xl"]
+[gd_scene load_steps=3 format=3 uid="uid://qp16i2cd76xl"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_74mi8"]
 [ext_resource type="Script" uid="uid://delq3qqr4iivg" path="res://01_user-interface/how-to-play/how_to_play.gd" id="1_l6cnn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkwh1"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
@@ -23,30 +20,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jkwh1")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "to play you must kill all of the enemies, you do this by touching them. 
 
-to move the player, you must define your loop using the preset commands. the sequence that is set is the way
-the player will move across the grid. 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 32
+text = "By Blade Repeated is a puzzle game where you define a sequence of commands to repeat with the goal
+of killing the enemies located in the level. Enemies are slain upon entering their grid space.
 
-the smalls sequence will repeat until either you complete the level, significantly go out of bounds, or manually stop it
+For example, if your loop is [RIGHT, RIGHT, UP], you will go two blocks right, then up. Then it will repeat
+and you will go two blocks right then up again.
 
-you can always open the settings menu using ESC as well. "
+The sequence that you define will repeat until either you complete the level, go significantly out of bounds,
+or manually stop it to try again.
+
+You can open settings at any time using ESC. Here you can go back to the main menu, change the volume, etc."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GoodBoyButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 599.0
-offset_top = 512.0
-offset_right = 785.0
-offset_bottom = 565.0
-text = "I Understand"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GoodBoyButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="LevelOneButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 2
+text = "Level One"
