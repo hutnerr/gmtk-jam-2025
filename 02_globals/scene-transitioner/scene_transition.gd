@@ -22,5 +22,7 @@ func change_scene(target: String) -> void:
 
 func nextLevel() -> void:
 	var currentLevel = get_tree().current_scene.name
+	#await MoveManny.player.animPlayer.animation_finished
+	#await get_tree().create_timer(0.5).timeout
 	change_scene(nextLevelPath[currentLevel][0])
 	Looper.loadNewLevel(nextLevelPath[currentLevel][1])

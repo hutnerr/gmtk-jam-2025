@@ -83,7 +83,12 @@ func movePlayerOnGrid(movement: Vector2i):
 	var newGridPos = currentGridPos + movement
 	
 	if newGridPos in Gridleton.gridObjects:
-		await Gridleton.handleGridOverlap(newGridPos)
+		Gridleton.handleGridOverlap(newGridPos)
+		
+	var animPlayer: AnimationPlayer = MoveManny.player.animPlayer
+	animPlayer.play("Move & Attack")
+	await animPlayer.animation_finished
+	animPlayer.play("RESET")
 		
 	player.global_position = Gridleton.currentGrid.to_global(Gridleton.currentGrid.map_to_local(newGridPos))
 	print("Moved to grid position: ", newGridPos)

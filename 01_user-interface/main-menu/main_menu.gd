@@ -27,7 +27,6 @@ func onPlayButtonPressed() -> void:
 
 func onLevelSelectButtonButtonPressed() -> void:
 	levelSelectMenu.visible = !levelSelectMenu.visible
-	print("Level Select Button Pressed")
 
 func onHowToPlayButtonPressed() -> void:
 	levelSelectMenu.visible = false
@@ -35,7 +34,7 @@ func onHowToPlayButtonPressed() -> void:
 
 func onSettingsButtonButtonPressed() -> void:
 	levelSelectMenu.visible = false
-	KeyboardDetector.escPressed.emit() # this is kinda monkey
+	SettingsMenu.get_child(0).toggleMenu()
 
 func onQuitButtonPressed() -> void:
 	get_tree().quit()

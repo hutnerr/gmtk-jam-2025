@@ -1,8 +1,5 @@
 class_name OnHoverAnimComponent extends Node
 
-# this component will call a tween on hover of its parent
-# basically a very simple animation to whatveer it is added to
-
 @export var fromCenter: bool = true # to ensure we scale from the center and not the top left corner
 @export var hoverScale : Vector2 = Vector2(1.1, 1.1)
 @export var time : float = 0.1

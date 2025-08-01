@@ -1,6 +1,5 @@
-[gd_scene load_steps=18 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=17 format=3 uid="uid://o3ryldcogx2y"]
 
-[ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
 [ext_resource type="Texture2D" uid="uid://brnsspgqm1tfe" path="res://99_assets/sprites/background/Parallax Monochrome.png" id="4_esoif"]
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_h3sfl"]
@@ -78,13 +77,12 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h3sfl"]
 gradient = SubResource("Gradient_esoif")
 width = 425
-height = 250
+height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Main" type="Node"]
 process_mode = 3
-script = ExtResource("1_f4613")
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
@@ -105,7 +103,7 @@ range_layer_min = -101
 texture = SubResource("GradientTexture2D_h3sfl")
 script = ExtResource("4_h3sfl")
 flickerMin = 0.5
-baseFlickerTime = 0.5
+baseFlickerTime = 0.1
 
 [node name="Sky" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
@@ -133,6 +131,6 @@ texture = SubResource("GradientTexture2D_h3sfl")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 z_index = 101
-energy = 0.75
+energy = 0.96
 blend_mode = 1
 range_layer_min = -101

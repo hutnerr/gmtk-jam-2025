@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://wxdd4vdgygv7" path="res://02_globals/looper/Looper.gd" id="1_42sy6"]
 
-[node name="Looper" type="Node2D"]
+[node name="Looper" type="Node"]
 script = ExtResource("1_42sy6")

@@ -14,8 +14,3 @@ func _process(delta):
 		self.energy = randf_range(flickerMin, flickerMax)
 		
 		#it would be cool to change the range, but I can't figure that out right now
-		
-
-		
-
-	

@@ -1,15 +1,16 @@
 class_name GridObject extends Node2D
 
-enum ObjectType {
-	PLAYER,
-	ENEMY,
-	WALL
-}
-
 signal overlapped
 
+enum ObjectType {
+	PLAYER,
+	WALL,
+	ENEMY, # maybe rename to STATIC_ENEMY
+	MOVING_ENEMY,
+	TELEPORTER,
+}
+
 @export var type: ObjectType
-# sprite / animated sprite export
 
 var handleOverlap: Callable
 

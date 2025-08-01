@@ -37,7 +37,6 @@ func onPressed() -> void:
 		audioPlayer.stream = pressedStream
 		audioPlayer.play()
 
-# done this way so it can be on more than just buttons
 func onGuiInput(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event = event as InputEventMouseButton

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckdblv5nchdg0"
-path="res://.godot/imported/Tile Border.png-e1998ad4b6aaffaf1123f65e581e1ed6.ctex"
+path="res://.godot/imported/Tile Border.png-043959f88a5f421138061fc6d5328554.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://99_resources/Tile Border.png"
-dest_files=["res://.godot/imported/Tile Border.png-e1998ad4b6aaffaf1123f65e581e1ed6.ctex"]
+source_file="res://99_assets/sprites/tileset/Tile Border.png"
+dest_files=["res://.godot/imported/Tile Border.png-043959f88a5f421138061fc6d5328554.ctex"]
 
 [params]
 

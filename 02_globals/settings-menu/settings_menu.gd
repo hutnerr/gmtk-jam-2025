@@ -1,5 +1,7 @@
 extends Control
 
+signal mainMenuButtonRequest
+
 @onready var quitButton: Button = $PanelContainer/MarginContainer/MainContainer/QuitButton
 @onready var quitButtonSpacer: Control = $PanelContainer/MarginContainer/MainContainer/Spacer4
 @onready var closeSettingsButton: Button = $PanelContainer/MarginContainer/MainContainer/CloseButton
@@ -16,23 +18,28 @@ func _ready() -> void:
 	mainMenuButton.pressed.connect(onMainMenuButtonPressed)
 	quitButton.pressed.connect(onQuitButtonPressed)
 	closeSettingsButton.pressed.connect(onCloseSettingsButtonPressed)
-	KeyboardDetector.escPressed.connect(onEscPressed)
-	
-func onEscPressed() -> void:
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		toggleMenu()
+
+func toggleMenu() -> void:
 	if visible:
 		AudiManny.playPressSFX()
 	else:
 		AudiManny.playHoverSFX()
 	toggleVisible()
-	
+
 func onMainMenuButtonPressed() -> void:
 	toggleVisible()
+	mainMenuButtonRequest.emit()
 	SceneTransitioner.change_scene(MAIN_PATH)
 	coveragePanel.visible = true
-	Looper.looping = false
-	Looper.clearCommands()
-	MoveManny.reset()
-	AudiManny.playMenuMusic()
+	# FIXME: clean up this shite 
+	#AudiManny.playMenuMusic()
+	#Looper.looping = false
+	#Looper.clearCommands()
+	#MoveManny.reset()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()

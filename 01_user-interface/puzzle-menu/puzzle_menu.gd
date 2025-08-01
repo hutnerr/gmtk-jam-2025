@@ -18,7 +18,6 @@ extends Control
 @onready var levelInfoLabel: Label = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer/LevelLabel
 @onready var loopLimitLabel: Label = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer/LimitLabel
 
- #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
 	rightButton.pressed.connect(onRightButtonPressed)
@@ -31,12 +30,14 @@ func _ready() -> void:
 	clearLoopButton.pressed.connect(onClearLoopButtonPressed)
 	stopButton.pressed.connect(onStopButtonPressed)
 	
+	# FIXME: Store this in the level object
+	# still have to get tree get current scene
+	# other way would be set a variable 
 	var level = get_tree().current_scene.name.split("Level")[-1]
 	levelInfoLabel.text += level
 	Looper.loadNewLevel(level)
 	loopLimitLabel.text += str(Looper.levelLimit)
-	
- #Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	var currentCommands = Looper.commands
 	if not currentCommands or len(currentCommands) <= 0:
@@ -96,6 +97,7 @@ func onRotate270ButtonPressed() -> void:
 
 func onClearLoopButtonPressed() -> void:
 	Looper.looping = false
+	Looper.currentCommand = null
 	Looper.clearCommands()
 	Gridleton.resetGridObjects()
 	MoveManny.reset()

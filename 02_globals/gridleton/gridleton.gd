@@ -16,10 +16,16 @@ func reset() -> void:
 	currentGrid = null
 	gridObjects = {}
 
+# tells us grid overlap
+# pass in a thing to check, and thing to look at, tells us if collission
+# then calls object.handleColission()? or returns something
+
 func handleGridOverlap(gridPosition) -> void:
 	var gridObject: GridObject = gridObjects[gridPosition]
+	gridObject.handleOverlap.call()
 	
 	if gridObject.type == GridObject.ObjectType.ENEMY:
+		# FIXME: kill anim here
 		slainEnemies[gridPosition] = gridObject # store it
 		gridObjects.erase(gridObject) # remove it
 		gridObject.visible = false
@@ -28,6 +34,10 @@ func handleGridOverlap(gridPosition) -> void:
 			Looper.looping = false
 			allEnemiesKilled.emit()
 
+# change how killing things work
+# signal connect to keep track of how many enemies died?
+# this would have to store the original loaded and then repopulate them
+# cause we're klilling theyu ass
 func resetGridObjects() -> void:
 	for deadEnemyLoc in slainEnemies:
 		gridObjects[deadEnemyLoc] = slainEnemies[deadEnemyLoc]
@@ -49,4 +59,7 @@ func loadGridObjects(objects) -> void:
 		object.global_position = currentGrid.to_global(currentGrid.map_to_local(converted)) # center in cell
 		gridObjects[converted] = object
 	loaded.emit()
-	print(gridObjects)
+	
+	
+# conversion methods like global pos to grid pos?
+# static methods
