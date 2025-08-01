@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://fg7vl58y3nn0"]
 
-[ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="2_bvaiu"]
+[ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="1_57uhh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hg2mo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -29,7 +29,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_57uhh"]
-color = Color(0.980392, 0.741176, 0.184314, 1)
+color = Color(0.941176, 0.964706, 0.941176, 1)
 thickness = 2
 
 [sub_resource type="Image" id="Image_57uhh"]
@@ -83,7 +83,7 @@ Button/colors/font_color = Color(0.941176, 0.964706, 0.941176, 1)
 Button/colors/font_focus_color = Color(0.941176, 0.964706, 0.941176, 1)
 Button/colors/font_hover_color = Color(0.537255, 0.552941, 0.541176, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("2_bvaiu")
+Button/fonts/font = ExtResource("1_57uhh")
 Button/styles/focus = SubResource("StyleBoxFlat_hg2mo")
 Button/styles/hover = SubResource("StyleBoxFlat_qdocg")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_qdocg")
@@ -95,13 +95,13 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_57uhh")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_evmcu")
 Label/colors/font_color = Color(0.941176, 0.964706, 0.941176, 1)
 Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("2_bvaiu")
+Label/fonts/font = ExtResource("1_57uhh")
 LabelHeader/base_type = &"Label"
 LabelHeader/font_sizes/font_size = 32
 LevelSelBtn/base_type = &"Button"
 LevelSelBtn/font_sizes/font_size = 42
 LinkButton/font_sizes/font_size = 32
-LinkButton/fonts/font = ExtResource("2_bvaiu")
+LinkButton/fonts/font = ExtResource("1_57uhh")
 MainMenuButton/base_type = &"Button"
 MainMenuButton/font_sizes/font_size = 32
 Panel/styles/panel = SubResource("StyleBoxFlat_xtpir")

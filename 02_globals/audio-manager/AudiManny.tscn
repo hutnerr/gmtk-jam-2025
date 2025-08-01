@@ -7,3 +7,5 @@ script = ExtResource("1_w1yye")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl5g7tjmjq45r"]
+[gd_scene load_steps=8 format=3 uid="uid://cl5g7tjmjq45r"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_v16xo"]
 [ext_resource type="Script" uid="uid://cnget6q00o0q7" path="res://01_user-interface/main-menu/main_menu.gd" id="2_o43a6"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_shm1l"]
 [ext_resource type="PackedScene" uid="uid://cllacdmsy4gp5" path="res://01_user-interface/level-select/LevelSelect.tscn" id="4_lw84q"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_q63ys"]
+[ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_fhkui"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v16xo"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 0)
@@ -67,6 +68,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/PlayButton"]
 script = ExtResource("4_q63ys")
+pressedStream = ExtResource("5_fhkui")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="LevelSelButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]

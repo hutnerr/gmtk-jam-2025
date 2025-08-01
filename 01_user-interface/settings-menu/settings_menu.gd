@@ -19,6 +19,10 @@ func _ready() -> void:
 	KeyboardDetector.escPressed.connect(onEscPressed)
 	
 func onEscPressed() -> void:
+	if visible:
+		AudiManny.playPressSFX()
+	else:
+		AudiManny.playHoverSFX()
 	toggleVisible()
 	
 func onMainMenuButtonPressed() -> void:
