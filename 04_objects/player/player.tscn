@@ -71,6 +71,7 @@ animations = [{
 script = ExtResource("1_xlt0o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -6)
 sprite_frames = SubResource("SpriteFrames_u1fcw")
 animation = &"walk"
 autoplay = "walk"
