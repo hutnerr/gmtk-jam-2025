@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cllacdmsy4gp5"]
+[gd_scene load_steps=7 format=3 uid="uid://cllacdmsy4gp5"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_rthvo"]
 [ext_resource type="Script" uid="uid://d3r7owvt03nn2" path="res://01_user-interface/level-select/level_select.gd" id="2_6dffn"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7mduo"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_ua04l"]
+[ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_hurrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mduo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -67,6 +68,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/1Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="3Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
@@ -81,6 +83,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/3Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="5Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
@@ -95,6 +98,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/5Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="7Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
@@ -109,6 +113,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/7Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="EvenButtons" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -127,6 +132,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/2Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="4Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
@@ -141,6 +147,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/4Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="6Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
@@ -155,6 +162,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/6Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="8Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
@@ -169,6 +177,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/8Button"]
 script = ExtResource("4_ua04l")
+pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qp16i2cd76xl"]
+[gd_scene load_steps=6 format=3 uid="uid://qp16i2cd76xl"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_74mi8"]
 [ext_resource type="Script" uid="uid://delq3qqr4iivg" path="res://01_user-interface/how-to-play/how_to_play.gd" id="1_l6cnn"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7tnm3"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_tl5ka"]
+[ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_tl5ka"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
@@ -85,4 +86,5 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
 script = ExtResource("4_tl5ka")
+pressedStream = ExtResource("5_tl5ka")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
