@@ -34,7 +34,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 theme_override_font_sizes/font_size = 32
-text = "By Blade Repeated is a puzzle game where you define a sequence of commands to repeat with the goal
+text = "Forgotten Paths is a puzzle game where you define a sequence of commands to repeat with the goal
 of killing the enemies located in the level. Enemies are slain upon entering their grid space.
 
 For example, if your loop is [RIGHT, RIGHT, UP], you will go two blocks right, then up. Then it will repeat

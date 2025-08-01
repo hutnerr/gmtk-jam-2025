@@ -41,7 +41,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0.133333, 0.137255, 0.137255, 1)
 theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 128
-text = "BY BLADE REPEATED"
+text = "FORGOTTEN PATHS"
 
 [node name="ButtonMarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
