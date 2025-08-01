@@ -15,3 +15,4 @@ func onGoodBoyButtonPressed() -> void:
 
 func onLevelOneButtonPressed() -> void:
 	SceneTransitioner.change_scene(LEVEL_ONE)
+	AudiManny.playLevelMusic()

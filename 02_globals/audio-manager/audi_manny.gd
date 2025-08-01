@@ -5,7 +5,7 @@ const LEVEL_MUSIC: String = "res://99_assets/music/THE_FIELNDS.mp3"
 
 @onready var menuMusic: AudioStream = preload(MENU_MUSIC)
 @onready var levelMusic: AudioStream = preload(LEVEL_MUSIC)
-@onready var player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
