@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0l1wuihe2ku6"]
+
+[ext_resource type="Script" uid="uid://b5lnn6pq1bvf1" path="res://02_globals/audio-manager/audi_manny.gd" id="1_w1yye"]
+
+[node name="AudiManny" type="Node2D"]
+script = ExtResource("1_w1yye")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

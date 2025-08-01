@@ -13,7 +13,7 @@ config_version=5
 config/name="gmtk-jam-2025"
 run/main_scene="uid://o3ryldcogx2y"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://99_assets/icon.svg"
+config/icon="res://99_assets/other-icons/icon.svg"
 
 [audio]
 
@@ -27,6 +27,7 @@ SettingsMenu="*res://01_user-interface/settings-menu/SettingsMenu.tscn"
 Gridleton="*res://02_globals/gridleton/gridleton.tscn"
 Looper="*res://02_globals/looper/Looper.tscn"
 MoveManny="*res://02_globals/movement-manager/MoveManny.tscn"
+AudiManny="*res://02_globals/audio-manager/AudiManny.tscn"
 
 [display]
 

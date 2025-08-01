@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0778cg3m1y6u"]
-
-[ext_resource type="AudioStream" uid="uid://cyx85rjoag8nd" path="res://music/THE_FIELNDS.mp3" id="1_tdpip"]
-
-[node name="MainTheme" type="AudioStreamPlayer"]
-stream = ExtResource("1_tdpip")
-bus = &"music"
-parameters/looping = true

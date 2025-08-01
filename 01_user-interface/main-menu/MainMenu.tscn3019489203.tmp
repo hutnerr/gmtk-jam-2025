@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl5g7tjmjq45r"]
+
+[ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_v16xo"]
+[ext_resource type="Script" uid="uid://cnget6q00o0q7" path="res://01_user-interface/main-menu/main_menu.gd" id="2_o43a6"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_shm1l"]
+[ext_resource type="PackedScene" uid="uid://cllacdmsy4gp5" path="res://01_user-interface/level-select/LevelSelect.tscn" id="4_lw84q"]
+[ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/on-hover-sfx-player/on_hover_sfx.gd" id="4_q63ys"]
+[ext_resource type="AudioStream" uid="uid://it4u8uwgavcu" path="res://music/bookFlip2.ogg" id="5_mvmic"]
+[ext_resource type="AudioStream" uid="uid://ybtqsc4k2lo1" path="res://music/bookOpen.ogg" id="6_32seq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v16xo"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v16xo")
+script = ExtResource("2_o43a6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v16xo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 200
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.133333, 0.137255, 0.137255, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 128
+text = "FORGOTTEN PATHS"
+
+[node name="ButtonMarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/margin_left = 550
+theme_override_constants/margin_right = 550
+
+[node name="ButtonVBox" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ButtonMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MainMenuButton"
+text = "Play"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/PlayButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/PlayButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="LevelSelButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Level Select"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/LevelSelButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent2" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/LevelSelButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="HowToPlayButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "How To Play"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/HowToPlayButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent3" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/HowToPlayButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Settings"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent4" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/SettingsButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Credits"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/CreditsButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent5" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/CreditsButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Quit"
+
+[node name="OnHoverAnimComponent" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton"]
+script = ExtResource("3_shm1l")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="OnHoverSFXComponent6" type="Node" parent="PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton"]
+script = ExtResource("4_q63ys")
+hoverStream = ExtResource("6_32seq")
+pressedStream = ExtResource("5_mvmic")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="LevelSelect" parent="." instance=ExtResource("4_lw84q")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -410.0
+offset_top = -203.0
+offset_right = -410.0
+offset_bottom = -203.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1

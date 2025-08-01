@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cllacdmsy4gp5"]
+[gd_scene load_steps=6 format=3 uid="uid://cllacdmsy4gp5"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_rthvo"]
 [ext_resource type="Script" uid="uid://d3r7owvt03nn2" path="res://01_user-interface/level-select/level_select.gd" id="2_6dffn"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7mduo"]
+[ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_ua04l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mduo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -64,6 +65,10 @@ text = "1"
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/1Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="3Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -73,6 +78,10 @@ text = "3"
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/3Button"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/3Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="5Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
 custom_minimum_size = Vector2(64, 64)
@@ -84,6 +93,10 @@ text = "5"
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/5Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="7Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -93,6 +106,10 @@ text = "7"
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/7Button"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/7Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="EvenButtons" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -108,6 +125,10 @@ text = "2"
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/2Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="4Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -117,6 +138,10 @@ text = "4"
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/4Button"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/4Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="6Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
 custom_minimum_size = Vector2(64, 64)
@@ -128,6 +153,10 @@ text = "6"
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/6Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="8Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -137,6 +166,10 @@ text = "8"
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/8Button"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/8Button"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -150,3 +183,7 @@ text = "Close"
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/CloseButton"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/CloseButton"]
+script = ExtResource("4_ua04l")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyssb2tl4nk65"]
+[gd_scene load_steps=5 format=3 uid="uid://dyssb2tl4nk65"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_77fc3"]
 [ext_resource type="Script" uid="uid://4jtvy6v1ftoq" path="res://01_user-interface/credits/credits.gd" id="2_n8g3m"]
+[ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="3_itg41"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="4_73pi6"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -53,19 +55,46 @@ text = "Hunter Baker"
 
 [node name="LinkButton2" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Itch.io"
 uri = "https://hutnerr.itch.io/"
 text_direction = 1
 
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton2"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton2"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
 [node name="LinkButton3" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "GitHub"
 uri = "https://github.com/hutnerr"
 
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton3"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton3"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="LinkButton" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Personal Website"
 uri = "https://www.hunter-baker.com/"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer/CenterContainer/VBoxContainer/LinkButton"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -90,18 +119,45 @@ vertical_alignment = 1
 
 [node name="LinkButton2" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Itch.io"
 uri = "https://koborooski.itch.io/"
 
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton2"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton2"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="LinkButton3" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "GitHub"
 uri = "https://github.com/Koborooski"
 
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton3"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton3"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="LinkButton" type="LinkButton" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Personal Website"
 uri = "https://koborooski.github.io/Personal-Website/"
+
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/HBoxContainer/MarginContainer2/CenterContainer/VBoxContainer/LinkButton"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
 [node name="GoodBoyButton" type="Button" parent="."]
 custom_minimum_size = Vector2(164, 48)
@@ -118,3 +174,11 @@ offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back to Main Menu"
+
+[node name="OnHoverAnimComponent" type="Node" parent="GoodBoyButton"]
+script = ExtResource("4_73pi6")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="GoodBoyButton"]
+script = ExtResource("3_itg41")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"

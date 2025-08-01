@@ -23,6 +23,7 @@ func _ready() -> void:
 func onPlayButtonPressed() -> void:
 	levelSelectMenu.visible = false
 	SceneTransitioner.change_scene(FIRST_LEVEL)
+	AudiManny.playLevelMusic()
 
 func onLevelSelectButtonButtonPressed() -> void:
 	levelSelectMenu.visible = !levelSelectMenu.visible

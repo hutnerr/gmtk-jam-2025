@@ -28,6 +28,7 @@ func onMainMenuButtonPressed() -> void:
 	Looper.looping = false
 	Looper.clearCommands()
 	MoveManny.reset()
+	AudiManny.playMenuMusic()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()

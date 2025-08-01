@@ -22,6 +22,7 @@ func onLevelButtonPressed(button: Button) -> void:
 	var btnNum = button.text  # Assuming button text is "1", "2", etc.
 	var path = LEVELS_PATH.replace("FORMAT", btnNum)
 	SceneTransitioner.change_scene(path)
+	AudiManny.playLevelMusic()
 	
 func onCloseButtonPressed() -> void:
 	visible = false

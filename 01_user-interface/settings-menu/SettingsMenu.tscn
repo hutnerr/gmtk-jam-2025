@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dufb3o6i21t47"]
+[gd_scene load_steps=7 format=3 uid="uid://dufb3o6i21t47"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_uh2pk"]
 [ext_resource type="Script" uid="uid://uf2n51uws82" path="res://01_user-interface/elements/volume-slider/volume_slider.gd" id="1_wsv10"]
 [ext_resource type="Script" uid="uid://bhi5vi1yni2i5" path="res://01_user-interface/settings-menu/settings_menu.gd" id="2_5nxtp"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_yr0k2"]
+[ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="5_sc86d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nxtp"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
@@ -137,6 +138,10 @@ script = ExtResource("3_yr0k2")
 hoverScale = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="SettingsMenu/PanelContainer/MarginContainer/MainContainer/MainMenuButton"]
+script = ExtResource("5_sc86d")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="Spacer3" type="Control" parent="SettingsMenu/PanelContainer/MarginContainer/MainContainer"]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
@@ -150,6 +155,10 @@ script = ExtResource("3_yr0k2")
 hoverScale = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
+[node name="SFXComponent" type="Node" parent="SettingsMenu/PanelContainer/MarginContainer/MainContainer/QuitButton"]
+script = ExtResource("5_sc86d")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
 [node name="Spacer4" type="Control" parent="SettingsMenu/PanelContainer/MarginContainer/MainContainer"]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
@@ -162,3 +171,7 @@ text = "Close"
 script = ExtResource("3_yr0k2")
 hoverScale = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="SettingsMenu/PanelContainer/MarginContainer/MainContainer/CloseButton"]
+script = ExtResource("5_sc86d")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
