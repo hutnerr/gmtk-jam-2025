@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfl2d7ijythod"]
+[gd_scene load_steps=6 format=3 uid="uid://cfl2d7ijythod"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_3b55p"]
 [ext_resource type="Script" uid="uid://d3k6ca78mmo0b" path="res://01_user-interface/puzzle-menu/puzzle_menu.gd" id="2_ss7uf"]
+[ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_n7xt4"]
+[ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_3xwnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss7uf"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.941176, 0.964706, 0.941176, 1)
 
 [node name="PuzzleMenu" type="Control"]
 custom_minimum_size = Vector2(640, 384)
@@ -14,62 +24,175 @@ size_flags_vertical = 3
 theme = ExtResource("1_3b55p")
 script = ExtResource("2_ss7uf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 2
 
-[node name="LoopItems" type="VBoxContainer" parent="HBoxContainer"]
+[node name="BaseContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BaseContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer/BaseContainer/MarginContainer"]
+custom_minimum_size = Vector2(126, 128)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ss7uf")
+
+[node name="PrimaryContainer" type="VBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CommandItems" type="VBoxContainer" parent="HBoxContainer"]
+[node name="LoopItems" type="VBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CommandMargin" type="MarginContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="CommandItems" type="VBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Up" type="HBoxContainer" parent="HBoxContainer/CommandItems"]
+[node name="Up" type="HBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/CommandItems/Up"]
+[node name="UpButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up"]
+custom_minimum_size = Vector2(56, 0)
 layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 16
 text = "Up"
 
-[node name="LeftRight" type="HBoxContainer" parent="HBoxContainer/CommandItems"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up/UpButton"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up/UpButton"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="LeftRight" type="HBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/CommandItems/LeftRight"]
+[node name="LeftButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "Left"
 
-[node name="Button2" type="Button" parent="HBoxContainer/CommandItems/LeftRight"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/LeftButton"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/LeftButton"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="RightButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "Right"
 
-[node name="Down" type="HBoxContainer" parent="HBoxContainer/CommandItems"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/RightButton"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/RightButton"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="Down" type="HBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/CommandItems/Down"]
+[node name="DownButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Down"]
+custom_minimum_size = Vector2(56, 0)
 layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 16
 text = "Down"
 
-[node name="Rotations" type="HBoxContainer" parent="HBoxContainer/CommandItems"]
-layout_mode = 2
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Down/DownButton"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
-[node name="Button" type="Button" parent="HBoxContainer/CommandItems/Rotations"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Down/DownButton"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="Rotations" type="HBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems"]
 layout_mode = 2
+size_flags_vertical = 6
+
+[node name="R90Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "R90"
 
-[node name="Button2" type="Button" parent="HBoxContainer/CommandItems/Rotations"]
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R90Button"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R90Button"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="R180Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "R180"
 
-[node name="Button3" type="Button" parent="HBoxContainer/CommandItems/Rotations"]
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R180Button"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R180Button"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="R270Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
 text = "R270"
 
-[node name="PlayStopButtons" type="VBoxContainer" parent="HBoxContainer"]
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R270Button"]
+script = ExtResource("4_3xwnf")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R270Button"]
+script = ExtResource("3_n7xt4")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="InfoMargin" type="MarginContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+
+[node name="InformationContainer" type="VBoxContainer" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Level "
+
+[node name="LimitLabel" type="Label" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Limit: "
+
+[node name="PlayStopButtons" type="VBoxContainer" parent="MarginContainer/BaseContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
