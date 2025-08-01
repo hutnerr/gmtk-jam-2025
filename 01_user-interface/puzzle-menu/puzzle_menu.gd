@@ -97,10 +97,12 @@ func onRotate270ButtonPressed() -> void:
 func onClearLoopButtonPressed() -> void:
 	Looper.looping = false
 	Looper.clearCommands()
+	Gridleton.resetGridObjects()
 	MoveManny.reset()
 	emptyLoopItemContainer()
 
 func onStopButtonPressed() -> void:
 	Looper.looping = false
 	Looper.currentCommand = null
+	Gridleton.resetGridObjects()
 	MoveManny.reset()

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://du7x6mx0tt6xm"]
+
+[ext_resource type="Script" uid="uid://csxbpkmee63ni" path="res://04_objects/grid-object/grid_object.gd" id="1_alqrr"]
+[ext_resource type="Texture2D" uid="uid://c00mbggjcmlea" path="res://99_assets/sprites/lil-guy/Lil Mono Guy.png" id="2_0nede"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf8mv"]
+atlas = ExtResource("2_0nede")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd8m1"]
+atlas = ExtResource("2_0nede")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yhnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf8mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd8m1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GridObject" type="Node2D"]
+script = ExtResource("1_alqrr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_4yhnf")
+autoplay = "default"

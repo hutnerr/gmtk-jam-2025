@@ -1,10 +1,17 @@
 extends CanvasLayer
 
+var nextLevelPath = {
+	"LevelOne" : ["res://05_levels/2/Level2.tscn", "Two"], # the path, the level to load for Looper
+	"LevelTwo" : null,
+	"LevelEight" : null # cutscene goes here 
+}
+
 signal sceneChanged
 const mainPath = "res://00_main/Main.tscn"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	Gridleton.allEnemiesKilled.connect(nextLevel)
 
 func change_scene(target: String) -> void:
 	$AnimationPlayer.play("dissolve")
@@ -13,10 +20,7 @@ func change_scene(target: String) -> void:
 	$AnimationPlayer.play_backwards("dissolve")
 	sceneChanged.emit()
 
-# to use you can set the SceneTransition node to an autoload
-# then whenever you want to change your scene, you simply call SceneTransition.change_scene(target)
-# it will play the animation set and change it.
-# you can extend ths and define many custom animations. 
-
-# you could also make it more dynamic by passing defining enums or something and
-# having an additional paremeter, then a switch statement that says which animation to play
+func nextLevel() -> void:
+	var currentLevel = get_tree().current_scene.name
+	change_scene(nextLevelPath[currentLevel][0])
+	Looper.loadNewLevel(nextLevelPath[currentLevel][1])
