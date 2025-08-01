@@ -81,6 +81,10 @@ func transformDirection(commandDir: Vector2i) -> Vector2i:
 func movePlayerOnGrid(movement: Vector2i):
 	var currentGridPos = Gridleton.currentGrid.local_to_map(player.global_position)
 	var newGridPos = currentGridPos + movement
+	
+	if newGridPos in Gridleton.gridObjects:
+		await Gridleton.handleGridOverlap(newGridPos)
+		
 	player.global_position = Gridleton.currentGrid.to_global(Gridleton.currentGrid.map_to_local(newGridPos))
 	print("Moved to grid position: ", newGridPos)
 

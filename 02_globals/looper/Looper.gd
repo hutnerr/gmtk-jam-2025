@@ -3,6 +3,7 @@ extends Node2D
 var levelLimits: Dictionary[String, int] = {
 	"INIT" : 0,
 	"One" : 2,
+	"Two" : 5
 }
 
 var levelLimit: int
