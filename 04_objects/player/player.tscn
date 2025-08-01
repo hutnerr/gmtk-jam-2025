@@ -1,10 +1,76 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=12 format=3 uid="uid://dfmwu30ysrsa3"]
 
-[ext_resource type="Texture2D" uid="uid://gpxi5wdp3e8h" path="res://99_assets/sprites/Cream Bunny.png" id="1_53e5t"]
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://04_objects/player/player.gd" id="1_xlt0o"]
+[ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn2r7"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m0x5"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vefp8"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmbt4"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxrkn"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptc0b"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwr2m"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ql2"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1fcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn2r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m0x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vefp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmbt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxrkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptc0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwr2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ql2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_xlt0o")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_53e5t")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u1fcw")
+animation = &"walk"
+autoplay = "walk"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d01n2700bob78"
-path="res://.godot/imported/Fruits.png-e386709f6bf33b3d8312bbaae906c351.ctex"
+uid="uid://brnsspgqm1tfe"
+path="res://.godot/imported/Parallax Monochrome.png-763d9f72febfd3a80076adbc1eb0509d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://99_assets/sprites/Fruits.png"
-dest_files=["res://.godot/imported/Fruits.png-e386709f6bf33b3d8312bbaae906c351.ctex"]
+source_file="res://99_assets/sprites/background/Parallax Monochrome.png"
+dest_files=["res://.godot/imported/Parallax Monochrome.png-763d9f72febfd3a80076adbc1eb0509d.ctex"]
 
 [params]
 

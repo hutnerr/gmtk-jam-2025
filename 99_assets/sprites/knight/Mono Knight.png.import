@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gpxi5wdp3e8h"
-path="res://.godot/imported/Cream Bunny.png-9890d00f69a41881e8391cbaec560525.ctex"
+uid="uid://dj3jrah4cn43u"
+path="res://.godot/imported/Mono Knight.png-3a02587c73ccfda6ce919651cbfba03d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://99_assets/sprites/Cream Bunny.png"
-dest_files=["res://.godot/imported/Cream Bunny.png-9890d00f69a41881e8391cbaec560525.ctex"]
+source_file="res://99_assets/sprites/knight/Mono Knight.png"
+dest_files=["res://.godot/imported/Mono Knight.png-3a02587c73ccfda6ce919651cbfba03d.ctex"]
 
 [params]
 

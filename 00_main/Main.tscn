@@ -1,12 +1,75 @@
-[gd_scene load_steps=8 format=3 uid="uid://o3ryldcogx2y"]
+[gd_scene load_steps=16 format=3 uid="uid://o3ryldcogx2y"]
 
 [ext_resource type="Script" uid="uid://cd27x07d34w5s" path="res://00_main/main.gd" id="1_f4613"]
 [ext_resource type="PackedScene" uid="uid://cl5g7tjmjq45r" path="res://01_user-interface/main-menu/MainMenu.tscn" id="2_utqqy"]
-[ext_resource type="Texture2D" uid="uid://byxe41kpy3k0f" path="res://99_assets/background/Pralax Background-Sky.png" id="4_h3sfl"]
+[ext_resource type="Texture2D" uid="uid://brnsspgqm1tfe" path="res://99_assets/sprites/background/Parallax Monochrome.png" id="4_esoif"]
 [ext_resource type="Script" uid="uid://ei132lunx33x" path="res://00_main/parallax.gd" id="4_hka2u"]
+[ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="5_esoif"]
 [ext_resource type="PackedScene" uid="uid://d0778cg3m1y6u" path="res://music/main_theme.tscn" id="5_hka2u"]
-[ext_resource type="Texture2D" uid="uid://bxaqf7sfyfas2" path="res://99_assets/background/Pralax Background-Clouds.png" id="5_ko1dt"]
-[ext_resource type="Texture2D" uid="uid://mpikqki8s2ec" path="res://99_assets/background/Pralax Background-Bushes.png" id="6_e244q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3sfl"]
+atlas = ExtResource("5_esoif")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko1dt"]
+atlas = ExtResource("5_esoif")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e244q"]
+atlas = ExtResource("5_esoif")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l02b2"]
+atlas = ExtResource("5_esoif")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhfen"]
+atlas = ExtResource("5_esoif")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xriyc"]
+atlas = ExtResource("5_esoif")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqvdj"]
+atlas = ExtResource("5_esoif")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp2d3"]
+atlas = ExtResource("5_esoif")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7wva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3sfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko1dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e244q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l02b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhfen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xriyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqvdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp2d3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -17,55 +80,39 @@ script = ExtResource("1_f4613")
 [node name="MainMenu" parent="UserInterface" instance=ExtResource("2_utqqy")]
 
 [node name="Sky" type="ParallaxBackground" parent="."]
-visible = false
 follow_viewport_enabled = true
-scroll_offset = Vector2(1, 0)
 script = ExtResource("4_hka2u")
-scrollSpeed = Vector2(1, 0)
+scrollSpeed = Vector2(-0.5, 0)
 
-[node name="Sky Parallax" type="ParallaxLayer" parent="Sky"]
+[node name="Background" type="ParallaxLayer" parent="Sky"]
 motion_scale = Vector2(30, 30)
-motion_mirroring = Vector2(1500, 0)
+motion_mirroring = Vector2(1280, 0)
 
-[node name="Sky" type="TextureRect" parent="Sky/Sky Parallax"]
+[node name="Background" type="TextureRect" parent="Sky/Background"]
+visible = false
 custom_minimum_size = Vector2(1500, 900)
-offset_right = 1200.0
+offset_right = 1500.0
 offset_bottom = 900.0
-texture = ExtResource("4_h3sfl")
+size_flags_horizontal = 0
+texture = ExtResource("4_esoif")
 
-[node name="Clouds" type="ParallaxBackground" parent="."]
-visible = false
-follow_viewport_enabled = true
-script = ExtResource("4_hka2u")
-scrollSpeed = Vector2(50, 0)
+[node name="Sprite2D" type="Sprite2D" parent="Sky/Background"]
+position = Vector2(640, 360)
+scale = Vector2(5, 5.625)
+texture = ExtResource("4_esoif")
 
-[node name="Cloud Parallax" type="ParallaxLayer" parent="Clouds"]
-motion_mirroring = Vector2(1200, 0)
+[node name="WalkingPlayer" type="Node2D" parent="Sky"]
 
-[node name="TextureRect" type="TextureRect" parent="Clouds/Cloud Parallax"]
-custom_minimum_size = Vector2(1200, 900)
-offset_right = 1200.0
-offset_bottom = 900.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-texture = ExtResource("5_ko1dt")
-
-[node name="Bushes" type="TextureRect" parent="Clouds"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 99.0
-offset_right = -4.0
-offset_bottom = 99.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_e244q")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sky/WalkingPlayer"]
+position = Vector2(317, 607)
+scale = Vector2(5, 5.625)
+sprite_frames = SubResource("SpriteFrames_b7wva")
+autoplay = "default"
 
 [node name="MainTheme" parent="." instance=ExtResource("5_hka2u")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
