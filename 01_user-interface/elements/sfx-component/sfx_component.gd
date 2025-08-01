@@ -11,7 +11,7 @@ var target: Control
 
 func _ready() -> void:
 	audioPlayer = AudioStreamPlayer.new()
-	audioPlayer.name = "AudioStreamPlayer2D"
+	audioPlayer.name = "AudioStreamPlayer"
 	audioPlayer.bus = "sfx"
 	add_child(audioPlayer)
 	

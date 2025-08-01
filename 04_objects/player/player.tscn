@@ -1,7 +1,143 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=28 format=3 uid="uid://dfmwu30ysrsa3"]
 
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://04_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
+
+[sub_resource type="Animation" id="Animation_dn2r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idleLantern"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xlt0o"]
+resource_name = "Waiting"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.267943),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1),
+"update": 1,
+"values": [&"dash", &"attack"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1m0x5"]
+_data = {
+&"RESET": SubResource("Animation_dn2r7"),
+&"Waiting": SubResource("Animation_xlt0o")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1fcw"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk4pq"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlayp"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tact"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jblvh"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gph6l"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecndn"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsuqj"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2jvg"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_256a7"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kpf6"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8546"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkj1o"]
+atlas = ExtResource("2_xlt0o")
+region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dn2r7"]
 atlas = ExtResource("2_xlt0o")
@@ -39,6 +175,65 @@ region = Rect2(256, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_u1fcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk4pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlayp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tact")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jblvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gph6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecndn")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsuqj")
+}],
+"loop": true,
+"name": &"idleLantern",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2jvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_256a7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kpf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8546")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkj1o")
+}],
+"loop": true,
+"name": &"idleSword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dn2r7")
 }, {
 "duration": 1.0,
@@ -70,8 +265,14 @@ animations = [{
 [node name="Player" type="Node2D"]
 script = ExtResource("1_xlt0o")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_1m0x5")
+}
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -6)
 sprite_frames = SubResource("SpriteFrames_u1fcw")
-animation = &"walk"
-autoplay = "walk"
+animation = &"idleLantern"
+autoplay = "idleLantern"
