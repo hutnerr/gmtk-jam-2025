@@ -1,27 +1,80 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhpyru26870m0"]
+[gd_scene load_steps=10 format=3 uid="uid://dhpyru26870m0"]
 
 [ext_resource type="Script" uid="uid://bdpstm0gitg2a" path="res://03_objects/enemy/enemy.gd" id="1_0r701"]
-[ext_resource type="Texture2D" uid="uid://c00mbggjcmlea" path="res://99_assets/sprites/lil-guy/Lil Mono Guy.png" id="2_rkhxj"]
+[ext_resource type="Texture2D" uid="uid://cjmbdim8p04m1" path="res://99_assets/sprites/tileset/All Enemies Quickly Drawn.png" id="2_s71i6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qf8mv"]
-atlas = ExtResource("2_rkhxj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s71i6"]
+atlas = ExtResource("2_s71i6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0d1f"]
+atlas = ExtResource("2_s71i6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wppuv"]
+atlas = ExtResource("2_s71i6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnyy8"]
+atlas = ExtResource("2_s71i6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqkhb"]
+atlas = ExtResource("2_s71i6")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qd8m1"]
-atlas = ExtResource("2_rkhxj")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r40en"]
+atlas = ExtResource("2_s71i6")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3uvdw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qf8mv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qd8m1")
+"texture": SubResource("AtlasTexture_s71i6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"big guy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0d1f")
+}],
+"loop": true,
+"name": &"goblin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wppuv")
+}],
+"loop": true,
+"name": &"necroman",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnyy8")
+}],
+"loop": true,
+"name": &"rat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqkhb")
+}],
+"loop": true,
+"name": &"skeleton",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r40en")
+}],
+"loop": true,
+"name": &"snail",
 "speed": 10.0
 }]
 
@@ -31,4 +84,5 @@ script = ExtResource("1_0r701")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_3uvdw")
-autoplay = "default"
+animation = &"necroman"
+autoplay = "rat"
