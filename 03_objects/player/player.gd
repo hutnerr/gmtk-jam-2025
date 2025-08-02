@@ -98,8 +98,8 @@ func isAFuckinRotateThing(command):
 	return (command.cmdName == "Rotate270") or (command.cmdName == "Rotate180") or (command.cmdName == "Rotate90") 
 	
 func imBeingToldToStop():
-	animPlayer.stop()
 	animPlayer.play("RESET")
+	$AnimatedSprite2D.play("idleLantern")
 	movementComponent.currentDirection = Vector2i(1, 0)
 # looper gives next step
 # take turn calls the step
