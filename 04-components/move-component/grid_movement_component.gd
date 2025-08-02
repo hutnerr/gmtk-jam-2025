@@ -8,16 +8,14 @@ func _ready() -> void:
 
 func move(newPosition: Vector2i):
 	print("MOVING TO : ", newPosition)
-	parent.gridPos = newPosition  # Update the GridObject's grid position
+	parent.gridPos = newPosition
 	parent.global_position = Gridleton.gridPosToGlobalPos(newPosition)
 	
 func getNewPosition(cmd: BaseCommand) -> Vector2i:
-	# Rotation commands don't change position, just direction
 	if cmd.rotationDegrees != 0:
 		currentDirection = rotateDirection(cmd.rotationDegrees)
 		return parent.gridPos  # Return current position (no movement)
 	
-	# Movement commands calculate new position
 	if cmd.direction != Vector2i.ZERO:
 		var actualMovement = transformDirection(cmd.direction)
 		return parent.gridPos + actualMovement
