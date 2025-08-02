@@ -695,8 +695,8 @@ position = Vector2(64, -12)
 range_layer_min = -101
 texture = SubResource("GradientTexture2D_h3sfl")
 script = ExtResource("4_h3sfl")
-flickerMin = 0.3
-flickerMax = 1.5
+flickerMin = 0.7
+flickerMax = 1.2
 baseFlickerTime = 0.5
 
 [node name="Sky" type="ParallaxBackground" parent="."]
