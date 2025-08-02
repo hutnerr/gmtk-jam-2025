@@ -81,7 +81,7 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		if playPortal:
 			AudiManny.playPortalSFX()
 	else:
-		animPlayer.play("searching")
+		animPlayer.play("Searching")
 		await animPlayer.animation_finished
 		
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId):

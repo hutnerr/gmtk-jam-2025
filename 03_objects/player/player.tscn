@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=47 format=3 uid="uid://dfmwu30ysrsa3"]
 
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://03_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
@@ -795,7 +795,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -6)
 sprite_frames = SubResource("SpriteFrames_u1fcw")
-animation = &"searching"
+animation = &"dash"
 autoplay = "idleLantern"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]

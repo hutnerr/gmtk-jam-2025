@@ -71,17 +71,17 @@ func runLoop() -> void:
 				looping = false
 				return
 			
-			if command.rotationDegrees == 0 and player.gridPos == lastPos:
-				print("stinky")
-				timesNotMoving += 1
-			
-			if timesNotMoving >= 50:
-				Looper.stopLoop()
-				player.imBeingToldToStop()
-				player.resetPosition()
-				Gridleton.reloadGridObjects()
-				AudiManny.playFailSFX()
-				print("PREVENTED INFINITE LOOP AND RESET")
+			#if command.rotationDegrees == 0 and player.gridPos == lastPos:
+				#print("stinky")
+				#timesNotMoving += 1
+			#
+			#if timesNotMoving >= 50:
+				#Looper.stopLoop()
+				#player.imBeingToldToStop()
+				#player.resetPosition()
+				#Gridleton.reloadGridObjects()
+				#AudiManny.playFailSFX()
+				#print("PREVENTED INFINITE LOOP AND RESET")
 				
 			lastPos = player.gridPos
 			
