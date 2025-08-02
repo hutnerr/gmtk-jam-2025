@@ -14,7 +14,7 @@ func move(newPosition: Vector2i):
 func getNewPosition(cmd: BaseCommand) -> Vector2i:
 	# Rotation commands don't change position, just direction
 	if cmd.rotationDegrees != 0:
-		rotateDirection(cmd.rotationDegrees)
+		currentDirection = rotateDirection(cmd.rotationDegrees)
 		return parent.gridPos  # Return current position (no movement)
 	
 	# Movement commands calculate new position
@@ -24,16 +24,29 @@ func getNewPosition(cmd: BaseCommand) -> Vector2i:
 	
 	return parent.gridPos
 
+func getProperAnimDirection(direction: Vector2i) -> String:
+	match direction:	
+		Vector2i(0, 1):
+			return "Up"
+		Vector2i(0, -1):
+			return "Down"
+		Vector2i(-1, 0):
+			return "Left"
+		Vector2i(1, 0):
+			return "Right"
+		_:
+			return "Unknown"
+
 func rotateDirection(degrees: int):
 	match degrees:
 		90:
-			currentDirection = Vector2i(currentDirection.y, -currentDirection.x)
+			return Vector2i(currentDirection.y, -currentDirection.x)
 		180:
-			currentDirection = Vector2i(-currentDirection.x, -currentDirection.y)
+			return Vector2i(-currentDirection.x, -currentDirection.y)
 		270:
-			currentDirection = Vector2i(-currentDirection.y, currentDirection.x)
+			return Vector2i(-currentDirection.y, currentDirection.x)
 		_:
-			pass  # Handle unknown rotation values
+			return currentDirection # Handle unknown rotation values
 	
 	# Optional: Handle sprite rotation here if needed
 	rotateSprite()
@@ -77,12 +90,12 @@ func getCurrentGridPos() -> Vector2i:
 func directionToString(dir: Vector2i) -> String:
 	match dir:
 		Vector2i(1, 0):
-			return "RIGHT"
+			return "Right"
 		Vector2i(-1, 0):
-			return "LEFT"
+			return "Left"
 		Vector2i(0, -1):
-			return "UP"
+			return "Up"
 		Vector2i(0, 1):
-			return "DOWN"
+			return "Down"
 		_:
 			return "UNKNOWN"
