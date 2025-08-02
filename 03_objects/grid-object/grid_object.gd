@@ -14,8 +14,8 @@ enum ObjectType {
 var type: ObjectType
 var gridPos: Vector2i
 
-func handleOverlap(overlappingObj: GridObject,  overlapCell: Vector2i):
-	pass
+func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overlapCell: Vector2i) -> Vector2i:
+	return Vector2i.ZERO
 
 func takeTurn(command: BaseCommand):
 	await get_tree().create_timer(0.05).timeout

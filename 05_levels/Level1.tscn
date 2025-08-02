@@ -30,3 +30,37 @@ position = Vector2(535, 101)
 
 [node name="Enemy3" parent="GameObjects" instance=ExtResource("3_l6t1r")]
 position = Vector2(345, 225)
+
+[node name="Wall" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(411, 155)
+animName = "rocks"
+
+[node name="Wall3" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(350, 155)
+
+[node name="Wall4" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(157, 284)
+
+[node name="Wall5" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(218, 345)
+
+[node name="Wall6" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(224, 281)
+
+[node name="Wall7" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(159, 157)
+
+[node name="Wall8" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(220, 91)
+
+[node name="Wall2" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(415, 284)
+
+[node name="Wall9" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(535, 343)
+
+[node name="Wall10" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(598, 218)
+
+[node name="Wall11" parent="GameObjects" instance=ExtResource("4_7ut40")]
+position = Vector2(479, 30)

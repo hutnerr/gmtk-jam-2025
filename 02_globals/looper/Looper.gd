@@ -31,33 +31,29 @@ func removeCommand(index: int) -> bool:
 
 func appendCommand(command: BaseCommand) -> bool:
 	if len(commands) >= loopLimit:
-		print("go over our limit")
 		return false
+	
 	commands.append(command)
 	commandAdded.emit(command, len(commands) - 1)
 	return true
 
 func runLoop() -> void:
 	if len(commands) <= 0:
-		print("invalid loop to run")
 		return
 	
 	if looping == true:
-		print("already looping")
 		return
 	
 	looping = true
 	currentLoopId += 1
 	var thisLoopId = currentLoopId
 	
-	print("Starting loop with ID: ", thisLoopId)
+	var timesNotMoving: int = 0
+	var lastPos: Vector2i = Vector2i.ZERO
 	
 	while looping and currentLoopId == thisLoopId:
-		print("we are looping with ID: ", thisLoopId)
 		for i in len(commands):
-			# Check if we should still be running THIS specific loop
 			if not looping or currentLoopId != thisLoopId:
-				print("Loop ", thisLoopId, " was cancelled")
 				return
 				
 			var command = commands[i]
@@ -68,20 +64,31 @@ func runLoop() -> void:
 			if not player:
 				looping = false
 				return
+			
+			if player.gridPos == lastPos:
+				timesNotMoving += 1
+			
+			if timesNotMoving >= 50:
+				Looper.stopLoop()
+				player.imBeingToldToStop()
+				player.resetPosition()
+				Gridleton.reloadGridObjects()
+				print("PREVENTED INFINITE LOOP AND RESET")
 				
-			print("Executing command in loop ", thisLoopId)
-			# AWAIT the takeTurn function directly
+			lastPos = player.gridPos
+			
+			# get the players current position, check it to the last position
+			# if its the same, add one to times not looping, if that ever reaches 10 thenn
+			# we stop looping to prevent infinite loops
+				
 			await player.takeTurn(command, thisLoopId)
 			
-			# Check again after the turn is completely done
 			if not looping or currentLoopId != thisLoopId:
-				print("Loop ", thisLoopId, " was cancelled after turn")
 				return
 
 func stopLoop() -> void:
-	print("Stopping loop. Current ID: ", currentLoopId)
 	looping = false
-	currentLoopId += 1  # This invalidates any running loops
+	currentLoopId += 1
 
 func clearCommands() -> void:
 	commands = []
