@@ -14,20 +14,21 @@ func _ready() -> void:
 func getMovementDistance():
 	movementDistance = Gridleton.currentGrid.tile_set.tile_size
 
-
-
-func handleOverlap(overlappingObj: GridObject,  overlapCell: Vector2i) -> GridObject.ObjectType:
+func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overlapCell: Vector2i) -> Vector2i:
 	# this will be called to determine behavior for going into a cell
 	# that something else is already in
 	match overlappingObj.type:
 		GridObject.ObjectType.ENEMY:
 			var success = Gridleton.killEnemy(overlapCell)
-			if success: 
-				return GridObject.ObjectType.ENEMY
-			return GridObject.ObjectType.PLAYER
+			if success:
+				return overlapCell
+			return currentPosition
+		GridObject.ObjectType.WALL:
+			return currentPosition # stay where we are
 		_:
+			return currentPosition # stay where we are if all fails
 			print("match failed")
-	return overlappingObj.type
+	
 		
 func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	var animStarterText = "Nonchalant Move "
@@ -38,21 +39,25 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		print("Turn cancelled - wrong loop ID")
 		emit_signal("turnCompleted")
 		return
-	
+		
 	var newPosition: Vector2i = movementComponent.getNewPosition(command)
 	var overlapObject = Gridleton.findGridObjectByPosition(newPosition)
 	
 	# Get the actual world direction for animation
+	var currentPosition: Vector2i = gridPos
 	var actualDirection: Vector2i = movementComponent.transformDirection(command.direction)
 	var directionString: String = movementComponent.directionToString(actualDirection)
 	
+	var overlapNewPosition: Vector2i = newPosition
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId) and overlapObject:
-		var overlapObjName: GridObject.ObjectType = handleOverlap(overlapObject, newPosition)
-		match overlapObjName:
+		overlapNewPosition = handleOverlap(overlapObject, currentPosition, newPosition)
+		
+		match overlapObject.type:
 			GridObject.ObjectType.ENEMY:
-				animStarterText = "Move & Attack "
-			GridObject.ObjectType.MOVING_ENEMY:
-				animStarterText = "Move & Attack "
+				if newPosition == currentPosition: # we failed to kill
+					animStarterText = "Nonchalant Move "
+				else:
+					animStarterText = "Move & Attack "
 			GridObject.ObjectType.WALL:
 				animStarterText = null
 			GridObject.ObjectType.TELEPORTER:
@@ -73,18 +78,20 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	# Final check before moving
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId):
 		print("Moving player for loop ID: ", loopId)
-		movementComponent.move(newPosition)
+		#movementComponent.move(newPosition)
+		movementComponent.move(overlapNewPosition)
 	else:
 		print("NOT moving player - loop was cancelled. Loop ID: ", loopId, " Current: ", Looper.currentLoopId)
 		
 	emit_signal("turnCompleted")
+
 func resetPosition() -> void:
 	global_position = defaultPosition
 	gridPos = Gridleton.globalPosToGridPos(global_position)
 
 func isAFuckinRotateThing(command):
+	#return command.rotation != 0
 	return (command.cmdName == "Rotate270") or (command.cmdName == "Rotate180") or (command.cmdName == "Rotate90") 
-	
 	
 func imBeingToldToStop():
 	animPlayer.stop()
