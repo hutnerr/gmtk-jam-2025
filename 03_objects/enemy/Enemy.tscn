@@ -86,10 +86,11 @@ script = ExtResource("1_0r701")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3uvdw")
-animation = &"goblin"
+animation = &"big guy"
 autoplay = "rat"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_s71i6")
