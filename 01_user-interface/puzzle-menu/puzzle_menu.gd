@@ -70,6 +70,7 @@ func onClearLoopButtonPressed() -> void:
 	Looper.stopLoop()
 	Looper.clearCommands()
 	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	player.imBeingToldToStop()
 	player.resetPosition()
 	Gridleton.reloadGridObjects()
 	for child in loopItemContainer.get_children():
@@ -79,6 +80,7 @@ func onClearLoopButtonPressed() -> void:
 func onStopButtonPressed() -> void:
 	Looper.stopLoop()
 	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	player.imBeingToldToStop()
 	player.resetPosition()
 	Gridleton.reloadGridObjects()
 	Looper.startable = true
