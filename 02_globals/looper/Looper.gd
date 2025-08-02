@@ -76,6 +76,7 @@ func runLoop() -> void:
 				player.imBeingToldToStop()
 				player.resetPosition()
 				Gridleton.reloadGridObjects()
+				AudiManny.playFailSFX()
 				print("PREVENTED INFINITE LOOP AND RESET")
 				
 			lastPos = player.gridPos

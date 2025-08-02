@@ -50,6 +50,7 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	var actualDirection: Vector2i = movementComponent.transformDirection(command.direction)
 	var directionString: String = movementComponent.directionToString(actualDirection)
 	
+	var playPortal = false
 	var overlapNewPosition: Vector2i = newPosition
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId) and overlapObject:
 		
@@ -61,6 +62,7 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		# Now handle the overlap (which might kill the enemy)
 		overlapNewPosition = handleOverlap(overlapObject, currentPosition, newPosition)
 		
+		
 		match overlapObject.type:
 			GridObject.ObjectType.ENEMY:
 				if enemyAlreadyDead:
@@ -70,11 +72,14 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 			GridObject.ObjectType.WALL:
 				animStarterText = null
 			GridObject.ObjectType.TELEPORTER:
+				playPortal = true
 				animStarterText = "Nonchalant Move "
 	
 	if animStarterText and not isAFuckinRotateThing(command):		
 		animPlayer.play(animStarterText + directionString)
 		await animPlayer.animation_finished
+		if playPortal:
+			AudiManny.playPortalSFX()
 	else:
 		await get_tree().create_timer(5)
 		
