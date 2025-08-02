@@ -47,9 +47,16 @@ func loadGridObjects(objects: Array[Node]) -> void:
 	enemyCount = 0
 	deadEnemies = {}
 
+	var firstTeleporter = null
+
 	for object: GridObject in objects:
 		if object.type == GridObject.ObjectType.ENEMY or object.type == GridObject.ObjectType.MOVING_ENEMY:
 			enemyCount += 1
+		if object.type == GridObject.ObjectType.TELEPORTER:
+			if not firstTeleporter:
+				firstTeleporter = object
+			else:
+				firstTeleporter.linkTeleporter(object)
 
 		var gridPos = globalPosToGridPos(object.global_position)
 		object.gridPos = gridPos

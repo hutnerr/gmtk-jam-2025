@@ -10,4 +10,8 @@ func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overla
 	return Vector2i.ZERO
 
 func sendObjToDestination(overlappingObj: GridObject) -> void:
-	pass
+	print("trying")
+
+func linkTeleporter(teleporter: GridObject):
+	teleporter.destination = self 
+	destination = teleporter

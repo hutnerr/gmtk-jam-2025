@@ -28,6 +28,8 @@ func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overla
 					return currentPosition  # Failed to kill (shouldn't happen?)
 		GridObject.ObjectType.WALL:
 			return currentPosition # stay where we are
+		GridObject.ObjectType.TELEPORTER:
+			return overlappingObj.destination.gridPos
 		_:
 			return currentPosition # stay where we are if all fails
 

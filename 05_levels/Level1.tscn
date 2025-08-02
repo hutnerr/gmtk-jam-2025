@@ -46,7 +46,7 @@ position = Vector2(276, 82)
 position = Vector2(506, 246)
 
 [node name="Teleporter" parent="GameObjects" instance=ExtResource("6_qxjjd")]
-position = Vector2(325, 325)
+position = Vector2(346, 349)
 
 [node name="Teleporter2" parent="GameObjects" instance=ExtResource("6_qxjjd")]
-position = Vector2(581, 133)
+position = Vector2(604, 162)

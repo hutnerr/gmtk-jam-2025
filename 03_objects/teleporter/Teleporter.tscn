@@ -1,12 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0xxe3lr74luk"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xxe3lr74luk"]
 
 [ext_resource type="Script" uid="uid://ddw3xqur7x7gf" path="res://03_objects/teleporter/teleporter.gd" id="1_sskl2"]
+[ext_resource type="Texture2D" uid="uid://ccifchomfrsoj" path="res://99_assets/sprites/Portal.png" id="2_kj305"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejsva"]
+atlas = ExtResource("2_kj305")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8env"]
+atlas = ExtResource("2_kj305")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_034nx"]
+atlas = ExtResource("2_kj305")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcjkl"]
+atlas = ExtResource("2_kj305")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpweg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8env")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_034nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcjkl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.5
+}]
 
 [node name="Teleporter" type="Node2D"]
 script = ExtResource("1_sskl2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(64, 64)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.262734, 0.437178, 1, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dpweg")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
