@@ -14,34 +14,33 @@ border_width_bottom = 1
 border_color = Color(0.941176, 0.964706, 0.941176, 1)
 
 [node name="PuzzleMenu" type="Control"]
-custom_minimum_size = Vector2(640, 384)
+custom_minimum_size = Vector2(640, 383)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
-offset_bottom = 384.0
-size_flags_horizontal = 3
+offset_bottom = 383.0
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme = ExtResource("1_3b55p")
 script = ExtResource("2_ss7uf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 190.0
 grow_vertical = 2
-theme_override_constants/margin_left = 2
 
 [node name="BaseContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BaseContainer"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 2
+theme_override_constants/margin_right = 2
 
 [node name="Panel" type="PanelContainer" parent="MarginContainer/BaseContainer/MarginContainer"]
-custom_minimum_size = Vector2(126, 128)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ss7uf")
 

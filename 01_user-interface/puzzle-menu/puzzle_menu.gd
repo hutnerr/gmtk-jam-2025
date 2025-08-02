@@ -59,6 +59,11 @@ func onCommandButtonPressed(command: BaseCommand.Commands) -> void:
 	if added:
 		renderCommand(cmd)
 
+	checkForCMDButtonsDisabled()
+	#if len(Looper.commands) - 1 >= Looper.loopLimit:
+		#disableCmdButtons()
+
+
 func renderCommand(cmd: BaseCommand) -> void:
 	var label = Label.new()
 	label.add_theme_font_size_override("font_size", 16)
@@ -73,9 +78,9 @@ func highlightActiveCommand() -> void:
 	pass
 
 func disableCmdButtons() -> void:
-	print(allCmdButtons)
-	#for but in allCmdButtons:
-		#but.disabled = true
+	#print(allCmdButtons)
+	for but in allCmdButtons:
+		but.disabled = true
 
 func onPlayButtonPressed() -> void:
 	if Looper.startable:
@@ -83,6 +88,8 @@ func onPlayButtonPressed() -> void:
 	else:
 		print("not right now lil bro")
 	playButton.disabled = true
+	stopButton.disabled = false
+	clearLoopButton.disabled = false
 	disableCmdButtons()
 
 func onClearLoopButtonPressed() -> void:
@@ -97,6 +104,7 @@ func onClearLoopButtonPressed() -> void:
 	Looper.startable = true
 	playButton.disabled = true
 	clearLoopButton.disabled = true
+	stopButton.disabled = true
 	
 	# turn them all back on
 	for but in allCmdButtons:
@@ -110,3 +118,15 @@ func onStopButtonPressed() -> void:
 	Gridleton.reloadGridObjects()
 	Looper.startable = true
 	playButton.disabled = false
+	stopButton.disabled = true
+	checkForCMDButtonsDisabled()
+
+func checkForCMDButtonsDisabled() -> void:
+	if len(Looper.commands) == Looper.loopLimit:
+		disableCmdButtons()
+		return
+	for but in allCmdButtons:
+		but.disabled = false
+
+	# if length - 1 is loop limimt, we cant add any more
+	# then we need to disable them, otherwise we can enable them again
