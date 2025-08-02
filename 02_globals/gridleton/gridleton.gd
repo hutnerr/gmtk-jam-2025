@@ -11,12 +11,12 @@ var currentEnemies: int
 func _ready() -> void:
 	reset()
 
-func killEnemy(overlapCell: Vector2i) -> void:
+func killEnemy(overlapCell: Vector2i) -> bool:
 	var obj = findGridObjectByPosition(overlapCell)
 	var objIndex = findIndexOfObject(obj)
 
 	if overlapCell in deadEnemies:
-		return
+		return false
 
 	deadEnemies[overlapCell] = obj
 	#obj.visible = false
@@ -26,6 +26,8 @@ func killEnemy(overlapCell: Vector2i) -> void:
 		allEnemiesKilled.emit()
 		#await get_tree().create_timer(1)
 		Looper.stopLoop()
+	
+	return true
 	
 func findGridObjectByPosition(checkPos: Vector2i) -> GridObject:
 	for object: GridObject in gridObjects:

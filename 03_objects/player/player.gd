@@ -21,7 +21,10 @@ func handleOverlap(overlappingObj: GridObject,  overlapCell: Vector2i) -> GridOb
 	# that something else is already in
 	match overlappingObj.type:
 		GridObject.ObjectType.ENEMY:
-			Gridleton.killEnemy(overlapCell)
+			var success = Gridleton.killEnemy(overlapCell)
+			if success: 
+				return GridObject.ObjectType.ENEMY
+			return GridObject.ObjectType.PLAYER
 		_:
 			print("match failed")
 	return overlappingObj.type
