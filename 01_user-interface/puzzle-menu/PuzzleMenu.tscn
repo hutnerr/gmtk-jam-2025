@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d3k6ca78mmo0b" path="res://01_user-interface/puzzle-menu/puzzle_menu.gd" id="2_ss7uf"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_n7xt4"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_3xwnf"]
-[ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_3xwnf"]
+[ext_resource type="AudioStream" uid="uid://dkwug63c2xdwl" path="res://99_assets/music/22_orc_jump_1.wav" id="5_3xwnf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss7uf"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
