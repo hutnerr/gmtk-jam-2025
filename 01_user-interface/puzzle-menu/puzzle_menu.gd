@@ -28,6 +28,16 @@ extends Control
 	rotate270Button: BaseCommand.Commands.ROTATE270
 }
 
+@onready var allCmdButtons = [
+	upButton,
+	leftButton,
+	rightButton,
+	downButton,
+	rotate90Button,
+	rotate180Button,
+	rotate270Button,
+]
+
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
 	stopButton.pressed.connect(onStopButtonPressed)
@@ -44,6 +54,8 @@ func _ready() -> void:
 func onCommandButtonPressed(command: BaseCommand.Commands) -> void:
 	var cmd: BaseCommand = BaseCommand.createCommand(command)
 	var added = Looper.appendCommand(cmd)
+	playButton.disabled = false
+	clearLoopButton.disabled = false
 	if added:
 		renderCommand(cmd)
 
@@ -60,11 +72,18 @@ func highlightActiveCommand() -> void:
 	# have to store the last one and make it not grey at the same time
 	pass
 
+func disableCmdButtons() -> void:
+	print(allCmdButtons)
+	#for but in allCmdButtons:
+		#but.disabled = true
+
 func onPlayButtonPressed() -> void:
 	if Looper.startable:
 		Looper.runLoop()
 	else:
 		print("not right now lil bro")
+	playButton.disabled = true
+	disableCmdButtons()
 
 func onClearLoopButtonPressed() -> void:
 	Looper.stopLoop()
@@ -76,6 +95,12 @@ func onClearLoopButtonPressed() -> void:
 	for child in loopItemContainer.get_children():
 		child.queue_free()
 	Looper.startable = true
+	playButton.disabled = true
+	clearLoopButton.disabled = true
+	
+	# turn them all back on
+	for but in allCmdButtons:
+		but.disabled = false
 
 func onStopButtonPressed() -> void:
 	Looper.stopLoop()
@@ -84,3 +109,4 @@ func onStopButtonPressed() -> void:
 	player.resetPosition()
 	Gridleton.reloadGridObjects()
 	Looper.startable = true
+	playButton.disabled = false
