@@ -53,6 +53,9 @@ func runLoop() -> void:
 	var lastPos: Vector2i = Vector2i.ZERO
 	
 	while looping and currentLoopId == thisLoopId:
+		
+		# Gridleton.renderLoopLine():
+		
 		for i in len(commands):
 			if not looping or currentLoopId != thisLoopId:
 				return
