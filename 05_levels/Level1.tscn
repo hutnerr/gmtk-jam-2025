@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="1_wt8ns"]
 [ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="2_7ut40"]
 [ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="3_l6t1r"]
-[ext_resource type="TileSet" uid="uid://rwh8wbphh26i" path="res://99_resources/art-tileset.tres" id="4_7ut40"]
+[ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="4_7ut40"]
 [ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="5_l6t1r"]
 
 [node name="Level1" type="Node2D"]
@@ -32,20 +32,5 @@ position = Vector2(535, 101)
 [node name="Enemy3" parent="GameObjects" instance=ExtResource("3_l6t1r")]
 position = Vector2(345, 225)
 
-[node name="Wall" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(541, 280)
-
-[node name="Wall2" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(350, 152)
-
-[node name="Wall3" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(287, 213)
-
-[node name="Wall4" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(280, 351)
-
-[node name="Wall5" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(208, 152)
-
-[node name="Wall6" parent="." instance=ExtResource("5_l6t1r")]
-position = Vector2(571, 155)
+[node name="Wall" parent="GameObjects" instance=ExtResource("5_l6t1r")]
+position = Vector2(414, 284)
