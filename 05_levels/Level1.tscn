@@ -26,12 +26,15 @@ position = Vector2(351, 289)
 
 [node name="Enemy" parent="GameObjects" instance=ExtResource("3_l6t1r")]
 position = Vector2(406, 222)
+enemySprite = "big guy"
 
 [node name="Enemy2" parent="GameObjects" instance=ExtResource("3_l6t1r")]
 position = Vector2(535, 101)
+enemySprite = "big guy"
 
 [node name="Enemy3" parent="GameObjects" instance=ExtResource("3_l6t1r")]
 position = Vector2(345, 225)
+enemySprite = "big guy"
 
 [node name="Wall" parent="GameObjects" instance=ExtResource("5_l6t1r")]
 position = Vector2(414, 284)

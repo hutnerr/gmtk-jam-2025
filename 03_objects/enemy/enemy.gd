@@ -1,13 +1,16 @@
 extends GridObject
 
 
-
+@export var enemySprite: String
 @onready var hitbox: Area2D = $Area2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	type = GridObject.ObjectType.ENEMY
 	hitbox.area_entered.connect(onAreaEntered)
-	
+	if enemySprite:
+		sprite.play(enemySprite)
+		
 	
 
 
