@@ -15,7 +15,6 @@ func _process(delta):
 	flickerTime -= delta
 	self.energy += flickerIterator * delta
 	if flickerTime <= 0:
-		print( " | ", currentEnergy, " | ", wantedEnergy, " | ", flickerIterator)
 		flickerTime = baseFlickerTime
 		wantedEnergy = randf_range(flickerMin, flickerMax)
 		flickerIterator = (wantedEnergy - self.energy) / baseFlickerTime
