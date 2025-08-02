@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=48 format=3 uid="uid://dfmwu30ysrsa3"]
 
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://03_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
@@ -501,6 +501,34 @@ tracks/4/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_n1bmn"]
+resource_name = "Searching"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"searching"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1m0x5"]
 _data = {
 &"Move & Attack Down": SubResource("Animation_3886c"),
@@ -511,7 +539,8 @@ _data = {
 &"Nonchalant Move Left": SubResource("Animation_kmyf5"),
 &"Nonchalant Move Right": SubResource("Animation_ocqos"),
 &"Nonchalant Move Up": SubResource("Animation_o2y61"),
-&"RESET": SubResource("Animation_dn2r7")
+&"RESET": SubResource("Animation_dn2r7"),
+&"Searching": SubResource("Animation_n1bmn")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnbo3"]
@@ -771,7 +800,7 @@ texture = ExtResource("4_uj617")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -6)
 sprite_frames = SubResource("SpriteFrames_u1fcw")
-animation = &"attack"
+animation = &"searching"
 autoplay = "idleLantern"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
