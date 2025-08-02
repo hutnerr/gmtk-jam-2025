@@ -7,7 +7,7 @@ func _ready() -> void:
 	parent = get_parent() as GridObject
 
 func move(newPosition: Vector2i):
-	print("MOVING TO : ", newPosition)
+	#print("MOVING TO : ", newPosition)
 	parent.gridPos = newPosition
 	parent.global_position = Gridleton.gridPosToGlobalPos(newPosition)
 	

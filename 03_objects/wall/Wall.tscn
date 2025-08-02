@@ -1,11 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1ajkb3p20rlk"]
+[gd_scene load_steps=6 format=3 uid="uid://c1ajkb3p20rlk"]
 
 [ext_resource type="Script" uid="uid://dsjcjtdcclgvd" path="res://03_objects/wall/wall.gd" id="1_piooj"]
+[ext_resource type="Texture2D" uid="uid://68l0mxces7d5" path="res://99_assets/sprites/tileset/Blocks.png" id="2_4purm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4purm"]
+atlas = ExtResource("2_4purm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brc53"]
+atlas = ExtResource("2_4purm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bl8ca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4purm")
+}],
+"loop": true,
+"name": &"rocks",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brc53")
+}],
+"loop": true,
+"name": &"tree",
+"speed": 5.0
+}]
 
 [node name="Wall" type="Node2D"]
 script = ExtResource("1_piooj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(64, 64)
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bl8ca")
+animation = &"tree"
