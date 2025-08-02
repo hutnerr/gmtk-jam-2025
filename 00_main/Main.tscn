@@ -78,8 +78,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h3sfl"]
 gradient = SubResource("Gradient_esoif")
-width = 425
-height = 400
+width = 600
+height = 450
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -275,7 +275,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7605")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -696,7 +696,7 @@ range_layer_min = -101
 texture = SubResource("GradientTexture2D_h3sfl")
 script = ExtResource("4_h3sfl")
 flickerMin = 0.5
-baseFlickerTime = 0.1
+baseFlickerTime = 0.5
 
 [node name="Sky" type="ParallaxBackground" parent="."]
 layer = -102
@@ -709,7 +709,6 @@ z_index = -1
 position = Vector2(640, 360)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_74vwj")
-autoplay = "default"
 
 [node name="Lights" type="Node2D" parent="Sky/ParallaxLayer/Sky2"]
 position = Vector2(-128, -72)

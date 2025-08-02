@@ -6,11 +6,17 @@ extends PointLight2D
 @export var rangeMin: float = 450
 @export var rangeMax: float = 400
 
-var flickerTime = baseFlickerTime
+var currentEnergy: float = randf_range(flickerMin, flickerMax)
+var wantedEnergy: float = randf_range(flickerMin, flickerMax)
+var flickerTime: float = 0.0
+var flickerIterator: float = 0.0
+
 func _process(delta):
 	flickerTime -= delta
+	self.energy += flickerIterator * delta
 	if flickerTime <= 0:
+		print( " | ", currentEnergy, " | ", wantedEnergy, " | ", flickerIterator)
 		flickerTime = baseFlickerTime
-		self.energy = randf_range(flickerMin, flickerMax)
-		
-		#it would be cool to change the range, but I can't figure that out right now
+		wantedEnergy = randf_range(flickerMin, flickerMax)
+		flickerIterator = (wantedEnergy - self.energy) / baseFlickerTime
+		currentEnergy = self.energy
