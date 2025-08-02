@@ -2,8 +2,13 @@ extends CanvasLayer
 
 var nextLevelPath = {
 	"One" : "res://05_levels/Level2.tscn",
-	"Two" : "res://00_main/Main.tscn",
-	"LevelEight" : null # cutscene goes here 
+	"Two" : "res://05_levels/Level3.tscn",
+	"Three" : "res://05_levels/Level4.tscn",
+	"Four" : "res://05_levels/Level5.tscn",
+	"Five" : "res://05_levels/Level6.tscn",
+	"Six" : "res://05_levels/Level7.tscn",
+	"Seven" : "res://05_levels/Level8.tscn", 
+	"Eight" : "res://05_levels/FinalCutscene.tscn",
 }
 
 signal sceneChanged

@@ -3,7 +3,7 @@ extends Node
 @onready var gridTile = $Grid
 @export var gameObjects: Node
 
-@export var loopLimit: int = 12
+@export var loopLimit: int = 10
 @export var levelString: String = "NOTSET"
 @export var levelNum: int = -1
 

@@ -1,11 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://bp1u0836cmi02"]
+[gd_scene load_steps=4 format=4 uid="uid://bp1u0836cmi02"]
 
 [ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_sdj0c"]
 [ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_hcmnu"]
 [ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="3_2mtjx"]
-[ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="4_051xc"]
-[ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="5_wmfxd"]
-[ext_resource type="PackedScene" uid="uid://d0xxe3lr74luk" path="res://03_objects/teleporter/Teleporter.tscn" id="6_nva7l"]
 
 [node name="Level8" type="Node2D"]
 
@@ -15,7 +12,6 @@ tile_set = ExtResource("1_sdj0c")
 
 [node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_hcmnu")]
 gameObjects = NodePath("../GameObjects")
-loopLimit = 10
 levelString = "Eight"
 levelNum = 8
 
@@ -23,60 +19,3 @@ levelNum = 8
 
 [node name="Player" parent="GameObjects" instance=ExtResource("3_2mtjx")]
 position = Vector2(351, 289)
-
-[node name="Enemy" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(406, 222)
-
-[node name="Enemy2" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(535, 101)
-
-[node name="Enemy4" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(284, 227)
-
-[node name="Enemy8" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(408, 355)
-
-[node name="Enemy9" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(286, 411)
-
-[node name="Enemy10" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(235, 357)
-
-[node name="Enemy11" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(281, 337)
-
-[node name="Enemy12" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(231, 281)
-
-[node name="Enemy13" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(287, 288)
-
-[node name="Enemy5" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(288, 165)
-
-[node name="Enemy6" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(413, 156)
-
-[node name="Enemy7" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(356, 162)
-
-[node name="Enemy3" parent="GameObjects" instance=ExtResource("4_051xc")]
-position = Vector2(345, 225)
-
-[node name="Wall" parent="GameObjects" instance=ExtResource("5_wmfxd")]
-position = Vector2(414, 284)
-
-[node name="Wall2" parent="GameObjects" instance=ExtResource("5_wmfxd")]
-position = Vector2(224, 218)
-
-[node name="Wall3" parent="GameObjects" instance=ExtResource("5_wmfxd")]
-position = Vector2(276, 82)
-
-[node name="Wall4" parent="GameObjects" instance=ExtResource("5_wmfxd")]
-position = Vector2(506, 246)
-
-[node name="Teleporter" parent="GameObjects" instance=ExtResource("6_nva7l")]
-position = Vector2(346, 349)
-
-[node name="Teleporter2" parent="GameObjects" instance=ExtResource("6_nva7l")]
-position = Vector2(604, 162)
