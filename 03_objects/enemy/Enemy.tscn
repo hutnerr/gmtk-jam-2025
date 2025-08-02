@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhpyru26870m0"]
+[gd_scene load_steps=12 format=3 uid="uid://dhpyru26870m0"]
 
 [ext_resource type="Script" uid="uid://bdpstm0gitg2a" path="res://03_objects/enemy/enemy.gd" id="1_0r701"]
+[ext_resource type="Texture2D" uid="uid://c78yt8algitua" path="res://99_assets/sprites/piggy.png" id="2_r40en"]
 [ext_resource type="Texture2D" uid="uid://cjmbdim8p04m1" path="res://99_assets/sprites/tileset/All Enemies Quickly Drawn.png" id="2_s71i6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s71i6"]
-atlas = ExtResource("2_s71i6")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgm3s"]
+atlas = ExtResource("2_r40en")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0d1f"]
 atlas = ExtResource("2_s71i6")
@@ -31,7 +32,7 @@ region = Rect2(64, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s71i6")
+"texture": SubResource("AtlasTexture_mgm3s")
 }],
 "loop": true,
 "name": &"big guy",
