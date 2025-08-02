@@ -68,7 +68,8 @@ func runLoop() -> void:
 				looping = false
 				return
 			
-			if player.gridPos == lastPos:
+			if command.rotationDegrees == 0 and player.gridPos == lastPos:
+				print("stinky")
 				timesNotMoving += 1
 			
 			if timesNotMoving >= 50:

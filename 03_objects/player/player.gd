@@ -5,10 +5,13 @@ extends GridObject
 var defaultPosition
 var movementDistance
 @onready var movementComponent: GridMovementComponent = $GridMovementComponent
+@onready var arrowDistance = 25
+@onready var arrow: Sprite2D = $Arrow
 
 func _ready() -> void:
 	self.type = ObjectType.PLAYER
 	self.defaultPosition = global_position
+	arrow.position = Vector2(arrowDistance, 0)
 	call_deferred("getMovementDistance")
 
 func getMovementDistance():
@@ -81,11 +84,16 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		if playPortal:
 			AudiManny.playPortalSFX()
 	else:
-		await get_tree().create_timer(5)
+		animPlayer.play("Searching")
+		await animPlayer.animation_finished
 		
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId):
 		movementComponent.move(overlapNewPosition)
-	
+
+		var direction_vector = Vector2(movementComponent.currentDirection)
+		arrow.position = direction_vector.normalized() * arrowDistance
+		arrow.rotation = direction_vector.angle()
+		
 	emit_signal("turnCompleted")
 
 func resetPosition() -> void:
