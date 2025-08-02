@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=4 uid="uid://c1lvjsgs45yfy"]
+
+[ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_hsphi"]
+[ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_4m1vf"]
+[ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="3_17ed2"]
+[ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="4_t3sy1"]
+[ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="5_p0eid"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAAYAAQADAAAAAAAJAAYAAQADAAAAAAAIAAYAAQADAAEAAAAGAAYAAQADAAEAAAAFAAYAAQADAAMAAAAEAAYAAQADAAIAAAADAAYAAQADAAAAAAABAAYAAQADAAEAAAABAAUAAQADAAEAAAAFAAUAAQADAAEAAAAGAAUAAQADAAEAAAAIAAUAAQADAAIAAAAJAAUAAQADAAAAAAAJAAQAAQADAAEAAAAIAAQAAQACAAMAAAAGAAQAAQADAAEAAAADAAQAAQADAAEAAAACAAQAAQADAAAAAAABAAQAAQADAAEAAAABAAMAAQADAAIAAAABAAIAAQADAAAAAAACAAIAAQADAAIAAAADAAIAAQADAAAAAAADAAMAAQADAAMAAAAEAAMAAQADAAMAAAAJAAMAAQADAAAAAAAKAAMAAQADAAMAAAAKAAIAAQADAAIAAAAJAAIAAQADAAIAAAAIAAIAAQADAAEAAAAFAAIAAQADAAAAAAAEAAIAAQADAAEAAAAAAAIAAQADAAEAAAAAAAEAAQADAAEAAAABAAEAAQADAAMAAAACAAAAAQADAAAAAAADAAAAAQADAAMAAAAEAAAAAQADAAEAAAAFAAAAAQADAAEAAAAGAAAAAQADAAEAAAAKAAAAAQADAAAAAAAKAAEAAQADAAAAAAAJAAEAAQADAAIAAAAFAAEAAQADAAEAAAAEAAEAAQADAAAAAAADAAEAAQADAAAAAAACAAEAAQADAAEAAAACAAMAAQADAAIAAAAKAAQAAQADAAIAAAAKAAUAAQADAAEAAAAAAAQAAQADAAIAAAAAAAUAAQADAAEAAAAAAAYAAQADAAEAAAAIAAAAAQADAAEAAAAHAAEAAQADAAAAAAAIAAEAAQADAAAAAAAFAAMAAQADAAAAAAAFAAQAAQADAAIAAAAEAAQAAQADAAIAAAAEAAUAAQADAAIAAAADAAUAAQADAAIAAAACAAUAAQADAAIAAAACAAYAAQADAAIAAAACAAcAAQADAAEAAAAHAAAAAQADAAEAAAAJAAAAAQADAAEAAAAHAAMAAQADAAIAAAAGAAMAAQADAAAAAAAHAAYAAQADAAMAAAAHAAQAAQADAAIAAAAHAAUAAQADAAEAAAAHAAcAAQADAAMAAAAIAAMAAQADAAEAAAAHAAIAAQADAAAAAAAGAAIAAQADAAIAAAAGAAEAAQADAAIAAAALAAcAAQADAAEAAAALAAYAAQADAAAAAAALAAUAAQADAAIAAAALAAQAAQADAAAAAAALAAMAAQADAAEAAAALAAIAAQADAAAAAAALAAEAAQADAAIAAAALAAAAAQADAAIAAAALAP//AQADAAAAAAAKAAcAAQADAAEAAAAKAP//AQADAAMAAAAJAAcAAQADAAAAAAAJAP//AQADAAEAAAAIAAcAAQACAAMAAAAIAP//AQADAAAAAAAHAP//AQADAAAAAAAGAAcAAQADAAEAAAAGAP//AQADAAEAAAAFAAcAAQADAAAAAAAFAP//AQADAAMAAAAEAAcAAQADAAAAAAAEAP//AQADAAEAAAADAAcAAQADAAEAAAADAP//AQADAAAAAAACAP//AQADAAIAAAABAAcAAQADAAAAAAABAAAAAQADAAEAAAABAP//AQADAAEAAAAAAAcAAQADAAAAAAAAAAMAAQADAAAAAAAAAAAAAQADAAEAAAAAAP//AQADAAAAAAD//wcAAQADAAIAAAD//wYAAQADAAIAAAD//wUAAQADAAIAAAD//wQAAQADAAMAAAD//wMAAQADAAAAAAD//wIAAQADAAIAAAD//wEAAQADAAEAAAD//wAAAQADAAEAAAD/////AQADAAEAAAA=")
+tile_set = ExtResource("1_hsphi")
+
+[node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_4m1vf")]
+gameObjects = NodePath("../GameObjects")
+levelString = "Four"
+levelNum = 4
+
+[node name="GameObjects" type="Node" parent="."]
+
+[node name="Player" parent="GameObjects" instance=ExtResource("3_17ed2")]
+position = Vector2(350, 223)
+
+[node name="Enemy" parent="GameObjects" instance=ExtResource("4_t3sy1")]
+position = Vector2(414, 222)
+
+[node name="Enemy2" parent="GameObjects" instance=ExtResource("4_t3sy1")]
+position = Vector2(551, 156)
+
+[node name="Wall9" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(348, 285)
+
+[node name="Wall29" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(283, 221)
+
+[node name="Wall30" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(349, 152)
+
+[node name="Wall32" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(539, 213)
+
+[node name="Wall33" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(599, 151)
+
+[node name="Wall37" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(540, 94)
+
+[node name="Wall38" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(417, 89)
+
+[node name="Wall39" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(414, 24)
+
+[node name="Wall40" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(541, 25)
+
+[node name="Wall23" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(418, 283)
+
+[node name="Wall27" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(478, 223)
+
+[node name="Wall16" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(546, -40)
+
+[node name="Wall18" parent="GameObjects" instance=ExtResource("5_p0eid")]
+position = Vector2(415, -38)

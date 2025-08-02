@@ -86,32 +86,34 @@ script = ExtResource("4_ua04l")
 pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
-[node name="9Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+[node name="9" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_type_variation = &"LevelSelBtn"
-text = "9"
+text = "9
+"
 
-[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/9Button"]
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/9"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
-[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/9Button"]
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/9"]
 script = ExtResource("4_ua04l")
 pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
-[node name="13Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
+[node name="13" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_type_variation = &"LevelSelBtn"
-text = "13"
+text = "13
+"
 
-[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/13Button"]
+[node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/13"]
 script = ExtResource("3_7mduo")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
-[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/13Button"]
+[node name="SFXComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/13"]
 script = ExtResource("4_ua04l")
 pressedStream = ExtResource("5_hurrr")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
@@ -154,7 +156,8 @@ metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_type_variation = &"LevelSelBtn"
-text = "10"
+text = "10
+"
 
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/10Button"]
 script = ExtResource("3_7mduo")
@@ -169,7 +172,8 @@ metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_type_variation = &"LevelSelBtn"
-text = "14"
+text = "14
+"
 
 [node name="OnHoverAnimComponent" type="Node" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/14Button"]
 script = ExtResource("3_7mduo")
