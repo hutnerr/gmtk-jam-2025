@@ -86,6 +86,7 @@ func isAFuckinRotateThing(command):
 func imBeingToldToStop():
 	animPlayer.stop()
 	animPlayer.play("RESET")
+	movementComponent.currentDirection = Vector2i(1, 0)
 # looper gives next step
 # take turn calls the step
 # does the movement
