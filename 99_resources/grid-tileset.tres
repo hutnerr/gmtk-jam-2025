@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c2ds6b7ic1rcy"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c2ds6b7ic1rcy"]
 
 [ext_resource type="Texture2D" uid="uid://ckdblv5nchdg0" path="res://99_assets/sprites/tileset/Tile Border.png" id="1_6ccm5"]
+[ext_resource type="Texture2D" uid="uid://74k4isqp10op" path="res://99_assets/sprites/background/cube.png" id="2_8h80r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8h80r"]
 texture = ExtResource("1_6ccm5")
@@ -17,9 +18,36 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/terrains_peering_bit/top_side = 0
 0:0/0/terrains_peering_bit/top_right_corner = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m34wp"]
+texture = ExtResource("2_8h80r")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+
 [resource]
 tile_size = Vector2i(64, 64)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Tile"
 terrain_set_0/terrain_0/color = Color(0, 0.36106, 0.777655, 1)
 sources/0 = SubResource("TileSetAtlasSource_8h80r")
+sources/1 = SubResource("TileSetAtlasSource_m34wp")
