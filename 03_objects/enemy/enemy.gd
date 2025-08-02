@@ -12,6 +12,8 @@ func _ready() -> void:
 
 
 
+
+# Should play some sort of death animation, then connect that to this invisibility thing
 func onAreaEntered(area):
 	if self.is_visible_in_tree():
 		self.visible = false

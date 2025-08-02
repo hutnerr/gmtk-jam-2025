@@ -8,6 +8,7 @@
 script = ExtResource("1_3w3q7")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
