@@ -23,21 +23,6 @@ levelNum = 5
 [node name="Player" parent="GameObjects" instance=ExtResource("3_ugeql")]
 position = Vector2(279, 167)
 
-[node name="Enemy" parent="GameObjects" instance=ExtResource("4_k7117")]
-position = Vector2(415, 287)
-
-[node name="Enemy3" parent="GameObjects" instance=ExtResource("4_k7117")]
-position = Vector2(420, 159)
-
-[node name="Enemy7" parent="GameObjects" instance=ExtResource("4_k7117")]
-position = Vector2(355, 162)
-
-[node name="Enemy11" parent="GameObjects" instance=ExtResource("4_k7117")]
-position = Vector2(348, 222)
-
-[node name="Enemy12" parent="GameObjects" instance=ExtResource("4_k7117")]
-position = Vector2(421, 221)
-
 [node name="Wall" parent="GameObjects" instance=ExtResource("5_6qvhj")]
 position = Vector2(284, 282)
 
@@ -139,3 +124,6 @@ position = Vector2(536, 343)
 
 [node name="Wall34" parent="GameObjects" instance=ExtResource("5_6qvhj")]
 position = Vector2(605, 341)
+
+[node name="Enemy" parent="." instance=ExtResource("4_k7117")]
+position = Vector2(419, 160)

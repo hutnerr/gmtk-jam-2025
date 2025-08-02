@@ -1,21 +1,145 @@
-[gd_scene load_steps=4 format=4 uid="uid://c1lvjsgs45yfy"]
+[gd_scene load_steps=7 format=4 uid="uid://dc5upi5vwofsc"]
 
-[ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_orork"]
-[ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_05762"]
-[ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="3_dby2h"]
+[ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_gggot"]
+[ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_48xtu"]
+[ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="3_55lvf"]
+[ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="4_dhkrp"]
+[ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="5_6n5vg"]
+[ext_resource type="PackedScene" uid="uid://d0xxe3lr74luk" path="res://03_objects/teleporter/Teleporter.tscn" id="6_mwtwm"]
 
-[node name="Level4" type="Node2D"]
+[node name="Level7" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAKAAYAAQADAAAAAAAJAAYAAQADAAAAAAAIAAYAAQADAAEAAAAGAAYAAQADAAEAAAAFAAYAAQADAAMAAAAEAAYAAQADAAIAAAADAAYAAQADAAAAAAABAAYAAQADAAEAAAABAAUAAQADAAEAAAAFAAUAAQADAAEAAAAGAAUAAQADAAEAAAAIAAUAAQADAAIAAAAJAAUAAQADAAAAAAAJAAQAAQADAAEAAAAIAAQAAQACAAMAAAAGAAQAAQADAAEAAAADAAQAAQADAAEAAAACAAQAAQADAAAAAAABAAQAAQADAAEAAAABAAMAAQADAAIAAAABAAIAAQADAAAAAAACAAIAAQADAAIAAAADAAIAAQADAAAAAAADAAMAAQADAAMAAAAEAAMAAQADAAMAAAAJAAMAAQADAAAAAAAKAAMAAQADAAMAAAAKAAIAAQADAAIAAAAJAAIAAQADAAIAAAAIAAIAAQADAAEAAAAFAAIAAQADAAAAAAAEAAIAAQADAAEAAAAAAAIAAQADAAEAAAAAAAEAAQADAAEAAAABAAEAAQADAAMAAAACAAAAAQADAAAAAAADAAAAAQADAAMAAAAEAAAAAQADAAEAAAAFAAAAAQADAAEAAAAGAAAAAQADAAEAAAAKAAAAAQADAAAAAAAKAAEAAQADAAAAAAAJAAEAAQADAAIAAAAFAAEAAQADAAEAAAAEAAEAAQADAAAAAAADAAEAAQADAAAAAAACAAEAAQADAAEAAAACAAMAAQADAAIAAAAKAAQAAQADAAIAAAAKAAUAAQADAAEAAAAAAAQAAQADAAIAAAAAAAUAAQADAAEAAAAAAAYAAQADAAEAAAAIAAAAAQADAAEAAAAHAAEAAQADAAAAAAAIAAEAAQADAAAAAAAFAAMAAQADAAAAAAAFAAQAAQADAAIAAAAEAAQAAQADAAIAAAAEAAUAAQADAAIAAAADAAUAAQADAAIAAAACAAUAAQADAAIAAAACAAYAAQADAAIAAAACAAcAAQADAAEAAAAHAAAAAQADAAEAAAAJAAAAAQADAAEAAAAHAAMAAQADAAIAAAAGAAMAAQADAAAAAAAHAAYAAQADAAMAAAAHAAQAAQADAAIAAAAHAAUAAQADAAEAAAAHAAcAAQADAAMAAAAIAAMAAQADAAEAAAAHAAIAAQADAAAAAAAGAAIAAQADAAIAAAAGAAEAAQADAAIAAAALAAcAAQADAAEAAAALAAYAAQADAAAAAAALAAUAAQADAAIAAAALAAQAAQADAAAAAAALAAMAAQADAAEAAAALAAIAAQADAAAAAAALAAEAAQADAAIAAAALAAAAAQADAAIAAAALAP//AQADAAAAAAAKAAcAAQADAAEAAAAKAP//AQADAAMAAAAJAAcAAQADAAAAAAAJAP//AQADAAEAAAAIAAcAAQACAAMAAAAIAP//AQADAAAAAAAHAP//AQADAAAAAAAGAAcAAQADAAEAAAAGAP//AQADAAEAAAAFAAcAAQADAAAAAAAFAP//AQADAAMAAAAEAAcAAQADAAAAAAAEAP//AQADAAEAAAADAAcAAQADAAEAAAADAP//AQADAAAAAAACAP//AQADAAIAAAABAAcAAQADAAAAAAABAAAAAQADAAEAAAABAP//AQADAAEAAAAAAAcAAQADAAAAAAAAAAMAAQADAAAAAAAAAAAAAQADAAEAAAAAAP//AQADAAAAAAD//wcAAQADAAIAAAD//wYAAQADAAIAAAD//wUAAQADAAIAAAD//wQAAQADAAMAAAD//wMAAQADAAAAAAD//wIAAQADAAIAAAD//wEAAQADAAEAAAD//wAAAQADAAEAAAD/////AQADAAEAAAA=")
-tile_set = ExtResource("1_orork")
+tile_set = ExtResource("1_gggot")
 
-[node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_05762")]
+[node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_48xtu")]
 gameObjects = NodePath("../GameObjects")
-levelString = "Four"
-levelNum = 4
+loopLimit = 3
+levelString = "Seven"
+levelNum = 7
 
 [node name="GameObjects" type="Node" parent="."]
 
-[node name="Player" parent="GameObjects" instance=ExtResource("3_dby2h")]
-position = Vector2(351, 289)
+[node name="Player" parent="GameObjects" instance=ExtResource("3_55lvf")]
+position = Vector2(479, 100)
+
+[node name="Enemy" parent="GameObjects" instance=ExtResource("4_dhkrp")]
+position = Vector2(602, 94)
+
+[node name="Enemy2" parent="GameObjects" instance=ExtResource("4_dhkrp")]
+position = Vector2(408, 288)
+
+[node name="Wall" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(158, 410)
+
+[node name="Wall2" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(227, 409)
+
+[node name="Wall3" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(296, 418)
+
+[node name="Wall4" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(361, 411)
+
+[node name="Wall5" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(415, 411)
+
+[node name="Wall6" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(494, 418)
+
+[node name="Wall7" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(558, 418)
+
+[node name="Wall8" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(605, 416)
+
+[node name="Wall36" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(674, 347)
+
+[node name="Wall10" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(668, 286)
+
+[node name="Wall11" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(664, 220)
+
+[node name="Wall12" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(662, 156)
+
+[node name="Wall13" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(667, 89)
+
+[node name="Wall14" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(665, 24)
+
+[node name="Wall15" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(603, -36)
+
+[node name="Wall16" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(546, -40)
+
+[node name="Wall17" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(478, -38)
+
+[node name="Wall18" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(415, -38)
+
+[node name="Wall19" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(346, -32)
+
+[node name="Wall20" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(279, -39)
+
+[node name="Wall21" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(219, -39)
+
+[node name="Wall22" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(153, -37)
+
+[node name="Wall23" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(223, 28)
+
+[node name="Wall25" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(231, 214)
+
+[node name="Wall27" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(283, 153)
+
+[node name="Wall30" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(279, 91)
+
+[node name="Wall31" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(342, 27)
+
+[node name="Wall32" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(285, 32)
+
+[node name="Wall33" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(224, 97)
+
+[node name="Wall37" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(222, 157)
+
+[node name="Wall24" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(163, 88)
+
+[node name="Wall26" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(160, 158)
+
+[node name="Wall28" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(167, 217)
+
+[node name="Wall29" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(225, 273)
+
+[node name="Wall34" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(159, 349)
+
+[node name="Wall35" parent="GameObjects" instance=ExtResource("5_6n5vg")]
+position = Vector2(161, 285)
+
+[node name="Teleporter" parent="GameObjects" instance=ExtResource("6_mwtwm")]
+position = Vector2(350, 289)
+
+[node name="Teleporter2" parent="GameObjects" instance=ExtResource("6_mwtwm")]
+position = Vector2(548, 96)
