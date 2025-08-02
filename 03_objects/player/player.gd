@@ -82,6 +82,9 @@ func resetPosition() -> void:
 func isAFuckinRotateThing(command):
 	return (command.cmdName == "Rotate270") or (command.cmdName == "Rotate180") or (command.cmdName == "Rotate90") 
 	
+	
+func imBeingToldToStop():
+	animPlayer.stop()
 # looper gives next step
 # take turn calls the step
 # does the movement
