@@ -8,7 +8,10 @@ var nextLevelPath = {
 	"Five" : "res://05_levels/Level6.tscn",
 	"Six" : "res://05_levels/Level7.tscn",
 	"Seven" : "res://05_levels/Level8.tscn", 
-	"Eight" : "res://05_levels/FinalCutscene.tscn",
+	#"Eight" : "res://05_levels/FinalCutscene.tscn",
+	"Eight" : "res://05_levels/Level9.tscn",
+	"Nine" : "res://05_levels/Level10.tscn",
+	"Ten" : "res://00_main/Main.tscn"
 }
 
 signal sceneChanged
