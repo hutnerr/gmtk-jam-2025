@@ -25,7 +25,6 @@ SceneTransitioner="*res://02_globals/scene-transitioner/SceneTransition.tscn"
 SettingsMenu="*res://02_globals/settings-menu/SettingsMenu.tscn"
 Gridleton="*res://02_globals/gridleton/gridleton.tscn"
 Looper="*res://02_globals/looper/Looper.tscn"
-MoveManny="*res://02_globals/movement-manager/MoveManny.tscn"
 AudiManny="*res://02_globals/audio-manager/AudiManny.tscn"
 
 [display]

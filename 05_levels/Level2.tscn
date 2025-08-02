@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qsgsuofql33"]
+
+[ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="1_60wqp"]
+[ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="2_jakn5"]
+[ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="3_05lvf"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("1_60wqp")]
+gameObjects = NodePath("../GameObjects")
+loopLimit = 4
+levelString = "Two"
+levelNum = 2
+
+[node name="GameObjects" type="Node" parent="."]
+
+[node name="Player" parent="GameObjects" instance=ExtResource("2_jakn5")]
+position = Vector2(223, 225)
+
+[node name="Enemy" parent="GameObjects" instance=ExtResource("3_05lvf")]
+position = Vector2(348, 172)
+
+[node name="Enemy2" parent="GameObjects" instance=ExtResource("3_05lvf")]
+position = Vector2(348, 293)

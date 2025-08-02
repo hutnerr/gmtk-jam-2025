@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 var nextLevelPath = {
-	"LevelOne" : ["res://05_levels/2/Level2.tscn", "Two"], # the path, the level to load for Looper
-	"LevelTwo" : null,
+	"One" : "res://05_levels/Level2.tscn",
+	"Two" : "res://00_main/Main.tscn",
 	"LevelEight" : null # cutscene goes here 
 }
 
@@ -22,7 +22,8 @@ func change_scene(target: String) -> void:
 
 func nextLevel() -> void:
 	var currentLevel = get_tree().current_scene.name
-	#await MoveManny.player.animPlayer.animation_finished
-	#await get_tree().create_timer(0.5).timeout
-	change_scene(nextLevelPath[currentLevel][0])
-	Looper.loadNewLevel(nextLevelPath[currentLevel][1])
+	await get_tree().create_timer(0.5).timeout
+	var level = get_tree().current_scene.get_node("BaseLevel")
+	change_scene(nextLevelPath[level.levelString])
+	Looper.loadNewLevel(level.loopLimit)
+	

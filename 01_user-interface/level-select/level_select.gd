@@ -1,6 +1,6 @@
 extends Control
 
-const LEVELS_PATH = "res://05_levels/FORMAT/LevelFORMAT.tscn"
+const LEVELS_PATH = "res://05_levels/LevelFORMAT.tscn"
 
 @onready var l1btn: Button = $"Panel/MarginContainer/VBoxContainer/HBoxContainer/OddButtons/1Button"
 @onready var l2btn: Button = $"Panel/MarginContainer/VBoxContainer/HBoxContainer/EvenButtons/2Button"

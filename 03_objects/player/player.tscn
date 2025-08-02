@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=29 format=3 uid="uid://dfmwu30ysrsa3"]
 
-[ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://04_objects/player/player.gd" id="1_xlt0o"]
+[ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://03_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
+[ext_resource type="Script" uid="uid://eq6ym6jydcda" path="res://04-components/move-component/grid_movement_component.gd" id="3_qnbo3"]
 
 [sub_resource type="Animation" id="Animation_xlt0o"]
 resource_name = "Move & Attack"
@@ -276,3 +277,7 @@ position = Vector2(6, -6)
 sprite_frames = SubResource("SpriteFrames_u1fcw")
 animation = &"idleLantern"
 autoplay = "idleLantern"
+
+[node name="GridMovementComponent" type="Node" parent="."]
+script = ExtResource("3_qnbo3")
+metadata/_custom_type_script = "uid://eq6ym6jydcda"

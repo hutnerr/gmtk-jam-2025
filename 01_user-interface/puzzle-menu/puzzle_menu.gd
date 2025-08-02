@@ -18,93 +18,62 @@ extends Control
 @onready var levelInfoLabel: Label = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer/LevelLabel
 @onready var loopLimitLabel: Label = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer/LimitLabel
 
+@onready var commandButtonMap := {
+	rightButton: BaseCommand.Commands.RIGHT,
+	leftButton: BaseCommand.Commands.LEFT,
+	upButton: BaseCommand.Commands.UP,
+	downButton: BaseCommand.Commands.DOWN,
+	rotate90Button: BaseCommand.Commands.ROTATE90,
+	rotate180Button: BaseCommand.Commands.ROTATE180,
+	rotate270Button: BaseCommand.Commands.ROTATE270
+}
+
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
-	rightButton.pressed.connect(onRightButtonPressed)
-	leftButton.pressed.connect(onLeftButtonPressed)
-	upButton.pressed.connect(onUpButtonPressed)
-	downButton.pressed.connect(onDownButtonPressed)
-	rotate90Button.pressed.connect(onRotate90ButtonPressed)
-	rotate180Button.pressed.connect(onRotate180ButtonPressed)
-	rotate270Button.pressed.connect(onRotate270ButtonPressed)
-	clearLoopButton.pressed.connect(onClearLoopButtonPressed)
 	stopButton.pressed.connect(onStopButtonPressed)
-	
-	# FIXME: Store this in the level object
-	# still have to get tree get current scene
-	# other way would be set a variable 
-	var level = get_tree().current_scene.name.split("Level")[-1]
-	levelInfoLabel.text += level
-	Looper.loadNewLevel(level)
-	loopLimitLabel.text += str(Looper.levelLimit)
+	clearLoopButton.pressed.connect(onClearLoopButtonPressed)
 
-func _process(delta: float) -> void:
-	var currentCommands = Looper.commands
-	if not currentCommands or len(currentCommands) <= 0:
-		return
-	renderCurrentCommands(currentCommands)
-		
-func emptyLoopItemContainer() -> void:
-	for child in loopItemContainer.get_children():
-		child.queue_free()
+	for button in commandButtonMap.keys():
+		button.pressed.connect(onCommandButtonPressed.bind(commandButtonMap[button]))
 
-func renderCurrentCommands(cmds: Array[BaseCommand]) -> void:
-	emptyLoopItemContainer()
-	for i in range(len(cmds)):
-		var cmd = cmds[i]
-		if cmd:
-			renderCommand(cmd, i)
+	var level = get_tree().current_scene.get_node("BaseLevel")
+	levelInfoLabel.text += level.levelString
+	loopLimitLabel.text += str(level.loopLimit)
+	Looper.loadNewLevel(level.loopLimit)
 
-func renderCommand(cmd: BaseCommand, index: int) -> void:
+func onCommandButtonPressed(command: BaseCommand.Commands) -> void:
+	var cmd: BaseCommand = BaseCommand.createCommand(command)
+	var added = Looper.appendCommand(cmd)
+	if added:
+		renderCommand(cmd)
+
+func renderCommand(cmd: BaseCommand) -> void:
 	var label = Label.new()
 	label.add_theme_font_size_override("font_size", 16)
-	if index == Looper.currentCommand:
-		label.add_theme_color_override("font_color", Color("898d8a"))
-	
+	var index = Looper.getCommandIndex(cmd)
 	label.text = str(index + 1, ": ", cmd.cmdName)
 	loopItemContainer.add_child(label)
 
+func highlightActiveCommand() -> void:
+	# get the active command and make it grey
+	# label.add_theme_color_override("font_color", Color("898d8a"))
+	# have to store the last one and make it not grey at the same time
+	pass
+
 func onPlayButtonPressed() -> void:
 	Looper.runLoop()
-	
-func onRightButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.RIGHT)
-	Looper.appendCommand(cmd)
-
-func onLeftButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.LEFT)
-	Looper.appendCommand(cmd)
-
-func onUpButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.UP)
-	Looper.appendCommand(cmd)
-	
-func onDownButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.DOWN)
-	Looper.appendCommand(cmd)
-	
-func onRotate90ButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.ROTATE90)
-	Looper.appendCommand(cmd)
-	
-func onRotate180ButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.ROTATE180)
-	Looper.appendCommand(cmd)
-	
-func onRotate270ButtonPressed() -> void:
-	var cmd = BaseCommand.createCommand(BaseCommand.Commands.ROTATE270)
-	Looper.appendCommand(cmd)
 
 func onClearLoopButtonPressed() -> void:
 	Looper.looping = false
-	Looper.currentCommand = null
 	Looper.clearCommands()
-	Gridleton.resetGridObjects()
-	MoveManny.reset()
-	emptyLoopItemContainer()
+	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	player.resetPosition()
+	Gridleton.reloadGridObjects()
+	for child in loopItemContainer.get_children():
+		child.queue_free()
 
 func onStopButtonPressed() -> void:
 	Looper.looping = false
-	Looper.currentCommand = null
-	Gridleton.resetGridObjects()
-	MoveManny.reset()
+	Gridleton.reloadGridObjects()
+	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	player.resetPosition()

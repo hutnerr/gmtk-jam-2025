@@ -62,19 +62,6 @@ theme_override_constants/margin_bottom = 128
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="GoodBoyButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(164, 48)
-layout_mode = 2
-text = "Back to Main Menu"
-
-[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
-script = ExtResource("3_7tnm3")
-metadata/_custom_type_script = "uid://wtkip6i1f07w"
-
-[node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
-script = ExtResource("4_tl5ka")
-metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
-
 [node name="LevelOneButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(164, 48)
 layout_mode = 2
@@ -87,4 +74,17 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 [node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
 script = ExtResource("4_tl5ka")
 pressedStream = ExtResource("5_tl5ka")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="GoodBoyButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
+script = ExtResource("3_7tnm3")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
+script = ExtResource("4_tl5ka")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"

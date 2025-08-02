@@ -34,19 +34,16 @@ func onMainMenuButtonPressed() -> void:
 	toggleVisible()
 	mainMenuButtonRequest.emit()
 	SceneTransitioner.change_scene(MAIN_PATH)
-	coveragePanel.visible = true
 	# FIXME: clean up this shite 
 	#AudiManny.playMenuMusic()
 	#Looper.looping = false
 	#Looper.clearCommands()
-	#MoveManny.reset()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()
 	
 func onCloseSettingsButtonPressed() -> void:
 	visible = false
-	coveragePanel.visible = false
 	get_tree().paused = false
 
 func toggleVisible() -> void:
@@ -56,13 +53,11 @@ func toggleVisible() -> void:
 		mainMenuButtonSpacer.visible = false
 		quitButton.visible = false
 		quitButtonSpacer.visible = false
-		coveragePanel.visible = true
 	else:
 		mainMenuButton.visible = true
 		mainMenuButtonSpacer.visible = true
 		quitButton.visible = true
 		quitButtonSpacer.visible = true
-		coveragePanel.visible = false
 	
 	tree.paused = !tree.paused
 	visible = !visible 

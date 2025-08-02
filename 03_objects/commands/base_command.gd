@@ -19,9 +19,6 @@ func _init(cmdName: String, dir: Vector2i = Vector2i.ZERO, rot: int = 0) -> void
 	self.direction = dir
 	self.rotationDegrees = rot
 
-func applyCommand() -> void:
-	MoveManny.move(self)
-
 static func createCommand(cmd: BaseCommand.Commands) -> BaseCommand:
 	match cmd:
 		BaseCommand.Commands.RIGHT:

@@ -8,7 +8,7 @@ extends Control
 @onready var quitButton: Button = $PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/QuitButton
 @onready var creditsButton: Button = $PanelContainer/VBoxContainer/ButtonMarginContainer/ButtonVBox/CreditsButton
 
-const FIRST_LEVEL: String = "res://05_levels/1/Level1.tscn"
+const FIRST_LEVEL: String = "res://05_levels/Level1.tscn"
 const HOW_TO_PLAY: String = "res://01_user-interface/how-to-play/HowToPlay.tscn"
 const CREDITS: String = "res://01_user-interface/credits/Credits.tscn"
 

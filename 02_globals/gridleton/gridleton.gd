@@ -1,65 +1,81 @@
 extends Node2D
 
-signal loaded
 signal allEnemiesKilled
 
 var currentGrid: TileMapLayer
-var gridObjects: Dictionary
+var gridObjects: Array[GridObject] # keep them in order to loop
+var deadEnemies: Dictionary
 var enemyCount: int = 0
-var slainEnemies: Dictionary
-var initObjects
+var currentEnemies: int
 
 func _ready() -> void:
 	reset()
+
+func killEnemy(overlapCell: Vector2i) -> void:
+	var obj = findGridObjectByPosition(overlapCell)
+	var objIndex = findIndexOfObject(obj)
+
+	if overlapCell in deadEnemies:
+		return
+
+	deadEnemies[overlapCell] = obj
+	obj.visible = false
+	currentEnemies -= 1
+	print("Enemies Left: ", currentEnemies)
+	if currentEnemies <= 0:
+		Looper.looping = false
+		allEnemiesKilled.emit()
 	
+func findGridObjectByPosition(checkPos: Vector2i) -> GridObject:
+	for object: GridObject in gridObjects:
+		var objPos = object.gridPos
+		if objPos == checkPos:
+			return object
+	return null
+
+func findIndexOfObject(obj: GridObject) -> int:
+	for i in range(len(gridObjects)):
+		if gridObjects[i] == obj:
+			return i
+	return -1
+	
+func loadGridObjects(objects: Array[Node]) -> void:
+	gridObjects = []
+	enemyCount = 0
+	deadEnemies = {}
+
+	for object: GridObject in objects:
+		if object.type == GridObject.ObjectType.ENEMY or object.type == GridObject.ObjectType.MOVING_ENEMY:
+			enemyCount += 1
+
+		var gridPos = globalPosToGridPos(object.global_position)
+		object.gridPos = gridPos
+		object.global_position = gridPosToGlobalPos(gridPos)
+
+		gridObjects.append(object)
+
+	currentEnemies = enemyCount
+
+func reloadGridObjects() -> void:
+	# iter through dead enemies and make them visible again
+	for enemy in deadEnemies.values():
+		enemy.visible = true
+	currentEnemies = enemyCount
+
 func reset() -> void:
 	currentGrid = null
-	gridObjects = {}
-
-# tells us grid overlap
-# pass in a thing to check, and thing to look at, tells us if collission
-# then calls object.handleColission()? or returns something
-
-func handleGridOverlap(gridPosition) -> void:
-	var gridObject: GridObject = gridObjects[gridPosition]
-	gridObject.handleOverlap.call()
-	
-	if gridObject.type == GridObject.ObjectType.ENEMY:
-		# FIXME: kill anim here
-		slainEnemies[gridPosition] = gridObject # store it
-		gridObjects.erase(gridObject) # remove it
-		gridObject.visible = false
-		enemyCount -= 1
-		if enemyCount <= 0:
-			Looper.looping = false
-			allEnemiesKilled.emit()
-
-# change how killing things work
-# signal connect to keep track of how many enemies died?
-# this would have to store the original loaded and then repopulate them
-# cause we're klilling theyu ass
-func resetGridObjects() -> void:
-	for deadEnemyLoc in slainEnemies:
-		gridObjects[deadEnemyLoc] = slainEnemies[deadEnemyLoc]
-		enemyCount += 1
-	
-	for object in gridObjects.values():
-		object.visible = true
-	
-func loadGridObjects(objects) -> void:
+	gridObjects = []
 	enemyCount = 0
-	gridObjects = {}
 	
-	for object: GridObject in objects:
-		if object.type == GridObject.ObjectType.ENEMY:
-			enemyCount += 1
-		
-		var objpos = object.global_position
-		var converted = currentGrid.local_to_map(objpos)
-		object.global_position = currentGrid.to_global(currentGrid.map_to_local(converted)) # center in cell
-		gridObjects[converted] = object
-	loaded.emit()
+func globalPosToGridPos(objPos: Vector2) -> Vector2i:
+	if not objPos:
+		print("u done super messed up")
+		return Vector2i.ZERO
+	return currentGrid.local_to_map(objPos)
+
+func gridPosToGlobalPos(gridPos: Vector2i) -> Vector2:
+	if not currentGrid:
+		print("No current grid!")
+		return Vector2.ZERO
+	return currentGrid.to_global(currentGrid.map_to_local(gridPos))
 	
-	
-# conversion methods like global pos to grid pos?
-# static methods

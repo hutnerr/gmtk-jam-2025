@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ajkb3p20rlk"]
+
+[ext_resource type="Script" uid="uid://dsjcjtdcclgvd" path="res://03_objects/wall/wall.gd" id="1_piooj"]
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_piooj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
