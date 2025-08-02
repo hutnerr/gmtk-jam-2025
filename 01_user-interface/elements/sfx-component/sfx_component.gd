@@ -2,9 +2,11 @@ class_name SFXComponent extends Node
 
 const HOVER_AUDIO: String = "res://99_assets/music/bookOpen.ogg"
 const PRESSED_AUDIO: String = "res://99_assets/music/bookFlip2.ogg"
+const DISABLED_AUDIO: String = "res://99_assets/music/02_chest_close_2.wav"
 
 @export var hoverStream: AudioStream = preload(HOVER_AUDIO)
 @export var pressedStream: AudioStream = preload(PRESSED_AUDIO)
+@export var disabledStream: AudioStream = preload(DISABLED_AUDIO)
 
 var audioPlayer: AudioStreamPlayer
 var target: Control
@@ -28,9 +30,12 @@ func _ready() -> void:
 		target.gui_input.connect(onGuiInput)
 	
 func onHover() -> void:
-	if audioPlayer and hoverStream:
-		audioPlayer.stream = hoverStream
-		audioPlayer.play()
+	if audioPlayer:
+		if target is Button and target.disabled and disabledStream:
+			return
+		elif hoverStream:
+			audioPlayer.stream = hoverStream
+			audioPlayer.play()
 
 func onPressed() -> void:
 	if audioPlayer and pressedStream:

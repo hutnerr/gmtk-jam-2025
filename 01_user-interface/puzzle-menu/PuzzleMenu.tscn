@@ -75,6 +75,7 @@ theme_override_constants/margin_right = 16
 [node name="ClearButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+disabled = true
 text = "Clear Loop"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/ClearButton"]
@@ -246,6 +247,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 16
+disabled = true
 text = "Run Loop"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/PlayButton"]
@@ -262,6 +264,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 16
+disabled = true
 text = "Stop"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/StopButton"]

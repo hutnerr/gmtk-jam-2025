@@ -20,6 +20,9 @@ func setup() -> void:
 	defaultScale = target.scale
 
 func onHover() -> void:
+	if target is Button and target.disabled:
+		return
+	
 	addTween("scale", hoverScale, time)
 	
 func offHover() -> void:
