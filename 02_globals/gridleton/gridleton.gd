@@ -19,7 +19,7 @@ func killEnemy(overlapCell: Vector2i) -> void:
 		return
 
 	deadEnemies[overlapCell] = obj
-	obj.visible = false
+	#obj.visible = false
 	currentEnemies -= 1
 	print("Enemies Left: ", currentEnemies)
 	if currentEnemies <= 0:
