@@ -24,7 +24,7 @@ func killEnemy(overlapCell: Vector2i) -> void:
 	print("Enemies Left: ", currentEnemies)
 	if currentEnemies <= 0:
 		allEnemiesKilled.emit()
-		await get_tree().create_timer(1)
+		#await get_tree().create_timer(1)
 		Looper.stopLoop()
 	
 func findGridObjectByPosition(checkPos: Vector2i) -> GridObject:
