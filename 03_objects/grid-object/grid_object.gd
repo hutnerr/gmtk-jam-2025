@@ -18,4 +18,5 @@ func handleOverlap(overlappingObj: GridObject,  overlapCell: Vector2i):
 	pass
 
 func takeTurn(command: BaseCommand):
+	await get_tree().create_timer(0.05).timeout
 	turnCompleted.emit()

@@ -23,7 +23,7 @@ func killEnemy(overlapCell: Vector2i) -> void:
 	currentEnemies -= 1
 	print("Enemies Left: ", currentEnemies)
 	if currentEnemies <= 0:
-		Looper.looping = false
+		Looper.stopLoop()
 		allEnemiesKilled.emit()
 	
 func findGridObjectByPosition(checkPos: Vector2i) -> GridObject:
@@ -61,6 +61,7 @@ func reloadGridObjects() -> void:
 	for enemy in deadEnemies.values():
 		enemy.visible = true
 	currentEnemies = enemyCount
+	deadEnemies = {}
 
 func reset() -> void:
 	currentGrid = null

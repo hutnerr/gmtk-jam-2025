@@ -36,8 +36,8 @@ func onMainMenuButtonPressed() -> void:
 	SceneTransitioner.change_scene(MAIN_PATH)
 	# FIXME: clean up this shite 
 	#AudiManny.playMenuMusic()
-	#Looper.looping = false
-	#Looper.clearCommands()
+	Looper.stopLoop()
+	Looper.clearCommands()
 	
 func onQuitButtonPressed() -> void:
 	get_tree().quit()

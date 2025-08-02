@@ -23,14 +23,33 @@ func handleOverlap(overlappingObj: GridObject,  overlapCell: Vector2i):
 		_:
 			print("match failed")
 
-func takeTurn(command: BaseCommand):
-	var newPosition: Vector2i = movementComponent.getNewPosition(command) # gets the new grid pos
+func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
+	print("takeTurn called with loop ID: ", loopId, " current loop ID: ", Looper.currentLoopId)
+	
+	# Check if this turn belongs to a cancelled loop
+	if loopId != -1 and Looper.currentLoopId != loopId:
+		print("Turn cancelled - wrong loop ID")
+		emit_signal("turnCompleted")
+		return
+	
+	var newPosition: Vector2i = movementComponent.getNewPosition(command)
 	var overlapObject = Gridleton.findGridObjectByPosition(newPosition)
-	if overlapObject:
+	
+	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId) and overlapObject:
 		handleOverlap(overlapObject, newPosition)
 	
-	movementComponent.move(newPosition) # call the actual move 
-	turnCompleted.emit()
+	print("Starting 1 second wait for loop ID: ", loopId)
+	await get_tree().create_timer(1).timeout
+	print("Finished 1 second wait for loop ID: ", loopId)
+	
+	# Final check before moving
+	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId):
+		print("Moving player for loop ID: ", loopId)
+		movementComponent.move(newPosition)
+	else:
+		print("NOT moving player - loop was cancelled. Loop ID: ", loopId, " Current: ", Looper.currentLoopId)
+		
+	emit_signal("turnCompleted")
 
 func resetPosition() -> void:
 	global_position = defaultPosition

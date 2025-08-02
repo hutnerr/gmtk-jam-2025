@@ -6,6 +6,8 @@ signal commandRemoved(command: BaseCommand, index: int)
 var looping: bool
 var commands: Array[BaseCommand]
 var loopLimit: int
+var startable: bool = true
+var currentLoopId: int = 0
 
 func addCommand(command: BaseCommand, index: int) -> bool:
 	# FIXME: error handling
@@ -45,30 +47,41 @@ func runLoop() -> void:
 		return
 	
 	looping = true
-	while looping:
+	currentLoopId += 1
+	var thisLoopId = currentLoopId
+	
+	print("Starting loop with ID: ", thisLoopId)
+	
+	while looping and currentLoopId == thisLoopId:
+		print("we are looping with ID: ", thisLoopId)
 		for i in len(commands):
+			# Check if we should still be running THIS specific loop
+			if not looping or currentLoopId != thisLoopId:
+				print("Loop ", thisLoopId, " was cancelled")
+				return
+				
 			var command = commands[i]
 			if command == null:
 				continue
 				
-			for gridObject: GridObject in Gridleton.gridObjects:
-				if not looping:
-					break
-
-				gridObject.takeTurn(command)
+			var player = get_tree().current_scene.get_node("GameObjects").get_node("Player")
+			if not player:
+				looping = false
+				return
 				
-				if not looping:
-					break
-					
-				# each gridObject emits a signal
-				# await the taking of turn, likely animation being played there
-
-			# call each grid object, tell them to take their turn, and pass them the current command
-			# might have to check if Looper.looping when taking our turn
-			await get_tree().create_timer(2).timeout
+			print("Executing command in loop ", thisLoopId)
+			# AWAIT the takeTurn function directly
+			await player.takeTurn(command, thisLoopId)
 			
-			if not looping: # if we've stopped looping during our wait
-				break
+			# Check again after the turn is completely done
+			if not looping or currentLoopId != thisLoopId:
+				print("Loop ", thisLoopId, " was cancelled after turn")
+				return
+
+func stopLoop() -> void:
+	print("Stopping loop. Current ID: ", currentLoopId)
+	looping = false
+	currentLoopId += 1  # This invalidates any running loops
 
 func clearCommands() -> void:
 	commands = []

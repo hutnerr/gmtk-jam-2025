@@ -61,19 +61,24 @@ func highlightActiveCommand() -> void:
 	pass
 
 func onPlayButtonPressed() -> void:
-	Looper.runLoop()
+	if Looper.startable:
+		Looper.runLoop()
+	else:
+		print("not right now lil bro")
 
 func onClearLoopButtonPressed() -> void:
-	Looper.looping = false
+	Looper.stopLoop()
 	Looper.clearCommands()
 	var player = get_parent().get_parent().get_node("GameObjects/Player")
 	player.resetPosition()
 	Gridleton.reloadGridObjects()
 	for child in loopItemContainer.get_children():
 		child.queue_free()
+	Looper.startable = true
 
 func onStopButtonPressed() -> void:
-	Looper.looping = false
-	Gridleton.reloadGridObjects()
+	Looper.stopLoop()
 	var player = get_parent().get_parent().get_node("GameObjects/Player")
 	player.resetPosition()
+	Gridleton.reloadGridObjects()
+	Looper.startable = true
