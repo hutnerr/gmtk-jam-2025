@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://03_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
 [ext_resource type="Script" uid="uid://eq6ym6jydcda" path="res://04-components/move-component/grid_movement_component.gd" id="3_qnbo3"]
-[ext_resource type="Texture2D" uid="uid://d0r68qei566vq" path="res://99_assets/other-icons/icon.svg" id="4_uj617"]
 
 [sub_resource type="Animation" id="Animation_3886c"]
 resource_name = "Move & Attack Down"
@@ -792,10 +791,6 @@ root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_1m0x5")
 }
-
-[node name="Arrow" type="Sprite2D" parent="."]
-scale = Vector2(0.0703125, 0.0703125)
-texture = ExtResource("4_uj617")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -6)
