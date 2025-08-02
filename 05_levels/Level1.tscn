@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://c2k4l1l4l36k7"]
+[gd_scene load_steps=6 format=4 uid="uid://c2k4l1l4l36k7"]
 
 [ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="1_wt8ns"]
 [ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="2_7ut40"]
 [ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="4_7ut40"]
+[ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="4_l6t1r"]
+[ext_resource type="PackedScene" uid="uid://dhpyru26870m0" path="res://03_objects/enemy/Enemy.tscn" id="5_qxjjd"]
 
 [node name="Level1" type="Node2D"]
 
@@ -12,11 +14,122 @@ tile_set = ExtResource("4_7ut40")
 
 [node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("1_wt8ns")]
 gameObjects = NodePath("../GameObjects")
-loopLimit = 2
+loopLimit = 3
 levelString = "One"
 levelNum = 1
 
 [node name="GameObjects" type="Node" parent="."]
 
 [node name="Player" parent="GameObjects" instance=ExtResource("2_7ut40")]
-position = Vector2(351, 289)
+position = Vector2(160, 157)
+
+[node name="Wall" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-29, 22)
+
+[node name="Wall2" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-34, 293)
+
+[node name="Wall16" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(417, 418)
+
+[node name="Wall24" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(544, 416)
+
+[node name="Wall27" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(609, 419)
+
+[node name="Wall25" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(471, 410)
+
+[node name="Wall18" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(355, 413)
+
+[node name="Wall19" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(287, 415)
+
+[node name="Wall20" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(219, 414)
+
+[node name="Wall21" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(170, 415)
+
+[node name="Wall22" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(99, 414)
+
+[node name="Wall23" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(31, 409)
+
+[node name="Wall17" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-44, 359)
+
+[node name="Wall3" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-30, 219)
+
+[node name="Wall4" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-32, 169)
+
+[node name="Wall5" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(-34, 106)
+
+[node name="Wall6" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(226, -33)
+
+[node name="Wall10" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(609, -41)
+
+[node name="Wall11" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(544, -42)
+
+[node name="Wall12" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(486, -37)
+
+[node name="Wall13" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(421, -36)
+
+[node name="Wall14" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(341, -39)
+
+[node name="Wall15" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(277, -45)
+
+[node name="Wall7" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(156, -33)
+
+[node name="Wall8" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(106, -40)
+
+[node name="Wall9" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(36, -36)
+
+[node name="Wall26" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(677, 10)
+
+[node name="Wall28" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(672, 281)
+
+[node name="Wall29" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(674, 346)
+
+[node name="Wall30" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(676, 207)
+
+[node name="Wall31" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(674, 157)
+
+[node name="Wall32" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(672, 94)
+
+[node name="Wall33" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(220, 215)
+
+[node name="Wall34" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(542, 348)
+
+[node name="Wall35" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+position = Vector2(416, 91)
+
+[node name="Enemy" parent="GameObjects" instance=ExtResource("5_qxjjd")]
+position = Vector2(290, 219)
+
+[node name="Enemy2" parent="GameObjects" instance=ExtResource("5_qxjjd")]
+position = Vector2(416, 284)
