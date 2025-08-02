@@ -8,6 +8,7 @@ var commands: Array[BaseCommand]
 var loopLimit: int
 var startable: bool = true
 var currentLoopId: int = 0
+var currentIndex: int
 
 func addCommand(command: BaseCommand, index: int) -> bool:
 	# FIXME: error handling
@@ -59,6 +60,8 @@ func runLoop() -> void:
 			var command = commands[i]
 			if command == null:
 				continue
+			
+			currentIndex = i
 				
 			var player = get_tree().current_scene.get_node("GameObjects").get_node("Player")
 			if not player:
@@ -89,8 +92,10 @@ func runLoop() -> void:
 func stopLoop() -> void:
 	looping = false
 	currentLoopId += 1
+	currentIndex = -1
 
 func clearCommands() -> void:
+	currentIndex = -1
 	commands = []
 
 func loadNewLevel(loopLimit: int) -> void:

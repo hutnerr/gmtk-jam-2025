@@ -63,6 +63,14 @@ func onCommandButtonPressed(command: BaseCommand.Commands) -> void:
 	#if len(Looper.commands) - 1 >= Looper.loopLimit:
 		#disableCmdButtons()
 
+func _process(delta: float) -> void:
+	var children = loopItemContainer.get_children()
+	for child in children:
+		child.remove_theme_color_override("font_color")
+	if Looper.currentIndex >= 0 and Looper.currentIndex < children.size():
+		children[Looper.currentIndex].add_theme_color_override("font_color", Color("898d8a"))
+		
+		
 
 func renderCommand(cmd: BaseCommand) -> void:
 	var label = Label.new()
