@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://dwwem77mig6gw"]
+[gd_scene load_steps=103 format=3 uid="uid://dwwem77mig6gw"]
 
 [ext_resource type="Script" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://oxv3qxrsedt8" path="res://99_assets/sprites/cutscene/tombstone.png" id="3_2ainb"]
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_cxkvq"]
 [ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="6_cxkvq"]
+[ext_resource type="AudioStream" uid="uid://rlxj3874ufj3" path="res://99_assets/music/guitar-start.wav" id="8_6wa22"]
+[ext_resource type="AudioStream" uid="uid://bskg8rgiqyp8s" path="res://99_assets/music/guitar-mainloop.wav" id="9_nk1kp"]
+[ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="10_i3gaw"]
+[ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="11_2qnml"]
+[ext_resource type="AudioStream" uid="uid://cp0mguic5jxav" path="res://99_assets/music/player-sfx/07_human_atk_sword_1.wav" id="12_wvib6"]
 
 [sub_resource type="Animation" id="Animation_3bcln"]
 length = 0.001
@@ -70,11 +75,35 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Guitar-start:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Step:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2ainb"]
 resource_name = "final-cutscene"
 length = 30.0
-step = 0.1
+step = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -148,6 +177,30 @@ tracks/5/keys = {
 "args": [&"Slackin", 1.0, false],
 "method": &"play"
 }]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Guitar-start:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 15.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Step:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1, 1.33333, 1.66667, 2, 2.33333, 2.66667, 3, 3.33333, 3.66667, 4, 4.33333, 4.66667, 5, 5.33333, 5.66667, 6, 6.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d43sx"]
@@ -883,3 +936,19 @@ z_index = 101
 energy = 1.1
 blend_mode = 1
 range_layer_min = -101
+
+[node name="Guitar-start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6wa22")
+
+[node name="Guitar-mainloop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nk1kp")
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_i3gaw")
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_2qnml")
+volume_db = -0.05
+
+[node name="Slash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wvib6")
