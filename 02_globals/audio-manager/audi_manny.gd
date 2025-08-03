@@ -11,7 +11,7 @@ const FAIL_SFX: String = "res://99_assets/music/04_sack_open_1.wav"
 const PORTAL_SFX: String = "res://99_assets/music/portal.wav"
 const ROTATION_SFX: String = "res://99_assets/music/beltHandle2.ogg"
 const WALLHIT_SFX: String = "res://99_assets/music/dropLeather.ogg"
-const ENEMYDEAD_SFX: String = "res://99_assets/music/24_orc_death_spin.wav"
+const ENEMYDEAD_SFX: String = "res://99_assets/music/enemy-kill-final.wav"
 
 @onready var menuMusic: AudioStream = preload(MENU_MUSIC)
 @onready var levelMusic: AudioStream = preload(LEVEL_MUSIC)
