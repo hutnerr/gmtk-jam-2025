@@ -1,10 +1,12 @@
-[gd_scene load_steps=96 format=3 uid="uid://dwwem77mig6gw"]
+[gd_scene load_steps=98 format=3 uid="uid://dwwem77mig6gw"]
 
+[ext_resource type="Script" uid="uid://jn1b5bw7tdpj" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="1_jc6x1"]
 [ext_resource type="Texture2D" uid="uid://bmec8oh4ixpws" path="res://99_assets/sprites/cutscene/Cutscene Hills.png" id="2_cxkvq"]
 [ext_resource type="Texture2D" uid="uid://oxv3qxrsedt8" path="res://99_assets/sprites/cutscene/tombstone.png" id="3_2ainb"]
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_cxkvq"]
+[ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="6_cxkvq"]
 
 [sub_resource type="Animation" id="Animation_3bcln"]
 length = 0.001
@@ -800,6 +802,7 @@ animations = [{
 }]
 
 [node name="FinalCutscene" type="Node2D"]
+script = ExtResource("1_2ainb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -848,7 +851,34 @@ animation = &"new_animation"
 position = Vector2(40, -28)
 zoom = Vector2(6, 6)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 333.0
+offset_top = -1.0
+offset_right = 437.0
+offset_bottom = 167.0
+theme_override_fonts/normal_font = ExtResource("6_cxkvq")
+bbcode_enabled = true
+text = "[font_size=32]Credits:[/font_size]
+
+[font_size=24]Developers:[/font_size]
+Hunter Baker
+Jakob Bennie
+
+[font_size=24]Special Thanks:[/font_size]
+Sam
+May
+Abi
+Lily
+Matt"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="Darkness" type="DirectionalLight2D" parent="."]
+visible = false
 z_index = 101
 energy = 1.1
 blend_mode = 1
