@@ -1,6 +1,6 @@
-[gd_scene load_steps=103 format=3 uid="uid://dwwem77mig6gw"]
+[gd_scene load_steps=104 format=3 uid="uid://dwwem77mig6gw"]
 
-[ext_resource type="Script" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
+[ext_resource type="Script" uid="uid://jn1b5bw7tdpj" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="1_jc6x1"]
 [ext_resource type="Texture2D" uid="uid://bmec8oh4ixpws" path="res://99_assets/sprites/cutscene/Cutscene Hills.png" id="2_cxkvq"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="10_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="11_2qnml"]
 [ext_resource type="AudioStream" uid="uid://cp0mguic5jxav" path="res://99_assets/music/player-sfx/07_human_atk_sword_1.wav" id="12_wvib6"]
+[ext_resource type="AudioStream" uid="uid://dntp1675de7qp" path="res://99_assets/music/04_sack_open_1.wav" id="13_nk1kp"]
 
 [sub_resource type="Animation" id="Animation_3bcln"]
 length = 0.001
@@ -99,11 +100,47 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Whip It Out:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Dash:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Slash:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2ainb"]
 resource_name = "final-cutscene"
-length = 30.0
-step = 0.4
+length = 32.5
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,7 +148,7 @@ tracks/0/path = NodePath("AnimationPlayer/Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.03333, 10.0333, 13.1667, 13.3),
+"times": PackedFloat32Array(0, 7.03333, 10.0333, 15.3, 15.4333),
 "transitions": PackedFloat32Array(1, 1, 1, 9.51364, 1),
 "update": 0,
 "values": [Vector2(45, -35), Vector2(280, -35), Vector2(350, -35), Vector2(350, -35), Vector2(414, -35)]
@@ -123,7 +160,7 @@ tracks/1/path = NodePath("AnimationPlayer/Player:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 13.0333, 13.7333, 14.4, 21.9),
+"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 15.1666, 15.8666, 16.5333, 21.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"Walking", &"DefNotIdle", &"Whip It Out", &"Stanced", &"Strike", &"Stanced", &"Whip It In", &"Sleepin"]
@@ -135,10 +172,10 @@ tracks/2/path = NodePath("Darkness:energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 10.0333, 10.5333, 13.0667, 13.6, 14.0667),
-"transitions": PackedFloat32Array(1e+06, 2.2974, 1, 0.5, 0.466516, 0.196146),
+"times": PackedFloat32Array(0, 10.5333, 15.2, 15.7, 16.2),
+"transitions": PackedFloat32Array(1e+06, 1, 0.5, 0.466516, 0.196146),
 "update": 0,
-"values": [1.1, 0.0, 1.1, 1.1, 2.5, 1.1]
+"values": [1.1, 1.1, 1.1, 2.5, 1.1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -159,7 +196,7 @@ tracks/4/path = NodePath("AnimationPlayer/LOOPER Player:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0333333, 13.7),
+"times": PackedFloat32Array(0.0333333, 15.8333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -171,7 +208,7 @@ tracks/5/path = NodePath("AnimationPlayer/Player")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(16),
+"times": PackedFloat32Array(18.1333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"Slackin", 1.0, false],
@@ -185,10 +222,10 @@ tracks/6/path = NodePath("Guitar-start:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 15.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 18.0333, 25.26),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -197,10 +234,57 @@ tracks/7/path = NodePath("Step:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667, 1, 1.33333, 1.66667, 2, 2.33333, 2.66667, 3, 3.33333, 3.66667, 4, 4.33333, 4.66667, 5, 5.33333, 5.66667, 6, 6.33333),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Whip It Out:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(11.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Dash:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Slash:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Guitar-mainloop")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d43sx"]
@@ -773,7 +857,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
-"speed": 10.0
+"speed": 7.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -931,7 +1015,6 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="Darkness" type="DirectionalLight2D" parent="."]
-visible = false
 z_index = 101
 energy = 1.1
 blend_mode = 1
@@ -948,7 +1031,11 @@ stream = ExtResource("10_i3gaw")
 
 [node name="Step" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_2qnml")
-volume_db = -0.05
+volume_db = -0.01
+bus = &"sfx"
 
 [node name="Slash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_wvib6")
+
+[node name="Whip It Out" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_nk1kp")
