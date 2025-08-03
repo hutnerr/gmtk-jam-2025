@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7tnm3"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_tl5ka"]
 [ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_tl5ka"]
+[ext_resource type="Texture2D" uid="uid://b7vnhkwypch1y" path="res://99_assets/Hunter Ui Shit/rocks.png" id="5_vydya"]
 [ext_resource type="Texture2D" uid="uid://bxym3wevxrkun" path="res://99_assets/Hunter Ui Shit/rat.png" id="6_42exy"]
 [ext_resource type="Texture2D" uid="uid://dgqdbyfqqpc4k" path="res://99_assets/Hunter Ui Shit/tree.png" id="7_vydya"]
-[ext_resource type="Texture2D" uid="uid://da5eq61td6tbb" path="res://99_assets/Hunter Ui Shit/rock.png" id="8_wc2x8"]
 [ext_resource type="Texture2D" uid="uid://b546lbcdcagx3" path="res://99_assets/Hunter Ui Shit/Portal.png" id="9_cca6d"]
 
 [node name="HowToPlay" type="Control"]
@@ -119,7 +119,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("8_wc2x8")
+texture = ExtResource("5_vydya")
 expand_mode = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]

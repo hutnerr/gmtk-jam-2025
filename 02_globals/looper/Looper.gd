@@ -9,6 +9,7 @@ var loopLimit: int
 var startable: bool = true
 var currentLoopId: int = 0
 var currentIndex: int
+var currentLevel: int
 
 func addCommand(command: BaseCommand, index: int) -> bool:
 	# FIXME: error handling
@@ -103,6 +104,7 @@ func clearCommands() -> void:
 	currentIndex = -1
 	commands = []
 
-func loadNewLevel(loopLimit: int) -> void:
+func loadNewLevel(loopLimit: int, levelNum: int) -> void:
 	self.loopLimit = loopLimit
+	self.currentLevel = levelNum
 	clearCommands()

@@ -52,7 +52,7 @@ func _ready() -> void:
 	var level = get_tree().current_scene.get_node("BaseLevel")
 	levelInfoLabel.text += level.levelString
 	loopLimitLabel.text += str(level.loopLimit)
-	Looper.loadNewLevel(level.loopLimit)
+	Looper.loadNewLevel(level.loopLimit, level.levelNum)
 	playerRef.rotatedDirection.connect(onRotationApplied)
 
 func onRotationApplied(rotationDeg: int) -> void:
