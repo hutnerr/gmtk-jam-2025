@@ -1,6 +1,6 @@
 [gd_scene load_steps=98 format=3 uid="uid://dwwem77mig6gw"]
 
-[ext_resource type="Script" uid="uid://jn1b5bw7tdpj" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
+[ext_resource type="Script" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="1_jc6x1"]
 [ext_resource type="Texture2D" uid="uid://bmec8oh4ixpws" path="res://99_assets/sprites/cutscene/Cutscene Hills.png" id="2_cxkvq"]
