@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cluwwjje6p6af"]
+[gd_scene load_steps=7 format=4 uid="uid://dmbkggkh44n8f"]
 
 [ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_qn2lv"]
 [ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_6wqwi"]
@@ -16,8 +16,8 @@ tile_set = ExtResource("1_qn2lv")
 [node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_6wqwi")]
 gameObjects = NodePath("../GameObjects")
 loopLimit = 5
-levelString = "Eleven"
-levelNum = 11
+levelString = "Four"
+levelNum = 4
 
 [node name="GameObjects" type="Node" parent="."]
 

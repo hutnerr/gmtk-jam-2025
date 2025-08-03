@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://b8wfx8o5tb8va"]
+[gd_scene load_steps=6 format=4 uid="uid://3aaicvwolnvh"]
 
 [ext_resource type="TileSet" uid="uid://df5ilx8st82u" path="res://99_resources/art-tileset.tres" id="1_i7cdg"]
 [ext_resource type="PackedScene" uid="uid://c50d8nrf0ayry" path="res://05_levels/base-level/BaseLevel.tscn" id="2_jcge2"]
 [ext_resource type="PackedScene" uid="uid://dfmwu30ysrsa3" path="res://03_objects/player/player.tscn" id="3_xy5hj"]
 [ext_resource type="PackedScene" uid="uid://c1ajkb3p20rlk" path="res://03_objects/wall/Wall.tscn" id="4_i3me5"]
-[ext_resource type="PackedScene" uid="uid://cmlv12ok276x4" path="res://03_objects/teleporter/SceneTeleporter.tscn" id="5_jcge2"]
+[ext_resource type="PackedScene" path="res://03_objects/teleporter/SceneTeleporter.tscn" id="5_jcge2"]
 
 [node name="LevelTP" type="Node2D"]
 
