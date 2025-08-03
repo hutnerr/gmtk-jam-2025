@@ -11,6 +11,7 @@ const FAIL_SFX: String = "res://99_assets/music/04_sack_open_1.wav"
 const PORTAL_SFX: String = "res://99_assets/music/portal.wav"
 const ROTATION_SFX: String = "res://99_assets/music/beltHandle2.ogg"
 const WALLHIT_SFX: String = "res://99_assets/music/dropLeather.ogg"
+const ENEMYDEAD_SFX: String = "res://99_assets/music/24_orc_death_spin.wav"
 
 @onready var menuMusic: AudioStream = preload(MENU_MUSIC)
 @onready var levelMusic: AudioStream = preload(LEVEL_MUSIC)
@@ -20,6 +21,7 @@ const WALLHIT_SFX: String = "res://99_assets/music/dropLeather.ogg"
 @onready var portalSFX: AudioStream = preload(PORTAL_SFX)
 @onready var rotationSFX: AudioStream = preload(ROTATION_SFX)
 @onready var wallHitSFX: AudioStream = preload(WALLHIT_SFX)
+@onready var enemyDeadSFX: AudioStream = preload(ENEMYDEAD_SFX)
 
 @onready var musicPlayer: AudioStreamPlayer = $MusicPlayer
 @onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
@@ -61,6 +63,10 @@ func playPortalSFX() -> void:
 
 func playRotationSFX() -> void:
 	SFXPlayer.stream = rotationSFX
+	SFXPlayer.play()
+
+func playEnemyDeadSFX() -> void:
+	SFXPlayer.stream = enemyDeadSFX
 	SFXPlayer.play()
 
 func playWallHitSFX() -> void:

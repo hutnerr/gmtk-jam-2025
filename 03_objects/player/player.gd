@@ -19,15 +19,14 @@ func getMovementDistance():
 func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overlapCell: Vector2i) -> Vector2i:
 	match overlappingObj.type:
 		GridObject.ObjectType.ENEMY:
-			# Check if enemy is already dead
 			if overlapCell in Gridleton.deadEnemies:
-				return overlapCell  # Move through dead enemy normally
+				return overlapCell
 			else:
 				var success = Gridleton.killEnemy(overlapCell)
 				if success:
-					return overlapCell  # Successfully killed, move to cell
+					return overlapCell 
 				else:
-					return currentPosition  # Failed to kill (shouldn't happen?)
+					return currentPosition
 		GridObject.ObjectType.WALL:
 			return currentPosition # stay where we are
 		GridObject.ObjectType.TELEPORTER:
@@ -41,10 +40,7 @@ func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overla
 
 func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	var animStarterText = "Nonchalant Move "
-	
-	print(Gridleton.gridObjects)
-	
-	# Check if this turn belongs to a cancelled loop
+		
 	if loopId != -1 and Looper.currentLoopId != loopId:
 		print("Turn cancelled - wrong loop ID")
 		emit_signal("turnCompleted")
@@ -59,13 +55,13 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	
 	var overlapObject = Gridleton.findGridObjectByPosition(newPosition)
 	
-	# Get the actual world direction for animation
 	var currentPosition: Vector2i = gridPos
 	var actualDirection: Vector2i = movementComponent.transformDirection(command.direction)
 	var directionString: String = movementComponent.directionToString(actualDirection)
 	
 	var playPortal = false
 	var playHitWall = false
+	var playKilledEnemy = false
 	var overlapNewPosition: Vector2i = newPosition
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId) and overlapObject:
 		
@@ -78,9 +74,10 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		match overlapObject.type:
 			GridObject.ObjectType.ENEMY:
 				if enemyAlreadyDead:
-					animStarterText = "Nonchalant Move "  # Enemy was already dead
+					animStarterText = "Nonchalant Move "
 				else:
-					animStarterText = "Move & Attack "  # Enemy was alive, we attacked it
+					animStarterText = "Move & Attack "
+					playKilledEnemy = true
 			GridObject.ObjectType.WALL:
 				animStarterText = null
 				playHitWall = true
@@ -90,9 +87,12 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	
 	if animStarterText and not isAFuckinRotateThing(command):
 		animPlayer.play(animStarterText + directionString)
+		#if playKilledEnemy:
+			#AudiManny.playEnemyDeadSFX()
 		await animPlayer.animation_finished
 		if playPortal:
 			AudiManny.playPortalSFX()
+
 	else:
 		if playHitWall:
 			AudiManny.playWallHitSFX()
@@ -118,8 +118,3 @@ func playMyIdle():
 func imBeingToldToStop():
 	animPlayer.play("RESET")
 	movementComponent.currentDirection = Vector2i(1, 0)
-# looper gives next step
-# take turn calls the step
-# does the movement
-# look at gridleton and figure out what we're going to collide with
-# based on this colission, we do something

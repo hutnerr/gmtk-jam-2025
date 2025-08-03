@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfl2d7ijythod"]
+[gd_scene load_steps=11 format=3 uid="uid://cfl2d7ijythod"]
 
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_3b55p"]
 [ext_resource type="Script" uid="uid://d3k6ca78mmo0b" path="res://01_user-interface/puzzle-menu/puzzle_menu.gd" id="2_ss7uf"]
@@ -14,6 +14,15 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.941176, 0.964706, 0.941176, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1ax5"]
+load_path = "res://.godot/imported/90.png-f80f55f4d10f490469a6d7391943ad0d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3628w"]
+load_path = "res://.godot/imported/180.png-c952458b5b405ec1dd3c2bb5b2637e72.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wuhft"]
+load_path = "res://.godot/imported/270.png-830f93f679be14984821919224fb9d97.ctex"
 
 [node name="PuzzleMenu" type="Control"]
 light_mask = 0
@@ -182,7 +191,8 @@ size_flags_vertical = 6
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "R90"
+text = "90"
+icon = SubResource("CompressedTexture2D_l1ax5")
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R90Button"]
 script = ExtResource("4_3xwnf")
@@ -196,7 +206,8 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "R180"
+text = "180"
+icon = SubResource("CompressedTexture2D_3628w")
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R180Button"]
 script = ExtResource("4_3xwnf")
@@ -210,7 +221,8 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "R270"
+text = "270"
+icon = SubResource("CompressedTexture2D_wuhft")
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R270Button"]
 script = ExtResource("4_3xwnf")

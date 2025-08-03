@@ -10,13 +10,9 @@ func _ready() -> void:
 	hitbox.area_entered.connect(onAreaEntered)
 	if enemySprite:
 		sprite.play(enemySprite)
-		
-	
-
-
-
 
 # Should play some sort of death animation, then connect that to this invisibility thing
 func onAreaEntered(area):
+	AudiManny.playEnemyDeadSFX()
 	if self.is_visible_in_tree():
 		self.visible = false

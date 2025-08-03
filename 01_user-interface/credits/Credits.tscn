@@ -168,7 +168,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 text = "Special Thanks:
-Sam, May, Abi, Lily
+Sam, May, Abi, Lily, Matt
 "
 horizontal_alignment = 1
 vertical_alignment = 1
