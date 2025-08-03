@@ -244,7 +244,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="PlayButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(58, 32)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -262,7 +262,7 @@ script = ExtResource("3_n7xt4")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="StopButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
