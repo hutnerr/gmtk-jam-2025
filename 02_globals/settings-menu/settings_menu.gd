@@ -34,8 +34,7 @@ func onMainMenuButtonPressed() -> void:
 	toggleVisible()
 	mainMenuButtonRequest.emit()
 	SceneTransitioner.change_scene(MAIN_PATH)
-	# FIXME: clean up this shite 
-	#AudiManny.playMenuMusic()
+	AudiManny.playMenuMusic()
 	Looper.stopLoop()
 	Looper.clearCommands()
 	

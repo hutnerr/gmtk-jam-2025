@@ -1,7 +1,9 @@
 extends Node
 
 const MENU_MUSIC: String = "res://99_assets/music/main-temp.wav"
-#const LEVEL_MUSIC: String = "res://99_assets/music/THE_FIELNDS.mp3"
+#const MENU_MUSIC: String = "res://99_assets/music/guitar-mainloop.wav"
+#const MENU_MUSIC: String = "res://99_assets/music/guitar-start.wav"
+const LEVEL_MUSIC: String = "res://99_assets/music/final.wav"
 
 const HOVER_SFX: String = "res://99_assets/music/bookOpen.ogg"
 const PRESS_SFX: String = "res://99_assets/music/bookFlip2.ogg"
@@ -11,7 +13,7 @@ const ROTATION_SFX: String = "res://99_assets/music/beltHandle2.ogg"
 const WALLHIT_SFX: String = "res://99_assets/music/dropLeather.ogg"
 
 @onready var menuMusic: AudioStream = preload(MENU_MUSIC)
-#@onready var levelMusic: AudioStream = preload(LEVEL_MUSIC)
+@onready var levelMusic: AudioStream = preload(LEVEL_MUSIC)
 @onready var hoverSFX: AudioStream = preload(HOVER_SFX)
 @onready var pressSFX: AudioStream = preload(PRESS_SFX)
 @onready var failSFX: AudioStream = preload(FAIL_SFX)
@@ -29,16 +31,15 @@ func _ready() -> void:
 	musicPlayer.finished.connect(onFinished)
 
 func playMenuMusic() -> void:
+	musicPlayer.stop()
 	musicPlayer.stream_paused = true
 	musicPlayer.stream = menuMusic
 	musicPlayer.play()
 	
 func playLevelMusic() -> void:
-	# FIXME: put this back when we make the other soundtrack
-	pass
-	#musicPlayer.stream_paused = true
-	#musicPlayer.stream = levelMusic
-	#musicPlayer.play()
+	musicPlayer.stream_paused = true
+	musicPlayer.stream = levelMusic
+	musicPlayer.play()
 
 func playPressSFX() -> void:
 	SFXPlayer.stream = pressSFX
