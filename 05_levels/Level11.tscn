@@ -64,13 +64,13 @@ position = Vector2(668, 286)
 position = Vector2(664, 220)
 
 [node name="Wall23" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-position = Vector2(474, 220)
+position = Vector2(475, 208)
 
 [node name="Wall30" parent="GameObjects" instance=ExtResource("5_gyu8e")]
 position = Vector2(606, 223)
 
 [node name="Wall29" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-position = Vector2(419, 151)
+position = Vector2(340, 153)
 
 [node name="Wall25" parent="GameObjects" instance=ExtResource("5_gyu8e")]
 position = Vector2(413, 281)
@@ -112,7 +112,7 @@ position = Vector2(219, -39)
 position = Vector2(153, -37)
 
 [node name="Wall31" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-position = Vector2(345, 91)
+position = Vector2(482, 89)
 
 [node name="Wall32" parent="GameObjects" instance=ExtResource("5_gyu8e")]
 position = Vector2(414, 34)
