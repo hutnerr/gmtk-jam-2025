@@ -14,7 +14,7 @@ tile_set = ExtResource("1_3lut5")
 
 [node name="BaseLevel" parent="." node_paths=PackedStringArray("gameObjects") instance=ExtResource("2_n44no")]
 gameObjects = NodePath("../GameObjects")
-loopLimit = 5
+loopLimit = 4
 levelString = "Six"
 levelNum = 6
 
