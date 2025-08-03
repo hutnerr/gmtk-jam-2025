@@ -27,21 +27,18 @@ const ENEMYDEAD_SFX: String = "res://99_assets/music/enemy-kill-final.wav"
 @onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
 
 func _ready() -> void:
-	return
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	musicPlayer.stream = menuMusic
 	musicPlayer.play()
 	musicPlayer.finished.connect(onFinished)
 
 func playMenuMusic() -> void:
-	return
 	musicPlayer.stop()
 	musicPlayer.stream_paused = true
 	musicPlayer.stream = menuMusic
 	musicPlayer.play()
 	
 func playLevelMusic() -> void:
-	return
 	musicPlayer.stream_paused = true
 	musicPlayer.stream = levelMusic
 	musicPlayer.play()

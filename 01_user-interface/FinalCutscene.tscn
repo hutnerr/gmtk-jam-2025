@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_cxkvq"]
 [ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="6_cxkvq"]
 [ext_resource type="AudioStream" uid="uid://rlxj3874ufj3" path="res://99_assets/music/guitar-start.wav" id="8_6wa22"]
-[ext_resource type="Script" uid="uid://dw2mpu4q2qskb" path="res://01_user-interface/label.gd" id="8_i3gaw"]
+[ext_resource type="Script" path="res://01_user-interface/label.gd" id="8_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://bskg8rgiqyp8s" path="res://99_assets/music/guitar-mainloop.wav" id="9_nk1kp"]
 [ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="10_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="11_2qnml"]
@@ -140,7 +140,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_2ainb"]
 resource_name = "final-cutscene"
-length = 32.5
+length = 25.26
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -161,7 +161,7 @@ tracks/1/path = NodePath("AnimationPlayer/Player:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 15.1666, 15.8666, 16.5333, 21.9),
+"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 15.1666, 15.8666, 16.5333, 25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"Walking", &"DefNotIdle", &"Whip It Out", &"Stanced", &"Strike", &"Stanced", &"Whip It In", &"Sleepin"]
@@ -223,10 +223,10 @@ tracks/6/path = NodePath("Guitar-start:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 18.0333, 25.26),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 18.0333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true, true]
+"values": [false, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
