@@ -1,5 +1,7 @@
 extends GridObject
 
+signal rotatedDirection(rotationDeg: int)
+
 @onready var animPlayer: AnimationPlayer = $Animations
 
 var defaultPosition
@@ -43,6 +45,12 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 		return
 		
 	var newPosition: Vector2i = movementComponent.getNewPosition(command)
+	
+	# then we've rotated at this point in time, therefore emit the signal with
+	# the integer of rotation that we've done
+	if command.rotationDegrees != 0:
+		rotatedDirection.emit(command.rotationDegrees)
+	
 	var overlapObject = Gridleton.findGridObjectByPosition(newPosition)
 	
 	# Get the actual world direction for animation
@@ -51,17 +59,15 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	var directionString: String = movementComponent.directionToString(actualDirection)
 	
 	var playPortal = false
+	var playHitWall = false
 	var overlapNewPosition: Vector2i = newPosition
 	if Looper.looping and (loopId == -1 or Looper.currentLoopId == loopId) and overlapObject:
 		
-		# Check enemy state BEFORE calling handleOverlap
 		var enemyAlreadyDead = false
 		if overlapObject.type == GridObject.ObjectType.ENEMY:
 			enemyAlreadyDead = newPosition in Gridleton.deadEnemies
 		
-		# Now handle the overlap (which might kill the enemy)
 		overlapNewPosition = handleOverlap(overlapObject, currentPosition, newPosition)
-		
 		
 		match overlapObject.type:
 			GridObject.ObjectType.ENEMY:
@@ -71,16 +77,19 @@ func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 					animStarterText = "Move & Attack "  # Enemy was alive, we attacked it
 			GridObject.ObjectType.WALL:
 				animStarterText = null
+				playHitWall = true
 			GridObject.ObjectType.TELEPORTER:
 				playPortal = true
 				animStarterText = "Nonchalant Move "
 	
-	if animStarterText and not isAFuckinRotateThing(command):		
+	if animStarterText and not isAFuckinRotateThing(command):
 		animPlayer.play(animStarterText + directionString)
 		await animPlayer.animation_finished
 		if playPortal:
 			AudiManny.playPortalSFX()
 	else:
+		if playHitWall:
+			AudiManny.playWallHitSFX()
 		animPlayer.play("Searching")
 		await animPlayer.animation_finished
 		

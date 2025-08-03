@@ -38,6 +38,8 @@ extends Control
 	rotate270Button,
 ]
 
+@onready var playerRef = get_parent().get_parent().get_node("GameObjects").get_node("Player")
+
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
 	stopButton.pressed.connect(onStopButtonPressed)
@@ -50,6 +52,93 @@ func _ready() -> void:
 	levelInfoLabel.text += level.levelString
 	loopLimitLabel.text += str(level.loopLimit)
 	Looper.loadNewLevel(level.loopLimit)
+	playerRef.rotatedDirection.connect(onRotationApplied)
+
+func onRotationApplied(rotationDeg: int) -> void:
+	# change the text of the labels in the loopItemContainer
+	for labelItem in loopItemContainer.get_children():
+		labelItem.text = changeTextForRotation(labelItem.text, rotationDeg)
+	AudiManny.playRotationSFX()
+
+func changeTextForRotation(originalText: String, rotationDeg: int) -> String:
+	# Extract the number and current direction from the label text
+	var parts = originalText.split(": ")
+	if parts.size() != 2:
+		return originalText  # Return unchanged if format is unexpected
+	
+	var number = parts[0]
+	var currentDirection = parts[1]
+	var newDirection = ""
+	
+	# Apply rotation transformation based on current direction and rotation amount
+	match rotationDeg:
+		90:
+			match currentDirection:
+				"Right":
+					newDirection = "Up"
+				"Up":
+					newDirection = "Left"
+				"Left":
+					newDirection = "Down"
+				"Down":
+					newDirection = "Right"
+				"Rotation90":
+					newDirection = "Rotation180"
+				"Rotation180":
+					newDirection = "Rotation270"
+				"Rotation270":
+					newDirection = "Rotation0"
+				"Rotation0":
+					newDirection = "Rotation90"
+				_:
+					newDirection = currentDirection  # Keep unchanged for unknown directions
+		
+		180:
+			match currentDirection:
+				"Right":
+					newDirection = "Left"
+				"Left":
+					newDirection = "Right"
+				"Up":
+					newDirection = "Down"
+				"Down":
+					newDirection = "Up"
+				"Rotation90":
+					newDirection = "Rotation270"
+				"Rotation180":
+					newDirection = "Rotation0"
+				"Rotation270":
+					newDirection = "Rotation90"
+				"Rotation0":
+					newDirection = "Rotation180"
+				_:
+					newDirection = currentDirection
+		
+		270:
+			match currentDirection:
+				"Right":
+					newDirection = "Down"
+				"Down":
+					newDirection = "Left"
+				"Left":
+					newDirection = "Up"
+				"Up":
+					newDirection = "Right"
+				"Rotation90":
+					newDirection = "Rotation0"
+				"Rotation180":
+					newDirection = "Rotation90"
+				"Rotation270":
+					newDirection = "Rotation180"
+				"Rotation0":
+					newDirection = "Rotation270"
+				_:
+					newDirection = currentDirection
+		
+		_:
+			newDirection = currentDirection  # No change for invalid rotation values
+	
+	return number + ": " + newDirection
 
 func onCommandButtonPressed(command: BaseCommand.Commands) -> void:
 	var cmd: BaseCommand = BaseCommand.createCommand(command)
@@ -126,6 +215,11 @@ func onStopButtonPressed() -> void:
 	playButton.disabled = false
 	stopButton.disabled = true
 	checkForCMDButtonsDisabled()
+	# search through the Looper.commands and render them all
+	for child in loopItemContainer.get_children():
+		child.queue_free()
+	for command in Looper.commands:
+		renderCommand(command)
 
 func checkForCMDButtonsDisabled() -> void:
 	if len(Looper.commands) == Looper.loopLimit:
