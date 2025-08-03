@@ -63,15 +63,12 @@ visible = false
 position = Vector2(605, 416)
 
 [node name="Wall36" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
 position = Vector2(674, 347)
 
 [node name="Wall10" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
-position = Vector2(668, 286)
+position = Vector2(675, 283)
 
 [node name="Wall11" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
 position = Vector2(664, 220)
 
 [node name="Wall23" parent="GameObjects" instance=ExtResource("5_gyu8e")]
@@ -96,15 +93,12 @@ position = Vector2(413, 281)
 position = Vector2(412, 344)
 
 [node name="Wall12" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
 position = Vector2(662, 156)
 
 [node name="Wall13" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
 position = Vector2(667, 89)
 
 [node name="Wall14" parent="GameObjects" instance=ExtResource("5_gyu8e")]
-visible = false
 position = Vector2(665, 24)
 
 [node name="Wall15" parent="GameObjects" instance=ExtResource("5_gyu8e")]
