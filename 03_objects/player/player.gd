@@ -33,6 +33,7 @@ func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overla
 			return overlappingObj.destination.gridPos
 		GridObject.ObjectType.SCENE_TELEPORTER:
 			print("we want to change this mf scene")
+			AudiManny.stop()
 			SceneTransitioner.change_scene(overlappingObj.path)
 			return Vector2i.ZERO
 		_:

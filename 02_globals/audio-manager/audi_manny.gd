@@ -79,3 +79,7 @@ func playWallHitSFX() -> void:
 
 func onFinished() -> void:
 	musicPlayer.play()
+	
+func stop() -> void:
+	SFXPlayer.stop()
+	musicPlayer.stop()
