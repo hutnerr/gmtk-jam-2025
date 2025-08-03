@@ -151,9 +151,6 @@ position = Vector2(668, 286)
 [node name="Wall29" parent="GameObjects" instance=ExtResource("4_41el6")]
 position = Vector2(551, 92)
 
-[node name="Wall34" parent="GameObjects" instance=ExtResource("4_41el6")]
-position = Vector2(413, 87)
-
 [node name="Wall35" parent="GameObjects" instance=ExtResource("4_41el6")]
 position = Vector2(348, 11)
 
