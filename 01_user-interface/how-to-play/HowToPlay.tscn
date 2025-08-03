@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://fg7vl58y3nn0" path="res://99_resources/main_theme.tres" id="1_74mi8"]
 [ext_resource type="Script" uid="uid://delq3qqr4iivg" path="res://01_user-interface/how-to-play/how_to_play.gd" id="1_l6cnn"]
 [ext_resource type="Script" uid="uid://wtkip6i1f07w" path="res://01_user-interface/elements/on-hover-anim-component/on_hover_animation_component.gd" id="3_7tnm3"]
+[ext_resource type="Texture2D" uid="uid://crjhh6du1nhwk" path="res://99_assets/sprites/centaur/Single Centaur.png" id="3_vydya"]
 [ext_resource type="Script" uid="uid://bei2cvpc8wqtr" path="res://01_user-interface/elements/sfx-component/sfx_component.gd" id="4_tl5ka"]
 [ext_resource type="AudioStream" uid="uid://c7y23np1b08dh" path="res://99_assets/music/17_orc_atk_sword_1.wav" id="5_tl5ka"]
 [ext_resource type="Texture2D" uid="uid://b7vnhkwypch1y" path="res://99_assets/Hunter Ui Shit/rocks.png" id="5_vydya"]
-[ext_resource type="Texture2D" uid="uid://bxym3wevxrkun" path="res://99_assets/Hunter Ui Shit/rat.png" id="6_42exy"]
 [ext_resource type="Texture2D" uid="uid://dgqdbyfqqpc4k" path="res://99_assets/Hunter Ui Shit/tree.png" id="7_vydya"]
 [ext_resource type="Texture2D" uid="uid://b546lbcdcagx3" path="res://99_assets/Hunter Ui Shit/Portal.png" id="9_cca6d"]
 
@@ -82,11 +82,11 @@ alignment = 1
 layout_mode = 2
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("6_42exy")
+texture = ExtResource("3_vydya")
 expand_mode = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
@@ -136,7 +136,7 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
