@@ -1,9 +1,9 @@
 extends Control
 
-@onready var playButton: Button = $MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/PlayButton
+@onready var playButton: Button = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/PlayButton
 @onready var stopButton: Button = $MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/StopButton
 
-@onready var clearLoopButton: Button = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/ClearButton
+@onready var clearLoopButton: Button = $MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/ClearButton
 
 @onready var upButton: Button = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up/UpButton
 @onready var leftButton: Button = $MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/LeftButton

@@ -87,19 +87,20 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
 
-[node name="ClearButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin"]
+[node name="PlayButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 disabled = true
-text = "Clear Loop"
+text = "Play Loop"
 
-[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/ClearButton"]
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/PlayButton"]
 script = ExtResource("4_3xwnf")
 pressedStream = ExtResource("4_l1ax5")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
-[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/ClearButton"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin/PlayButton"]
 script = ExtResource("3_n7xt4")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
@@ -256,7 +257,7 @@ text = "Limit: "
 [node name="PlayStopMargin" type="MarginContainer" parent="MarginContainer/BaseContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 8
 
 [node name="PlayStopButtons" type="VBoxContainer" parent="MarginContainer/BaseContainer/PlayStopMargin"]
 layout_mode = 2
@@ -264,26 +265,26 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="PlayButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(117, 64)
+[node name="ClearButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
+custom_minimum_size = Vector2(117, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 36
 disabled = true
-text = "Run Loop"
+text = "Clear"
 
-[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/PlayButton"]
+[node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/ClearButton"]
 script = ExtResource("4_3xwnf")
 pressedStream = ExtResource("5_3xwnf")
 metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 
-[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/PlayButton"]
+[node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons/ClearButton"]
 script = ExtResource("3_n7xt4")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="StopButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(117, 0)
+custom_minimum_size = Vector2(117, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
