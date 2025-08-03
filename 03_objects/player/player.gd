@@ -97,9 +97,11 @@ func isAFuckinRotateThing(command):
 	#return command.rotation != 0
 	return (command.cmdName == "Rotate270") or (command.cmdName == "Rotate180") or (command.cmdName == "Rotate90") 
 	
+func playMyIdle():
+	$AnimatedSprite2D.play("idleLantern")
+	
 func imBeingToldToStop():
 	animPlayer.play("RESET")
-	$AnimatedSprite2D.play("idleLantern")
 	movementComponent.currentDirection = Vector2i(1, 0)
 # looper gives next step
 # take turn calls the step

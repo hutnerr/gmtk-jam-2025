@@ -62,6 +62,8 @@ func loadGridObjects(objects: Array[Node]) -> void:
 		object.gridPos = gridPos
 		object.global_position = gridPosToGlobalPos(gridPos)
 
+		if object.type == GridObject.ObjectType.PLAYER:
+			object.defaultPosition = object.global_position
 		gridObjects.append(object)
 
 	currentEnemies = enemyCount

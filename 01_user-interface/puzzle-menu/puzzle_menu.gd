@@ -102,8 +102,8 @@ func onClearLoopButtonPressed() -> void:
 	Looper.stopLoop()
 	Looper.clearCommands()
 	var player = get_parent().get_parent().get_node("GameObjects/Player")
-	player.imBeingToldToStop()
 	player.resetPosition()
+	player.imBeingToldToStop()
 	Gridleton.reloadGridObjects()
 	for child in loopItemContainer.get_children():
 		child.queue_free()

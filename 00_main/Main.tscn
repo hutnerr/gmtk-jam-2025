@@ -686,7 +686,7 @@ position = Vector2(306, 625)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WalkingPlayer"]
 position = Vector2(46, -36)
-scale = Vector2(5, 5.625)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_b7wva")
 autoplay = "default"
 
