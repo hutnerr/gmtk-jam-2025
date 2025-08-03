@@ -36,7 +36,8 @@ var levelsComplete = {
 	13 : false,
 	14 : false, 
 	15 : false, 
-	16 : false
+	16 : false,
+	17 : false # to prevent invalid accesses lol
 }
 
 signal sceneChanged
@@ -57,8 +58,8 @@ func nextLevel() -> void:
 	var currentLevel = get_tree().current_scene.name
 	await get_tree().create_timer(0.5).timeout # play after 2 secs
 	var level = get_tree().current_scene.get_node("BaseLevel")
-	print(level.levelNum)
-	levelsComplete[level.levelNum - 1] = true
+	print("Completed level: ", level.levelNum, " opening access to : ", level.levelNum + 1)
+	levelsComplete[level.levelNum + 1] = true # open up the next level
 	change_scene(nextLevelPath[level.levelString])
 	Looper.loadNewLevel(level.loopLimit, level.levelNum)
 	

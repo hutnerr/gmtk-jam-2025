@@ -28,8 +28,40 @@ func _ready() -> void:
 	closeBtn.pressed.connect(onCloseButtonPressed)
 
 	for level_num in SceneTransitioner.levelsComplete:
-		if SceneTransitioner.levelsComplete[level_num] and level_num >= 1 and level_num <= btns.size():
-			btns[level_num - 1].disabled = false
+		if SceneTransitioner.levelsComplete[level_num]:
+			match level_num:
+				1:
+					l1btn.disabled = false
+				2:
+					l2btn.disabled = false
+				3:
+					l3btn.disabled = false
+				4:
+					l4btn.disabled = false
+				5:
+					l5btn.disabled = false
+				6:
+					l6btn.disabled = false
+				7:
+					l7btn.disabled = false
+				8:
+					l8btn.disabled = false
+				9:
+					l9btn.disabled = false
+				10:
+					l10btn.disabled = false
+				11:
+					l11btn.disabled = false
+				12:
+					l12btn.disabled = false
+				13:
+					l13btn.disabled = false
+				14:
+					l14btn.disabled = false
+				15:
+					l15btn.disabled = false
+				16:
+					l16btn.disabled = false
 
 func onLevelButtonPressed(button: Button) -> void:
 	var btnNum = button.text.strip_edges()  # Assuming button text is "1", "2", etc.
