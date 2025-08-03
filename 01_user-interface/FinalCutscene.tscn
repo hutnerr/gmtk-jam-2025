@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_cxkvq"]
 [ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="6_cxkvq"]
 [ext_resource type="AudioStream" uid="uid://rlxj3874ufj3" path="res://99_assets/music/guitar-start.wav" id="8_6wa22"]
-[ext_resource type="Script" path="res://01_user-interface/label.gd" id="8_i3gaw"]
+[ext_resource type="Script" uid="uid://dw2mpu4q2qskb" path="res://01_user-interface/label.gd" id="8_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://bskg8rgiqyp8s" path="res://99_assets/music/guitar-mainloop.wav" id="9_nk1kp"]
 [ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="10_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="11_2qnml"]
