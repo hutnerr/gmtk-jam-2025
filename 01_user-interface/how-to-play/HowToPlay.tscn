@@ -36,95 +36,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
+theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
-text = "Forgotten Paths is a puzzle game where you define
-a sequence of commands to repeat with the goal
-of killing the enemies located in the level.
-Enemies are slain upon entering their grid space.
+text = "Forgotten Paths is a puzzle game where you define a sequence of commands to repeat with the goal of killing the enemies located in the level. Enemies are slain upon entering their grid space.
 
-For example, if your loop is [RIGHT, RIGHT, UP], 
-you will go two blocks right, then up. Then it will repeat
-and you will go two blocks right then up again.
+For example, if your loop is [RIGHT, RIGHT, UP], you will go two blocks right, then up. Then it will repeat and you will go two blocks right then up again.
 
-The sequence that you define will repeat until 
-either you complete the level, get stuck in your loop,
-or manually stop it to try again.
+The sequence that you define will repeat until either you complete the level, get stuck in your loop, or manually stop it to try again.
 
-Each level has a defined Loop Limit, which is the
-maximum amount of commands that can be used.
+Each level has a defined Loop Limit, which is the maximum amount of commands that can be used.
 
 You can open settings at any time using ESC. "
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 256
-theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 32
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 16
-
-[node name="LevelOneButton" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(164, 48)
-layout_mode = 2
-text = "Level One"
-
-[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
-script = ExtResource("3_7tnm3")
-metadata/_custom_type_script = "uid://wtkip6i1f07w"
-
-[node name="SFXComponent" type="Node" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
-script = ExtResource("4_tl5ka")
-pressedStream = ExtResource("5_tl5ka")
-metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
-
-[node name="GoodBoyButton" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(164, 48)
-layout_mode = 2
-text = "Back to Main Menu"
-
-[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
-script = ExtResource("3_7tnm3")
-metadata/_custom_type_script = "uid://wtkip6i1f07w"
-
-[node name="SFXComponent" type="Node" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
-script = ExtResource("4_tl5ka")
-metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 3
+theme_override_constants/separation = 128
+alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -132,21 +89,24 @@ size_flags_vertical = 4
 texture = ExtResource("6_42exy")
 expand_mode = 1
 
-[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
-text = "Enemies must be slain to complete the level. Kill them by going into their grid space."
+text = "Enemies must be slain to complete the level."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -154,7 +114,7 @@ size_flags_vertical = 4
 texture = ExtResource("7_vydya")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -162,17 +122,20 @@ size_flags_vertical = 4
 texture = ExtResource("8_wc2x8")
 expand_mode = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
-text = "Rocks and Trees block your path. If your loop tries to walk into them, it will go onto the next in the sequence."
+text = "Rocks and Trees block your path. "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -180,28 +143,50 @@ size_flags_vertical = 4
 texture = ExtResource("9_cca6d")
 expand_mode = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
-text = "Teleporters will teleport you and your loop will continue from your new position."
+text = "Teleporters provide relocation."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 32
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(128, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 24
-text = "Rotations change your direction, which your loop will continue to move relative to. The direction arrow shows the current direction that the player is facing, which is equivalent to how \"Right\" will move.
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
 
-For example, if you go [RIGHT, R90], you will move right, then your direction will be rotate 90 degrees to face upwards. Now the upwards direction will be your new [RIGHT]."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+[node name="LevelOneButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 2
+text = "Level One"
+
+[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
+script = ExtResource("3_7tnm3")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/LevelOneButton"]
+script = ExtResource("4_tl5ka")
+pressedStream = ExtResource("5_tl5ka")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
+
+[node name="GoodBoyButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(164, 48)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="OnHoverAnimComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
+script = ExtResource("3_7tnm3")
+metadata/_custom_type_script = "uid://wtkip6i1f07w"
+
+[node name="SFXComponent" type="Node" parent="VBoxContainer/MarginContainer/VBoxContainer/GoodBoyButton"]
+script = ExtResource("4_tl5ka")
+metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
