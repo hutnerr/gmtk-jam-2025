@@ -57,7 +57,8 @@ func nextLevel() -> void:
 	var currentLevel = get_tree().current_scene.name
 	await get_tree().create_timer(0.5).timeout # play after 2 secs
 	var level = get_tree().current_scene.get_node("BaseLevel")
-	levelsComplete[level.levelNum] = true
+	print(level.levelNum)
+	levelsComplete[level.levelNum - 1] = true
 	change_scene(nextLevelPath[level.levelString])
 	Looper.loadNewLevel(level.loopLimit, level.levelNum)
 	

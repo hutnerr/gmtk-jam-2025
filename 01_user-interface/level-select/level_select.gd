@@ -29,7 +29,7 @@ func _ready() -> void:
 
 	for level_num in SceneTransitioner.levelsComplete:
 		if SceneTransitioner.levelsComplete[level_num] and level_num >= 1 and level_num <= btns.size():
-			btns[level_num].disabled = false
+			btns[level_num - 1].disabled = false
 
 func onLevelButtonPressed(button: Button) -> void:
 	var btnNum = button.text.strip_edges()  # Assuming button text is "1", "2", etc.
