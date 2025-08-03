@@ -32,11 +32,17 @@ func handleOverlap(overlappingObj: GridObject, currentPosition: Vector2i, overla
 			return currentPosition # stay where we are
 		GridObject.ObjectType.TELEPORTER:
 			return overlappingObj.destination.gridPos
+		GridObject.ObjectType.SCENE_TELEPORTER:
+			print("we want to change this mf scene")
+			SceneTransitioner.change_scene(overlappingObj.path)
+			return Vector2i.ZERO
 		_:
 			return currentPosition # stay where we are if all fails
 
 func takeTurn(command: BaseCommand, loopId: int = -1) -> void:
 	var animStarterText = "Nonchalant Move "
+	
+	print(Gridleton.gridObjects)
 	
 	# Check if this turn belongs to a cancelled loop
 	if loopId != -1 and Looper.currentLoopId != loopId:

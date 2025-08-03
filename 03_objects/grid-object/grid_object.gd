@@ -9,6 +9,7 @@ enum ObjectType {
 	ENEMY,
 	MOVING_ENEMY,
 	TELEPORTER,
+	SCENE_TELEPORTER
 }
 
 var type: ObjectType
