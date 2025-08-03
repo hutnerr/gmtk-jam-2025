@@ -30,109 +30,137 @@ position = Vector2(415, 37)
 position = Vector2(479, 227)
 
 [node name="Wall" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(158, 410)
 
 [node name="Wall2" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(227, 409)
 
 [node name="Wall3" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(296, 418)
 
 [node name="Wall4" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(361, 411)
 
 [node name="Wall5" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(415, 411)
 
 [node name="Wall6" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(494, 418)
 
 [node name="Wall7" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(558, 418)
 
 [node name="Wall8" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(605, 416)
 
 [node name="Wall9" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(614, 345)
+position = Vector2(534, 343)
 
 [node name="Wall36" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(674, 347)
 
 [node name="Wall10" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(668, 286)
 
 [node name="Wall11" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(664, 220)
 
 [node name="Wall12" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(662, 156)
 
 [node name="Wall13" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(667, 89)
 
 [node name="Wall14" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(665, 24)
 
 [node name="Wall15" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(603, -36)
 
 [node name="Wall16" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(546, -40)
 
 [node name="Wall17" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(478, -38)
 
 [node name="Wall18" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(415, -38)
 
 [node name="Wall19" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(346, -32)
 
 [node name="Wall20" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(279, -39)
 
 [node name="Wall21" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(219, -39)
 
 [node name="Wall22" parent="GameObjects" instance=ExtResource("5_fk30q")]
+visible = false
 position = Vector2(153, -37)
 
 [node name="Wall23" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(223, 28)
+visible = false
+position = Vector2(103, 27)
 
 [node name="Wall24" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(163, 88)
+visible = false
+position = Vector2(90, 92)
 
 [node name="Wall25" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(218, 154)
+position = Vector2(277, 34)
 
 [node name="Wall26" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(160, 158)
+visible = false
+position = Vector2(97, 156)
 
 [node name="Wall27" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(224, 219)
+position = Vector2(413, 95)
 
 [node name="Wall28" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(167, 217)
+visible = false
+position = Vector2(97, 220)
 
 [node name="Wall29" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(225, 273)
+position = Vector2(535, 25)
 
 [node name="Wall30" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(287, 285)
+position = Vector2(420, 210)
 
 [node name="Wall31" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(347, 346)
+position = Vector2(426, 152)
 
 [node name="Wall32" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(291, 344)
+position = Vector2(232, 182)
 
 [node name="Wall33" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(229, 343)
+position = Vector2(280, 286)
 
 [node name="Wall34" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(159, 349)
+visible = false
+position = Vector2(93, 350)
 
 [node name="Wall35" parent="GameObjects" instance=ExtResource("5_fk30q")]
-position = Vector2(161, 285)
+visible = false
+position = Vector2(100, 289)

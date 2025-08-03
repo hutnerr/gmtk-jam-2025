@@ -80,6 +80,12 @@ position = Vector2(475, 208)
 [node name="Wall30" parent="GameObjects" instance=ExtResource("5_gyu8e")]
 position = Vector2(606, 223)
 
+[node name="Wall37" parent="GameObjects" instance=ExtResource("5_gyu8e")]
+position = Vector2(615, 92)
+
+[node name="Wall38" parent="GameObjects" instance=ExtResource("5_gyu8e")]
+position = Vector2(284, 289)
+
 [node name="Wall29" parent="GameObjects" instance=ExtResource("5_gyu8e")]
 position = Vector2(340, 153)
 
