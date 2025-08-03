@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dwwem77mig6gw"]
+[gd_scene load_steps=105 format=3 uid="uid://dwwem77mig6gw"]
 
 [ext_resource type="Script" uid="uid://jn1b5bw7tdpj" path="res://01_user-interface/final_cutscene.gd" id="1_2ainb"]
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="4_cxkvq"]
 [ext_resource type="FontFile" uid="uid://dvpfcpnxtcknx" path="res://99_assets/fonts/PixelPurl.ttf" id="6_cxkvq"]
 [ext_resource type="AudioStream" uid="uid://rlxj3874ufj3" path="res://99_assets/music/guitar-start.wav" id="8_6wa22"]
+[ext_resource type="Script" uid="uid://dw2mpu4q2qskb" path="res://01_user-interface/label.gd" id="8_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://bskg8rgiqyp8s" path="res://99_assets/music/guitar-mainloop.wav" id="9_nk1kp"]
 [ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="10_i3gaw"]
 [ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="11_2qnml"]
@@ -992,27 +993,25 @@ zoom = Vector2(6, 6)
 follow_viewport_enabled = true
 
 [node name="Label" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 333.0
-offset_top = -1.0
-offset_right = 437.0
-offset_bottom = 167.0
+offset_left = 240.0
+offset_top = 2.0
+offset_right = 365.0
+offset_bottom = 122.0
 theme_override_fonts/normal_font = ExtResource("6_cxkvq")
 bbcode_enabled = true
-text = "[font_size=32]Credits:[/font_size]
-
-[font_size=24]Developers:[/font_size]
+text = "[font_size=16]Developers:[/font_size]
 Hunter Baker
 Jakob Bennie
 
-[font_size=24]Special Thanks:[/font_size]
-Sam
-May
-Abi
-Lily
-Matt"
+[font_size=16]Special Thanks:[/font_size]
+Sam, May, Abi
+Lily, Matt
+-"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("8_i3gaw")
 
 [node name="Darkness" type="DirectionalLight2D" parent="."]
 z_index = 101
