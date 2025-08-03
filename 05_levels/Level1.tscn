@@ -122,6 +122,34 @@ position = Vector2(672, 94)
 [node name="Wall33" parent="GameObjects" instance=ExtResource("4_l6t1r")]
 position = Vector2(220, 215)
 
+[node name="Wall36" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(93, 155)
+
+[node name="Wall37" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(96, 219)
+
+[node name="Wall38" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(101, 279)
+
+[node name="Wall39" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(100, 345)
+
+[node name="Wall40" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(96, 90)
+
+[node name="Wall41" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(100, 26)
+
+[node name="Wall42" parent="GameObjects" instance=ExtResource("4_l6t1r")]
+visible = false
+position = Vector2(156, 26)
+
 [node name="Wall34" parent="GameObjects" instance=ExtResource("4_l6t1r")]
 position = Vector2(542, 348)
 
