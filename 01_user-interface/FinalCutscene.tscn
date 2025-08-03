@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dwwem77mig6gw"]
+[gd_scene load_steps=96 format=3 uid="uid://dwwem77mig6gw"]
 
 [ext_resource type="Texture2D" uid="uid://bh5ye7mv5mhg7" path="res://99_assets/sprites/cutscene/Cutscene Sky.png" id="1_4n812"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="1_jc6x1"]
@@ -72,6 +72,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_2ainb"]
 resource_name = "final-cutscene"
 length = 30.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,7 +83,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 7.03333, 10.0333, 13.1667, 13.3),
 "transitions": PackedFloat32Array(1, 1, 1, 9.51364, 1),
 "update": 0,
-"values": [Vector2(45, -35), Vector2(280, -35), Vector2(350, -35), Vector2(350, -35), Vector2(410, -35)]
+"values": [Vector2(45, -35), Vector2(280, -35), Vector2(350, -35), Vector2(350, -35), Vector2(414, -35)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -91,10 +92,10 @@ tracks/1/path = NodePath("AnimationPlayer/Player:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 13.0333, 13.7333, 16.0667, 20.0667),
+"times": PackedFloat32Array(0, 10.0333, 11.5, 11.9667, 13.0333, 13.7333, 14.4, 21.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"Walking", &"DefNotIdle", &"Whip It Out", &"Stanced", &"Strike", &"Stanced", &"Slackin", &"Sleepin"]
+"values": [&"Walking", &"DefNotIdle", &"Whip It Out", &"Stanced", &"Strike", &"Stanced", &"Whip It In", &"Sleepin"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -123,26 +124,28 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Player/PointLight2D:energy")
+tracks/4/path = NodePath("AnimationPlayer/LOOPER Player:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/LOOPER Player:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.0333333, 13.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(16),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Slackin", 1.0, false],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d43sx"]
@@ -461,6 +464,10 @@ region = Rect2(1472, 0, 32, 32)
 atlas = ExtResource("1_jc6x1")
 region = Rect2(1504, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4bi5"]
+atlas = ExtResource("1_jc6x1")
+region = Rect2(1536, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ox6p5"]
 atlas = ExtResource("1_jc6x1")
 region = Rect2(1120, 0, 32, 32)
@@ -731,6 +738,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1a84x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4bi5")
 }],
 "loop": false,
 "name": &"Whip It In",
@@ -830,7 +840,7 @@ flickerMax = 1.5
 baseFlickerTime = 0.5
 
 [node name="LOOPER Player" type="AnimatedSprite2D" parent="AnimationPlayer"]
-position = Vector2(409, -36)
+position = Vector2(414, -36)
 sprite_frames = SubResource("SpriteFrames_3oafv")
 animation = &"new_animation"
 
