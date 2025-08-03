@@ -16,11 +16,15 @@ border_width_bottom = 1
 border_color = Color(0.941176, 0.964706, 0.941176, 1)
 
 [node name="PuzzleMenu" type="Control"]
+light_mask = 0
+z_index = 8
 custom_minimum_size = Vector2(640, 383)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 383.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
 theme = ExtResource("1_3b55p")
@@ -51,7 +55,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer"]
+custom_minimum_size = Vector2(253, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "Loop"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -75,7 +81,7 @@ theme_override_constants/margin_right = 16
 
 [node name="ClearButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/ClearBtnMargin"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 48
 disabled = true
 text = "Clear Loop"
 
@@ -104,10 +110,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="UpButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up"]
-custom_minimum_size = Vector2(56, 0)
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Up"
 
 [node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Up/UpButton"]
@@ -122,9 +128,10 @@ metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 layout_mode = 2
 
 [node name="LeftButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight"]
+custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Left"
 
 [node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/LeftButton"]
@@ -138,7 +145,7 @@ metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 [node name="RightButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Right"
 
 [node name="OnHoverAnimComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/LeftRight/RightButton"]
@@ -153,10 +160,10 @@ metadata/_custom_type_script = "uid://bei2cvpc8wqtr"
 layout_mode = 2
 
 [node name="DownButton" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Down"]
-custom_minimum_size = Vector2(56, 0)
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Down"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Down/DownButton"]
@@ -174,7 +181,7 @@ size_flags_vertical = 6
 [node name="R90Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "R90"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R90Button"]
@@ -188,7 +195,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 [node name="R180Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "R180"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R180Button"]
@@ -202,7 +209,7 @@ metadata/_custom_type_script = "uid://wtkip6i1f07w"
 [node name="R270Button" type="Button" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "R270"
 
 [node name="SFXComponent" type="Node" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/CommandMargin/CommandItems/Rotations/R270Button"]
@@ -226,29 +233,31 @@ theme_override_constants/separation = 1
 
 [node name="LevelLabel" type="Label" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 48
 text = "Level "
 
 [node name="LimitLabel" type="Label" parent="MarginContainer/BaseContainer/MarginContainer/Panel/PrimaryContainer/InfoMargin/InformationContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 48
 text = "Limit: "
 
 [node name="PlayStopMargin" type="MarginContainer" parent="MarginContainer/BaseContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 
 [node name="PlayStopButtons" type="VBoxContainer" parent="MarginContainer/BaseContainer/PlayStopMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(58, 32)
+custom_minimum_size = Vector2(117, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 36
 disabled = true
 text = "Run Loop"
 
@@ -262,11 +271,11 @@ script = ExtResource("3_n7xt4")
 metadata/_custom_type_script = "uid://wtkip6i1f07w"
 
 [node name="StopButton" type="Button" parent="MarginContainer/BaseContainer/PlayStopMargin/PlayStopButtons"]
-custom_minimum_size = Vector2(58, 0)
+custom_minimum_size = Vector2(117, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 36
 disabled = true
 text = "Stop"
 

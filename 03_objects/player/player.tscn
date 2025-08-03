@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://dfmwu30ysrsa3"]
+[gd_scene load_steps=53 format=3 uid="uid://dfmwu30ysrsa3"]
 
 [ext_resource type="Script" uid="uid://tj8uwqxnie27" path="res://03_objects/player/player.gd" id="1_xlt0o"]
 [ext_resource type="Texture2D" uid="uid://dj3jrah4cn43u" path="res://99_assets/sprites/knight/Mono Knight.png" id="2_xlt0o"]
+[ext_resource type="Script" uid="uid://ldvhyqrmmept" path="res://00_main/point_light_2d.gd" id="3_ocqos"]
 [ext_resource type="Script" uid="uid://eq6ym6jydcda" path="res://04-components/move-component/grid_movement_component.gd" id="3_qnbo3"]
 [ext_resource type="AudioStream" uid="uid://clvcwc0rowhdk" path="res://99_assets/music/player-sfx/16_human_walk_stone_3.wav" id="4_o2y61"]
 [ext_resource type="AudioStream" uid="uid://cs0vrrhbt3ray" path="res://99_assets/music/player-sfx/22_orc_jump_2.wav" id="5_ocqos"]
@@ -944,6 +945,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbo3"]
 size = Vector2(27, 21)
 
+[sub_resource type="Gradient" id="Gradient_esoif"]
+offsets = PackedFloat32Array(0.012987, 0.694805, 0.694805)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kmyf5"]
+gradient = SubResource("Gradient_esoif")
+width = 600
+height = 450
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="Node2D"]
 script = ExtResource("1_xlt0o")
 
@@ -966,6 +978,17 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_qnbo3")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(4, 3)
+range_layer_min = -101
+texture = SubResource("GradientTexture2D_kmyf5")
+script = ExtResource("3_ocqos")
+flickerMin = 0.7
+flickerMax = 1.5
+baseFlickerTime = 1.5
+rangeMin = 0.0
+rangeMax = 0.0
 
 [node name="GridMovementComponent" type="Node" parent="."]
 script = ExtResource("3_qnbo3")

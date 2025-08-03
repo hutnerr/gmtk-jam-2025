@@ -38,7 +38,8 @@ extends Control
 	rotate270Button,
 ]
 
-@onready var playerRef = get_parent().get_parent().get_node("GameObjects").get_node("Player")
+#@onready var playerRef = get_parent().get_parent().get_node("GameObjects").get_node("Player")
+@onready var playerRef = get_parent().get_parent().get_parent().get_node("GameObjects").get_node("Player")
 
 func _ready() -> void:
 	playButton.pressed.connect(onPlayButtonPressed)
@@ -161,7 +162,7 @@ func _process(delta: float) -> void:
 
 func renderCommand(cmd: BaseCommand) -> void:
 	var label = Label.new()
-	label.add_theme_font_size_override("font_size", 16)
+	label.add_theme_font_size_override("font_size", 48)
 	var index = Looper.getCommandIndex(cmd)
 	label.text = str(index + 1, ": ", cmd.cmdName)
 	loopItemContainer.add_child(label)
@@ -190,7 +191,8 @@ func onPlayButtonPressed() -> void:
 func onClearLoopButtonPressed() -> void:
 	Looper.stopLoop()
 	Looper.clearCommands()
-	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	#var player = get_parent().get_parent().get_node("GameObjects/Player")
+	var player = get_parent().get_parent().get_parent().get_node("GameObjects/Player")
 	player.resetPosition()
 	player.imBeingToldToStop()
 	Gridleton.reloadGridObjects()
@@ -207,7 +209,8 @@ func onClearLoopButtonPressed() -> void:
 
 func onStopButtonPressed() -> void:
 	Looper.stopLoop()
-	var player = get_parent().get_parent().get_node("GameObjects/Player")
+	#var player = get_parent().get_parent().get_node("GameObjects/Player")
+	var player = get_parent().get_parent().get_parent().get_node("GameObjects/Player")
 	player.imBeingToldToStop()
 	player.resetPosition()
 	Gridleton.reloadGridObjects()
