@@ -21,7 +21,7 @@ levelNum = 1
 [node name="GameObjects" type="Node" parent="."]
 
 [node name="Player" parent="GameObjects" instance=ExtResource("2_7ut40")]
-position = Vector2(160, 157)
+position = Vector2(134, 132)
 
 [node name="Wall" parent="GameObjects" instance=ExtResource("4_l6t1r")]
 position = Vector2(-29, 22)
