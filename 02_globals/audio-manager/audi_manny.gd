@@ -1,8 +1,6 @@
 extends Node
 
 const MENU_MUSIC: String = "res://99_assets/music/main-temp.wav"
-#const MENU_MUSIC: String = "res://99_assets/music/guitar-mainloop.wav"
-#const MENU_MUSIC: String = "res://99_assets/music/guitar-start.wav"
 const LEVEL_MUSIC: String = "res://99_assets/music/final.wav"
 
 const HOVER_SFX: String = "res://99_assets/music/bookOpen.ogg"

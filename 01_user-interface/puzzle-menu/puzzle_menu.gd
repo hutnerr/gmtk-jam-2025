@@ -38,7 +38,6 @@ extends Control
 	rotate270Button,
 ]
 
-#@onready var playerRef = get_parent().get_parent().get_node("GameObjects").get_node("Player")
 @onready var playerRef = get_parent().get_parent().get_parent().get_node("GameObjects").get_node("Player")
 
 func _ready() -> void:
@@ -62,16 +61,15 @@ func onRotationApplied(rotationDeg: int) -> void:
 	AudiManny.playRotationSFX()
 
 func changeTextForRotation(originalText: String, rotationDeg: int) -> String:
-	# Extract the number and current direction from the label text
 	var parts = originalText.split(": ")
 	if parts.size() != 2:
-		return originalText  # Return unchanged if format is unexpected
+		return originalText
 	
 	var number = parts[0]
 	var currentDirection = parts[1]
 	var newDirection = ""
 	
-	# Apply rotation transformation based on current direction and rotation amount
+	# more nightmare switch statement
 	match rotationDeg:
 		90:
 			match currentDirection:
@@ -92,7 +90,7 @@ func changeTextForRotation(originalText: String, rotationDeg: int) -> String:
 				"Rotation0":
 					newDirection = "Rotation90"
 				_:
-					newDirection = currentDirection  # Keep unchanged for unknown directions
+					newDirection = currentDirection
 		
 		180:
 			match currentDirection:
@@ -137,7 +135,7 @@ func changeTextForRotation(originalText: String, rotationDeg: int) -> String:
 					newDirection = currentDirection
 		
 		_:
-			newDirection = currentDirection  # No change for invalid rotation values
+			newDirection = currentDirection
 	
 	return number + ": " + newDirection
 
@@ -167,14 +165,7 @@ func renderCommand(cmd: BaseCommand) -> void:
 	label.text = str(index + 1, ": ", cmd.cmdName)
 	loopItemContainer.add_child(label)
 
-func highlightActiveCommand() -> void:
-	# get the active command and make it grey
-	# label.add_theme_color_override("font_color", Color("898d8a"))
-	# have to store the last one and make it not grey at the same time
-	pass
-
 func disableCmdButtons() -> void:
-	#print(allCmdButtons)
 	for but in allCmdButtons:
 		but.disabled = true
 
@@ -191,7 +182,6 @@ func onPlayButtonPressed() -> void:
 func onClearLoopButtonPressed() -> void:
 	Looper.stopLoop()
 	Looper.clearCommands()
-	#var player = get_parent().get_parent().get_node("GameObjects/Player")
 	var player = get_parent().get_parent().get_parent().get_node("GameObjects/Player")
 	player.resetPosition()
 	player.imBeingToldToStop()
@@ -230,6 +220,3 @@ func checkForCMDButtonsDisabled() -> void:
 		return
 	for but in allCmdButtons:
 		but.disabled = false
-
-	# if length - 1 is loop limimt, we cant add any more
-	# then we need to disable them, otherwise we can enable them again

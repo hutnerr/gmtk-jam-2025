@@ -12,7 +12,6 @@ var currentIndex: int
 var currentLevel: int
 
 func addCommand(command: BaseCommand, index: int) -> bool:
-	# FIXME: error handling
 	commands.insert(index, command)
 	commandAdded.emit(command, index)
 	return true
@@ -25,7 +24,6 @@ func getCommandIndex(cmd: BaseCommand) -> int:
 	return -1
 
 func removeCommand(index: int) -> bool:
-	# FIXME: error handling
 	var cmd = commands[index]
 	commands.remove_at(index)
 	commandRemoved.emit(cmd, index)
@@ -54,9 +52,6 @@ func runLoop() -> void:
 	var lastPos: Vector2i = Vector2i.ZERO
 	
 	while looping and currentLoopId == thisLoopId:
-		
-		# Gridleton.renderLoopLine():
-		
 		for i in len(commands):
 			if not looping or currentLoopId != thisLoopId:
 				return
@@ -71,25 +66,8 @@ func runLoop() -> void:
 			if not player:
 				looping = false
 				return
-			
-			#if command.rotationDegrees == 0 and player.gridPos == lastPos:
-				#print("stinky")
-				#timesNotMoving += 1
-			#
-			#if timesNotMoving >= 50:
-				#Looper.stopLoop()
-				#player.imBeingToldToStop()
-				#player.resetPosition()
-				#Gridleton.reloadGridObjects()
-				#AudiManny.playFailSFX()
-				#print("PREVENTED INFINITE LOOP AND RESET")
 				
 			lastPos = player.gridPos
-			
-			# get the players current position, check it to the last position
-			# if its the same, add one to times not looping, if that ever reaches 10 thenn
-			# we stop looping to prevent infinite loops
-				
 			await player.takeTurn(command, thisLoopId)
 			
 			if not looping or currentLoopId != thisLoopId:

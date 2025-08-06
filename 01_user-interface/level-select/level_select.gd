@@ -27,6 +27,7 @@ func _ready() -> void:
 		btn.pressed.connect(onLevelButtonPressed.bind(btn))
 	closeBtn.pressed.connect(onCloseButtonPressed)
 
+	# nightmare code
 	for level_num in SceneTransitioner.levelsComplete:
 		if SceneTransitioner.levelsComplete[level_num]:
 			match level_num:
@@ -64,7 +65,7 @@ func _ready() -> void:
 					l16btn.disabled = false
 
 func onLevelButtonPressed(button: Button) -> void:
-	var btnNum = button.text.strip_edges()  # Assuming button text is "1", "2", etc.
+	var btnNum = button.text.strip_edges()
 	var path = LEVELS_PATH.replace("FORMAT", btnNum)
 	SceneTransitioner.change_scene(path)
 	AudiManny.playLevelMusic()

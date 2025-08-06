@@ -11,8 +11,6 @@ func _ready() -> void:
 func onDonePlaying(something) -> void:
 	label.startCredits()
 	mainGuitarLoop.play()
-	print("roll the fuckin credits baby")
-	pass
 
 func stfu() -> void:
 	mainGuitarLoop.stop()

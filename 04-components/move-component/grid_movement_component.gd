@@ -7,14 +7,13 @@ func _ready() -> void:
 	parent = get_parent() as GridObject
 
 func move(newPosition: Vector2i):
-	#print("MOVING TO : ", newPosition)
 	parent.gridPos = newPosition
 	parent.global_position = Gridleton.gridPosToGlobalPos(newPosition)
 	
 func getNewPosition(cmd: BaseCommand) -> Vector2i:
 	if cmd.rotationDegrees != 0:
 		currentDirection = rotateDirection(cmd.rotationDegrees)
-		return parent.gridPos  # Return current position (no movement)
+		return parent.gridPos
 	
 	if cmd.direction != Vector2i.ZERO:
 		var actualMovement = transformDirection(cmd.direction)
@@ -23,7 +22,7 @@ func getNewPosition(cmd: BaseCommand) -> Vector2i:
 	return parent.gridPos
 
 func getProperAnimDirection(direction: Vector2i) -> String:
-	match direction:	
+	match direction:
 		Vector2i(0, 1):
 			return "Up"
 		Vector2i(0, -1):
@@ -44,32 +43,7 @@ func rotateDirection(degrees: int):
 		270:
 			return Vector2i(-currentDirection.y, currentDirection.x)
 		_:
-			return currentDirection # Handle unknown rotation values
-	
-	# Optional: Handle sprite rotation here if needed
-	rotateSprite()
-
-func rotateSprite():
-	# Find and rotate the sprite (similar to your original rotatePlayerSprite)
-	var sprite = parent.get_node_or_null("Sprite2D")
-	if not sprite:
-		for child in parent.get_children():
-			if child is Sprite2D:
-				sprite = child
-				break
-	
-	if not sprite:
-		return
-	
-	match currentDirection:
-		Vector2i(1, 0):   # RIGHT
-			sprite.rotation_degrees = 0
-		Vector2i(0, 1):   # DOWN
-			sprite.rotation_degrees = 90
-		Vector2i(-1, 0):  # LEFT
-			sprite.rotation_degrees = 180
-		Vector2i(0, -1):  # UP
-			sprite.rotation_degrees = 270
+			return currentDirection
 
 func transformDirection(commandDir: Vector2i) -> Vector2i:
 	if commandDir == Vector2i(1, 0):  # FORWARD
